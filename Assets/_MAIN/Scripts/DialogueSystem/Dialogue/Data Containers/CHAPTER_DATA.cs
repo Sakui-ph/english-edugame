@@ -132,40 +132,55 @@ namespace DIALOGUE
         public bool GetFileNamesList(string path)
         {
             #if UNITY_ANDROID
-                GetStreamingChapters(path);
-                return true;
+                return GetStreamingChapters(path);
             #else
-                try {
+                return GetChaptersFromDefaultFolder(path);
+            #endif
+        }
+
+        private bool GetChaptersFromDefaultFolder(string path)
+        {
+            try {
+                    path = GetPathToChapter(path);
+                    
+                    Debug.Log(path);
+
                     fileNames = Directory.GetFiles(path, "*.txt")
                         .Select<string, string>(Path.GetFileNameWithoutExtension)
                         .ToList<string>();
                     return true;
-                }
-                catch {
-                    Debug.Log("Could not load main levels!");
-                    // TODO maybe crash the game and handle this error;
-                }
-                return false;
-            #endif
+            }
+            catch {
+                Debug.Log("Could not load main levels!");
+                // TODO maybe crash the game and handle this error;
+            }
+            return false;
         }
 
-
+        private bool GetChaptersFromStreamingAssets(string directory)
+        {
+            try
+            {
+                string folderPath = "chapters/" + directory;
+                fileNames = BetterStreamingAssets.GetFiles(folderPath, "*.txt").Select<string, string>(Path.GetFileNameWithoutExtension)
+                            .ToList<string>();
+                return true;
+            }
+            catch
+            {
+                Debug.Log("Could not load main levels!");
+            }
+            return false;
+        }
 
         private string GetPathToChapter(string chapterName)
         {
-            string defaultPath = FilePaths.resource_chapter_files;
+            string defaultPath = FilePaths.stream_assets_chapters;
             if (chapterName.StartsWith(FilePaths.HOME_DIRECTORY_SYMBOL))
             {
                 return chapterName.Substring(FilePaths.HOME_DIRECTORY_SYMBOL.Length);
             }
             return defaultPath + chapterName;
-        }
-
-        public void GetStreamingChapters(string directory)
-        {
-            string folderPath = "chapters/" + directory;
-            fileNames = BetterStreamingAssets.GetFiles(folderPath, "*.txt").Select<string, string>(Path.GetFileNameWithoutExtension)
-                        .ToList<string>();
         }
 
     }

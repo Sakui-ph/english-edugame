@@ -67,7 +67,19 @@ public class FileManager
 
     public static List<string> ReadChapterFromStreamingAssets(string filePath, bool includeBlankLines = true)
     {
-        string relativePath = GetRelativePath(filePath, "chapters");
+        
+        #if UNITY_ANDROID
+            string relativePath = GetRelativePath(filePath, "chapters");
+            return ReadChapterAndroid(relativePath, includeBlankLines);
+        #else
+            string relativePath = $"{Application.streamingAssetsPath}/{GetRelativePath(filePath, "chapters")}";
+            return ReadChapterWindows(relativePath, includeBlankLines);
+        #endif 
+    }
+
+
+    private static List<string> ReadChapterAndroid(string relativePath, bool includeBlankLines = true)
+    {
         try{
             List<string> data = BetterStreamingAssets.ReadAllLines($"{relativePath}.txt").ToList();
                     if (includeBlankLines)
@@ -78,7 +90,25 @@ public class FileManager
         catch
         {
             GameSystem.instance.LoadMainMenu();
-            Debug.Log($"Error, file not found in {filePath}");
+            Debug.Log($"Error, file  not found in {relativePath}");
+            return null;
+        }
+    }
+
+    private static List<string> ReadChapterWindows(string relativePath, bool includeBlankLines = true)
+    {
+
+        try{
+            List<string> data = File.ReadAllLines($"{relativePath}.txt").ToList();
+                    if (includeBlankLines)
+            return data;
+            data = data.Where(s => !string.IsNullOrWhiteSpace(s)).Distinct().ToList();
+            return data;
+        }
+        catch
+        {
+            GameSystem.instance.LoadMainMenu();
+            Debug.Log($"Error, file  not found in {relativePath}");
             return null;
         }
     }
@@ -94,6 +124,6 @@ public class FileManager
             return fullPath;
         }
 
-        return string.Join("/", fullPathSegments.Skip(index));
+        return string.Join("/", fullPathSegments.Skip(index)).ToLower();
     }
 }
