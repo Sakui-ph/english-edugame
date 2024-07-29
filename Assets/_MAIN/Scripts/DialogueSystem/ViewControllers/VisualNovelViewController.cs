@@ -34,7 +34,7 @@ public class VisualNovelViewController : MonoBehaviour
         currentDay = day;
         
 
-        weekday.sprite = Resources.Load<Sprite>($"WeekdayGraphics/{currentDay.ToString()}");
+        weekday.sprite = Resources.Load<Sprite>($"Assets/WeekdayGraphics/{currentDay.ToString()}");
         cg.alpha = 0;
         LeanTween.alphaCanvas(cg, 1, 1);
     }
