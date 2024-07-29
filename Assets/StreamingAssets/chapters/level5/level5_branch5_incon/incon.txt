@@ -1,0 +1,17 @@
+PC "Tris said that you can do your assignments during class." 
+"But you say you can’t?" 
+Anjelo "Well, I get really tired from the morning so when in class," 
+Anjelo [0:embarrass] "I usually just fall asleep!"
+
+TriggerAnimation(Tris Hop)
+Tris [0:embarrass] "Do you not get enough sleep?" 
+Anjelo "Not usually…" 
+PC "Do you think it’s because you stay late after school everyday for school court?" 
+
+FlipCharacter(Anjelo)
+narrator  "Anjelo thinks for a second." 
+wait(1)
+FlipCharacter(Anjelo)
+Anjelo "That would make a lot of sense, actually."  
+
+ReturnBranch(7_Level5_Outro) 

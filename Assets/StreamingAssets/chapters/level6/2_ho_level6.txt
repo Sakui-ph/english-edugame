@@ -1,0 +1,18 @@
+AddForClaim("The school should adopt Ming Ming" "b2ca4289-6302-4dac-b6d3-e3b1e0bd74d6" 3)
+AddGroundCard("Most students have said that they love Ming Ming" "b2ca4289-6302-4dac-b6d3-e3b1e0bd74d6" "ForCard1"), AddWarrantCard("Things that are loved are good" "b2ca4289-6302-4dac-b6d3-e3b1e0bd74d6" "ForCard1")
+AddGroundCard("The cat hasn’t scratched or bitten anyone" "b2ca4289-6302-4dac-b6d3-e3b1e0bd74d6" "ForCard2"), AddWarrantCard("The cat probably won’t hurt the students" "b2ca4289-6302-4dac-b6d3-e3b1e0bd74d6" "ForCard2")
+AddGroundCard("Most students and staff do not have cat allergies" "b2ca4289-6302-4dac-b6d3-e3b1e0bd74d6" "ForCard3"), AddWarrantCard("The cat will probably not cause allergies" "b2ca4289-6302-4dac-b6d3-e3b1e0bd74d6" "ForCard3")
+
+
+AddAgainstClaim("The school should not adopt Ming Ming" "ee0b7ea3-657f-43b0-a64d-cbc2f006e827" 2)
+AddGroundCard("Stray cats can carry diseases" "ee0b7ea3-657f-43b0-a64d-cbc2f006e827" "AgainstCard1"), AddWarrantCard("It’s bad to expose students to disease" "ee0b7ea3-657f-43b0-a64d-cbc2f006e827" "AgainstCard1")
+AddGroundCard("Tris has a cat allergy" "ee0b7ea3-657f-43b0-a64d-cbc2f006e827" "AgainstCard2"), AddWarrantCard("The cat could trigger her allergies which would be bad" "ee0b7ea3-657f-43b0-a64d-cbc2f006e827" "AgainstCard2")
+
+
+AddIrrelevantClaim("Dogs are the best pets" "e81226c4-abd5-41c5-8b9e-fd924213250b" 1)
+AddGroundCard("Dogs are cute" "e81226c4-abd5-41c5-8b9e-fd924213250b" "ForCard1"), AddWarrantCard("Being cute is an important trait for animals to have" "e81226c4-abd5-41c5-8b9e-fd924213250b" "ForCard1")
+
+AddGroundCard("Everyone loves the school nurse")
+AddWarrantCard("The school nurse is kind")
+
+PlayCardGame("The School's Cat Adoption Debate" true)

@@ -1,0 +1,102 @@
+// Add some black screen or something as a transition to change of bg  
+// Background inside classroom that is club room  
+//note to us once Ejay enters the club room, he’s not allowed to smile till the end. Either neutral or sad or mad lang siya 
+
+PlaySoundEffect(DoorOpen4)
+SetLayerMedia(background 0 "ClubRoom_1")
+
+HideCharacter(Ejay Hershey)
+
+
+[wait]MoveCharacter(Anjelo 0.5:0 4 true)
+FlipCharacter(Anjelo)
+TriggerAnimation(Anjelo Hop)
+Anjelo "Okay, {name}, here are the facts." 
+"So, most of us have been in Haraya our whole lives." 
+"That’s why we know pretty much all the teachers." 
+"But there’s been one art teacher who hasn’t come to school at all this quarter." 
+"And well, Hershey and that art teacher..."
+Anjelo [0:sad] "Don’t really get along." 
+
+FlipCharacter(Ejay)
+Express(Ejay sad)
+Express(Hershey angry)
+
+SetPosition(Ejay 0:0)
+SetPosition(Hershey 1:0)
+
+ShowCharacter(Ejay true)
+ShowCharacter(Hershey true)
+
+TriggerAnimation(Anjelo Hop)
+Anjelo [0:happy] "You see, Ms. Em gets mixed reviews. Some love her, most are just okay with her,"
+"and others don’t like her at all." 
+
+FlipCharacter(Ejay)
+Express(Ejay sad)
+narrator  "You notice Ejay look away after that last statement." 
+
+
+Anjelo "So, Hershey decides to make a TikTok complaining about Ms. Emily over the summer."
+"And…"  
+"It went viral."
+
+Express(Hershey happy_2)
+
+TriggerAnimation(Anjelo Hop)
+"Now everybody’s talking about it!" 
+"Apparently, Ms. Em has been really badly affected by it."
+"So Ejay brought this to school court because he wants Hershey to get detention for posting that video" 
+
+Express(Ejay sad)
+Express(Hershey angry)
+
+[wait]MoveCharacter(Anjelo -1:0 1.3 true)
+StopTrack(0)
+[wait]PlayTitle("Case 4" "Should Hershey get detention for the video she posted? " 5)
+
+PC "I see." 
+"Hmm, since Ejay is the one who brought this to us," 
+"maybe we can start with Hershey." 
+
+StopTrack(0)
+[wait]PlayTitle("Case 4" "Hershey’s Stance" 5)
+PlayTrack(EavesdroppingLady 0.3 -p 1.1 -sv 0 -l true)
+[wait]MoveCharacter(Hershey 0.5:0 0.6 true)
+[wait]MoveCharacter(Ejay 0:0 0.6 true)
+
+
+Hershey [0:happy_2] "First of all, I think that <color=\"yellow\">it's healthy for students to separate school life and personal life</color>." // key statement 
+TriggerAnimation(Hershey Hop)
+Express(Ejay shock)
+Hershey [0:angry] "So I don’t think it's fair that I get detention for something I did during summer break!" 
+
+TriggerAnimation(Hershey Hop)
+Hershey "Secondly, <color=\"yellow\">I didn’t show in the video what school I was from</color>!" // key statement 
+Hershey "So even if it did go viral," 
+"no one outside of Haraya knew who I was talking about!" 
+
+TriggerAnimation(Ejay Hop)
+Express(Ejay angry)
+
+Hershey "Plus, <color=\"yellow\">I didn’t even say her real name</color>!" // key statement
+TriggerAnimation(Hershey Hop)
+Hershey "I just called her Ms. Em!"
+"I didn’t say her first name or last name!" 
+Hershey "And lastly, <color=\"yellow\">I don’t think anyone really got hurt</color> by what I did." // key statement
+
+StopTrack(0)
+[wait]PlayTitle("Case 4" "Ejay's Stance" 5)
+PlayTrack(NightlyDewdrops 0.1 -p 0.9 -sv 0 -l true)
+
+[wait]MoveCharacter(Ejay 0.5:0 0.6 true)
+[wait]MoveCharacter(Hershey 1:0 0.6 true)
+
+PC "Okay." 
+"Ejay, why do you think Hershey should get detention for what she did?"
+
+[I]Ejay [0:sad] "Well, first off, <color=\"yellow\">you could see a Haraya school uniform</color> in the background." 
+
+PrepareClassTrialButton("Continue" Level4_Branch1_Continue false) 
+PrepareClassTrialButton("Inconsistency" Level4_Branch1_Incon true)  
+[wait]ShowButtons()

@@ -1,0 +1,10 @@
+PC "Sammy, were you close with this girl before?" 
+Sammy [0:stoic] "Not as close as we are now." 
+Sammy [0:embarrass] "We bonded because of this whole thing." 
+Tris [0:happy] "And you have me to thank for that!"
+
+Express(Sammy angry)
+
+PC "You may continue your point, Tris." 
+
+ReturnBranch(3_Level2_Section2) 

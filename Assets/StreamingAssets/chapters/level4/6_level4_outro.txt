@@ -1,0 +1,60 @@
+Hershey [0:sad] "I–" 
+"I’m sorry," 
+
+FlipCharacter(Hershey)
+"I didn’t realize my video did so much harm." 
+
+ToggleAnimation(Hershey Shiver)
+TriggerAnimation(Hershey Shiver)
+narrator  "Hershey looked like she was about to start crying."
+FlipCharacter(Ejay)
+"Ejay moved closer to pat her on the back." 
+
+[wait]MoveCharacter(Ejay 0.6:0 1 true)
+ToggleAnimation(Hershey Shiver)
+
+Ejay [0:sad] "It’s okay."
+
+FlipCharacter(Hershey)
+ToggleAnimation(Hershey Hop)
+ToggleAnimation(Hershey Hop)
+Hershey [0:sad] "It’s really not! I’ll take the video down" 
+ToggleAnimation(Hershey Hop)
+"and apologize to her immediately!" 
+
+Express(Ejay happy)
+Ejay "She’d appreciate that." 
+
+[wait]MoveCharacter(Anjelo 0:0 0.5 true)
+
+FlipCharacter(Anjelo)
+Anjelo [0:happy] "Hey, can I ask how you know so much about Ms. Em?"
+"She hasn’t come to school since the video." 
+Ejay "I still see her at home everyday." 
+Express(Anjelo shock)
+Express(Hershey shock)
+PC "Is she your mom?" 
+
+TriggerAnimation(Ejay Hop)
+StopTrack(0 -i true)
+Ejay [0:embarrass] "No! She’s my sister." 
+
+PC "That makes more sense..." 
+Express(Hershey embarrass)
+narrator  "Hearing this realization" 
+"the tension disappeared and was replaced by a joking mood." 
+
+"As the talk continued, they cleared up more misunderstandings" 
+TriggerAnimation(Ejay hop)
+Express(Hershey happy)
+"and everyone seemed to feel better." 
+TriggerAnimation(Hershey hop)
+Express(Anjelo happy)
+
+HideCharacter(Anjelo Ejay Hershey)
+SetLayerMedia(background 0 pitchBlack)
+
+"By the end of the night, they all walked home together."
+
+SetLayerMedia(foreground 0 pitchBlack)
+[wait]PlayTitle("Case 4" "Case Closed" 5)

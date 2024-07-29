@@ -1,0 +1,11 @@
+PC "Hershey, if that’s true, people could recognize the school from the uniform." 
+Hershey [0:sad] "But I put it away before filming!" 
+Anjelo [0:happy] "Let’s check the video then!" 
+narrator  "While watching,"
+"you all realize that a small bit of the uniform could be seen." 
+
+Express(Hershey embarrass)
+
+Ejay [0:angry] "Right there, you can even see the logo!" 
+
+ReturnBranch(3_Level4_Section2) 

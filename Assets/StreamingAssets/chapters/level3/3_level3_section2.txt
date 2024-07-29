@@ -1,0 +1,9 @@
+Ezekiel [0:stoic] "He usually strategizes for us and leads the team most of the time." 
+"But he’s only good at following his plan. " 
+Ezekiel [0:angry] "He’s never there when we need him."
+
+[I]Ezekiel "Plus, <color=\"yellow\">he brings down group morale</color>." 
+
+PrepareClassTrialButton("Continue" Level3_Branch2_Continue false) 
+PrepareClassTrialButton("Inconsistency" Level3_Branch2_Incon true)  
+[wait]ShowButtons() 

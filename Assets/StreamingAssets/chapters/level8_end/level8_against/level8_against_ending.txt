@@ -1,0 +1,13 @@
+narrator  "You decided to let Sammy stay on the team!" 
+"Because of your decision," 
+"Sammy now chooses to be more conscious of what he says" 
+"and how he says it." 
+"It’s slow progress but, eventually," 
+"Sammy gets back to his old, not toxic self." 
+"The team is back, and they’re stronger than ever!" 
+"Thankful for what you did for them," 
+"you make a new group of friends and become an honorary member of the team!" 
+
+
+StopTrack(0)
+[wait]SetLayerMedia(foreground 0 pitchBlack)

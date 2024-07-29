@@ -1,0 +1,6 @@
+[I]Anjelo "And, lastly, being a working student is pretty hard so <color=\"yellow\">I struggle to do assignments even in class</color>!"
+
+PrepareClassTrialButton("Continue" Level5_Branch5_Continue false) 
+PrepareClassTrialButton("Inconsistency" Level5_Branch5_Incon true)  
+[wait]ShowButtons() 
+

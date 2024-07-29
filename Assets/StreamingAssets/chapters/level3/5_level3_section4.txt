@@ -1,0 +1,5 @@
+Ezekiel "And lastly, <color=\"yellow\">we always tried to call him out</color> whenever he's toxic but <color=\"yellow\">he doesn't change</color>." 
+
+PrepareClassTrialButton("Continue" Level3_Branch4_Continue false) 
+PrepareClassTrialButton("Inconsistency" Level3_Branch4_Incon true)  
+[wait]ShowButtons() 

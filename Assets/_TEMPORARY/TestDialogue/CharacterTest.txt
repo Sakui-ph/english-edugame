@@ -1,0 +1,18 @@
+CreateCharacter("Dokutah" -e true), CreateCharacter("Exusiai" -e true), SetPosition(Dokutah 1:0), SetPosition(Exusiai 0:0)
+CreateCharacter(Frieren -e true), SetPosition(Frieren 0.5:0.5)
+Frieren "Hello"
+"Test"
+
+
+Dokutah "Good morning Exusiai!"
+"How've you been doing?"
+"It's been kinda tiring for me lately, how's life at Penguin Logistics" MoveCharacter("Dokutah" "0.6:1" "10" -s true)
+MoveCharacter(Dokutah 1:1 5)
+
+Exusiai "We've been playing Minecraft a lot."
+"I'mma go" Hide("Exusiai")
+
+CreateCharacter("Gamer as Dokutah" -e false)
+Gamer "Hi!"
+Show("Gamer")
+

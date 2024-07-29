@@ -1,0 +1,6 @@
+Anjelo "Of all my responsibilities, this is the one I can’t neglect at all!"
+Anjelo [0:embarrass] "Additionally, <color=\"yellow\">I work so I can have enough money to buy school supplies</color>."
+
+PrepareClassTrialButton("Continue" Level5_Branch2_Continue false) 
+PrepareClassTrialButton("Inconsistency" Level5_Branch2_Incon true)  
+[wait]ShowButtons() 

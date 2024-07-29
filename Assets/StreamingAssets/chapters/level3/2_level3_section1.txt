@@ -1,0 +1,81 @@
+
+Anjelo "Here’s how Ezekiel explained the situation to me." 
+"Sammy, Ezekiel, some other guys," 
+"and Sammy’s crush" 
+
+Express(Sammy embarrass)
+
+Anjelo "have been playing ML together for a while. They recently noticed that Sammy’s started getting more and more toxic in game."
+
+Express(Sammy angry)
+Express(Ezekiel angry)
+[wait]TriggerAnimation(Ezekiel Hop)
+
+FlipCharacter(Sammy)
+narrator  "Sammy looks like he wants to butt in but Ezekiel stops him." 
+Express(Sammy sad)
+Express(Ezekiel stoic)
+
+Anjelo "Most of the guys stopped wanting to play because of this." 
+
+[wait]MoveCharacter(Sammy 0:-0.8 1 true)
+
+"Some people are even threatening to leave the team!" 
+
+[wait]MoveCharacter(Sammy 0:-0.6 1 true)
+
+"So they asked Ezekiel to talk to Sammy about his behavior since he knows Sammy the most." 
+
+Anjelo [0:sad] "Apparently, a lot of people just want to kick him out."
+
+Express(Anjelo happy)
+TriggerAnimation(Anjelo Hop)
+"Right now, our goal is to figure out if they can compromise so that Sammy can stay on the team!" 
+
+// have the following text be in large font, preferably shown in the middle of the screen like a movie title card  
+[wait]PlayTitle("Case 3" "Should Sammy be kicked from the team?" 5)
+
+
+PC "Since Ezekiel described the situation, let’s have Sammy go first." 
+HideCharacter(Anjelo Ezekiel)
+FlipCharacter(Sammy)
+[wait]MoveCharacter(Sammy 0.5:0 1 true)
+"Sammy, why shouldn't the team kick you out?" 
+
+// have the following text be in large font, preferably shown in the middle of the screen like a movie title card  
+StopTrack(0)
+[wait]PlayTitle("Case 3" "Sammy's Stance" 5)
+PlayTrack(RecessToDismissal 0 0.2 -sv 0 -l true)
+
+
+TriggerAnimation(Sammy Hop)
+Sammy [0:angry] "Well, first of all the team needs me because <color=\"yellow\">I do all of our planning and strategizing</color>." // key statement 
+Sammy "That’s a really important job!" 
+Sammy [0:happy] "Secondly, <color=\"yellow\">I’m great for group morale</color> because we usually win when I lead!</color>" // key statement
+
+TriggerAnimation(Sammy Hop)
+Sammy "I mean, nothing can be better for morale more than winning!" 
+Sammy [0:happy] "Thirdly, <color=\"yellow\">I always commend the team</color> when we win a game.</color>" // key statement 
+Sammy [0:embarrass] "And I understand that the way I talk can be seen as toxic." 
+
+TriggerAnimation(Sammy Hop)
+Sammy "But for the most part, <color=\"yellow\">I’m really just trying to be helpful</color>!"  // key statement 
+
+// have the following text be in large font, preferably shown in the middle of the screen like a movie title card
+[wait]MoveCharacter(Sammy 0:0 2 true)
+SetPosition(Ezekiel 1.5:0)
+[wait]MoveCharacter(Ezekiel 0.5:0 2 true)
+StopTrack(0)  
+[wait]PlayTitle("Case 3" "Ezekiel's Stance" 5)
+PlayTrack(MorningAfterTheRain 0 0.2 -p 1.2 -sv 0 -l true)
+
+PC "Well, what is your stance on this Ezekiel?" 
+"Why do you and the others want Sammy out?"
+
+ShowCharacter(Ezekiel)
+
+Ezekiel [0:stoic] "Well, first, he’s good at the game but <color=\"yellow\">bad at communicating<color>." 
+
+PrepareClassTrialButton("Continue" Level3_Branch1_Continue false) 
+PrepareClassTrialButton("Inconsistency" Level3_Branch1_Incon true)  
+[wait]ShowButtons() 

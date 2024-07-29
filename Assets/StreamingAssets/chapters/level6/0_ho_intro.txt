@@ -1,0 +1,93 @@
+SetWeekday("Friday")
+SetLayerMedia(background 0 Hallway_2)
+CreateCharacter(Anjelo false false), SetPosition(Anjelo 0.5:0)
+narrator  "It’s been an exhausting but fulfilling week and you’re glad it’s almost over." 
+PC "Last thing to do before my job as judge is officially done!"
+
+Anjelo "For the week!" 
+narrator  "You hear Anjelo’s voice echo in the hallway."
+
+ShowCharacter(Anjelo), TriggerAnimation(Anjelo Hop)
+"By the time you notice he’s there, he’s already close enough to open the door for you." 
+Anjelo "You could be judge next next week too ya know." 
+narrator  "His tone is teasing but a look of tiredness crosses your face." 
+
+TriggerAnimation(Anjelo Hop)
+TriggerAnimation(Anjelo Hop)
+Anjelo "C’mon!" 
+Anjelo [0:sad] "Don’t look like that..." 
+
+TriggerAnimation(Anjelo Hop)
+Anjelo [0:happy] "being the judge is fun!" 
+PC "Then why aren’t you the judge more often?" 
+
+
+Anjelo [0:embarrass] "I’m really bad at it." 
+narrator  "He smiles shyly."
+"He seems a little embarrassed." 
+Anjelo [0:happy] "I’m apparently a good teacher though!" 
+"So I’ve mostly been assigned to training newbies, like you!" 
+
+narrator  "His enthusiasm is almost contagious." 
+"You catch yourself smiling a bit as he opens the door to the club room to let you both in." 
+
+[wait]HideCharacter(Anjelo)
+SetPosition(Anjelo -0.5:0)
+PlaySoundEffect(DoorOpen4 0.4)
+PlayTrack(LateAfternoonPlans 0.2 -l true)
+SetLayerMedia(background 0 "ClubRoom_1")
+PlaySoundEffect(Aircon 0.2 -l true)
+
+narrator  "The room is empty." 
+"The chairs are arranged neatly and Anjelo motions for you to follow him as he sits in a randomly chosen seat."
+ShowCharacter(Anjelo)
+
+[wait]MoveCharacter(Anjelo 0.1:0 1 true)
+[wait]MoveCharacter(Anjelo 0.1:-0.4 1 true)
+
+TriggerAnimation(Anjelo Hop)
+TriggerAnimation(Anjelo Hop)
+"He pats the chair beside him and you settle in." 
+
+Anjelo "Okay! So we’ve gone through the trials, we’ve heard all the cases…" 
+narrator  "His words and movements are dramatic."
+"He’s acting like a TV show host that’s about to explain that you could win a new TV." 
+Anjelo "Now you get to do what the audience have all been waiting for…"
+"YOU"
+"GET TO" 
+"JUDGE!" 
+
+TriggerAnimation(Anjelo Hop)
+TriggerAnimation(Anjelo Hop)
+TriggerAnimation(Anjelo Hop)
+TriggerAnimation(Anjelo Hop)
+narrator  "Anjelo mimes a cheering crowd."
+
+"You roll your eyes but your face shows that you’re happy."
+"You clap along to his cheering and wait for him to settle down." 
+"Once he does, he pulls out a little folder from his bag." 
+
+Anjelo "This, my friend, is the most powerful document in all of Haraya School Court!" 
+
+// show like an item show / zoom in to the folder or something, just add something visually interesting that emphasizes the folder here 
+SetLayerMedia(cinematic 0 SuperSecretFolder)
+
+Anjelo "Inside this folder is a summary of all the people you’ve helped," 
+"all the problems you’ve heard," 
+"and, most importantly, this is going to help you <color=\"yellow\">decide who is wrong and who is right</color>!" 
+narrator  "You hesitate a bit as the weight of this task finally hits you." 
+PC "It feels kinda weird that I have to make objective decisions about all of this..."
+Anjelo "Well, it helps settle things when nobody else can!"
+
+ClearLayerMedia(cinematic 0)
+
+TriggerAnimation(Anjelo Hop)
+"Just do your best and you’ll be okay!" 
+"And I’ll be with you the whole way through!" 
+narrator  "Anjelo’s words help calm your nerves." 
+"You take a deep breath."
+"Anjelo looks at you to see if you’re ready." 
+"You nod."   
+"Anjelo opens the folder."
+
+QueueChapter(1_ho_level6_intro)

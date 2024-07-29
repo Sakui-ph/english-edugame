@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cd854eab12732046bf1d1e725b860a7, type: 3}
+  m_Name: Interrogation System Configuration 1
+  m_EditorClassIdentifier: 
+  characterConfigurationAsset: {fileID: 11400000, guid: 1edb7ed53037a9945a0cb9b5946a385d, type: 2}
+  defaultDialogueTextColor: {r: 1, g: 1, b: 1, a: 1}
+  defaultNameTextColor: {r: 1, g: 1, b: 1, a: 1}
+  defaultFont: {fileID: 11400000, guid: 3a4cdf1c9fc5658468dce44caffcfd52, type: 2}

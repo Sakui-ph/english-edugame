@@ -1,0 +1,12 @@
+PC "Tris said she was busy too but she submits things on time." 
+Anjelo [0:embarrass] "She does sound like she does a lot. But maybe she’s better at balancing stuff than me. Haha" 
+
+TriggerAnimation(Tris Hop)
+Tris [0:embarrass] "You know, I’m willing to help with that!" 
+"You just have to ask!" 
+
+Anjelo [0:happy] "That would be great, actually."
+// tris smiles 
+Express(Tris happy)
+
+ReturnBranch(5_Level5_Section4) 

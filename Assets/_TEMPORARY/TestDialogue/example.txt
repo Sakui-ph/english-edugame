@@ -1,0 +1,2 @@
+Doctor "I'm pretty exhausted{wa 1}.{wa 1}.{wa 1}. {a}wanna eat some pie?"
+Exusiai "Yeah! {c}Definitely!{wc 2}Can I invite some of my friends?"

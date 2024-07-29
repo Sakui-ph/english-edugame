@@ -1,0 +1,35 @@
+CreateCharacter(Nanami true), SetPosition(Nanami 0.3:0.1)
+
+// Jared "test"
+Jared "<b>test</b> <i>test</i>"
+Jared "Hi"
+[wait]triggeranimation(Nanami Hop), triggeranimation(Nanami Hop)
+Nanami "Hello \"Jared\""
+setlayermedia(background 0 "Fantasy Landscape" feathers -aud false)
+playtrack(misty_memory)
+CreateCharacter(Nagito true), SetPosition(Nagito 1:0)
+Nagito "Hello" MoveCharacter(Nagito 0:1 3 true), MoveCharacter(Nagito -1:1 10 false)
+Nagito "Stop sound effect"
+stoptrack(0)
+toggleanimation(Nagito Shiver)
+
+Nagito "This is the first line in the notebook"
+playtrack(misty_memory)
+addnotebookentry(), toggleanimation(Nagito Shiver)
+
+Nagito "Hello, this is an argument that is for"
+stoptrack(0 true)
+addnotebookentry("this is an argument that is for" -c 1)
+
+flipcharacter(Nagito)
+
+Hidecharacter(Nagito Nanami -i true)
+
+startnotebookminigame()
+
+
+
+
+
+
+

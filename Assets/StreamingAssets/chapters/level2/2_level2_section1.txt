@@ -1,0 +1,70 @@
+Anjelo "Okay {name}, are you ready!?" 
+
+
+"Today we’re dealing with crushes, secrets, and betrayal!" 
+
+Express(Sammy angry)
+Express(Tris angry)
+narrator  "Both Sammy and Tris roll their eyes." 
+Anjelo "So, the first thing you need to know is that Sammy and Tris have been close since Grade 1!"
+"They tell each other pretty much everything." 
+"But then, Sammy recently started liking this girl."
+"And so he thought it was a good idea to tell Tris about it." 
+"Sammy told Tris not to tell anyone but she knew Sammy would never try to confess to his crush..." 
+"so she decided to do it for him!" 
+"She wrote a fake love letter and gave it to his crush while pretending it was from Sammy." 
+Express(Sammy embarrass)
+Express(Tris happy)
+
+"Sammy found out immediately and told the girl the truth."
+"They’ve started hanging out more since then"
+
+Express(Sammy angry)
+Express(Tris sad)
+"but Sammy still wants Tris to be punished for what she did." 
+PC "I understand. I guess our next step is to figure out both of their perspectives?"
+HideCharacter(Sammy Tris) 
+
+TriggerAnimation(Anjelo Hop)
+Anjelo "Exactly! You’re getting really good at this being-a-judge thing! I'll watch from over here, you know what to do, right?"
+[wait]MoveCharacter(Anjelo -1:0 1.3 true)
+
+StopTrack(0)
+[wait]PlayTitle("Case 2" "Should Tris be punished for what she did?" 5)
+
+Anjelo "Why don’t we start with Sammy today?" 
+
+[wait]PlayTitle("Case 2" "Sammy's Stance" 5)
+PlayTrack(RecessToDismissal 0.2 -p 0.8 -sv 0 -l true)
+SetPosition(Sammy -1:0)
+
+ShowCharacter(Sammy)
+PC "Okay Sammy, why do you think Tris should be punished?"
+[wait]MoveCharacter(Sammy 0.5:0 0.6 true)
+
+Sammy "Well first of all, <color=\"yellow\">Tris revealed my secret without my permission</color>." // key statement 
+Sammy "Secondly, <color=\"yellow\">she lied to the girl I like</color>." // key statement 
+Sammy [0:sad] "And, lastly, <color=\"yellow\">Tris broke my trust</color>." // key statement 
+
+Sammy [0:sad] "We’ve been close for a really long time. I thought I could trust her… I’m just really disappointed" 
+Sammy [0:angry] "and I don’t even think that she knows she did something wrong!" 
+
+[wait]MoveCharacter(Sammy 0.1:0 0.6 true)
+
+Express(Tris happy)
+SetPosition(Tris 1.5:0)
+StopTrack(0)
+[wait]PlayTitle("Case 2" "Tris's Stance" 5)
+PlayTrack(NightlyDewdrops 0.2 -p 1 -sv 0 -l true)
+
+ShowCharacter(Tris)
+PC "Now let’s hear from you, Tris."
+"Why do you think that you shouldn’t be punished for what you did?"  
+
+[wait]MoveCharacter(Tris 0.5:0 0.6 true)
+TriggerAnimation(Tris Hop)
+Tris [0:happy] "Well, first of all <color=\"yellow\">Sammy and his crush are now close friends</color>!" Express(Sammy embarrass)
+
+PrepareClassTrialButton("Continue" Level2_Branch1_Continue false) 
+PrepareClassTrialButton("Inconsistency" Level2_Branch1_Incon true)  
+[wait]ShowButtons()

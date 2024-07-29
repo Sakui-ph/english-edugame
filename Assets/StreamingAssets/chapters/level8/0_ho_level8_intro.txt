@@ -1,0 +1,44 @@
+SetWeekday("Friday")
+SetLayerMedia(background 0 "ClubRoom_1")
+CreateCharacter(Anjelo true true)
+CreateCharacter(Ezekiel false false), SetPosition(Ezekiel 0.9:0)
+CreateCharacter(Sammy false false), SetPosition(Sammy 0.1:0)
+
+PlayTrack(LateAfternoonPlans 0.2 -l true)
+
+TriggerAnimation(Anjelo Hop)
+Anjelo "We are making so much progress!" 
+"Okay!" 
+"Ready for Case 3?" 
+PC "Yeah, I think I remember this one actually." 
+Anjelo "Look at you," 
+"you really are good at this being-a-judge-thing!" 
+narrator  "You smile a bit but still roll your eyes." 
+PC "This was the Sammy gaming case right?"
+Anjelo "Exactly!" 
+"Can you remember the details?" 
+
+HideCharacter(Anjelo)
+SetWeekday("Tuesday")
+SetLayerMedia(background 1 "RecapOverlay_2")
+SetLayerMedia(background 0 "Bench_1") 
+PlaySoundEffect(MovieProjectorEffect 0.1 -l true)
+
+Express(Sammy angry)
+Express(Ezekiel stoic)
+ShowCharacter(Sammy Ezekiel)
+PC "Sammy’s team wanted to kick him out for being toxic." 
+"To make things fair, they asked Ezekiel" 
+TriggerAnimation(Ezekiel Hop)
+PC "to bring Sammy" 
+TriggerAnimation(Sammy Hop)
+PC "to school court." 
+"Sammy basically had to justify why he should be allowed to stay on the team" 
+"while Ezekiel explained why the others wanted to kick him out." 
+narrator  "Anjelo nods in approval and excitedly turns to the next file." 
+
+
+StopSoundEffect(MovieProjectorEffect)
+StopTrack(0)
+[wait]SetLayerMedia(foreground 0 pitchBlack)
+QueueChapter(1_ho_level8)

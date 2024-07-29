@@ -1,0 +1,20 @@
+AddForClaim("Hershey should get detention because of the video she posted." "e459d9f5-7ebd-44a5-8e06-bdfe8dac11a5" 3)
+AddGroundCard("The name of the teacher was said in the video." "e459d9f5-7ebd-44a5-8e06-bdfe8dac11a5" "ForCard1"), AddWarrantCard("Sharing information about someone online without their permission is bad." "e459d9f5-7ebd-44a5-8e06-bdfe8dac11a5" "ForCard1")
+AddGroundCard("The teacher's feelings were really hurt by the video." "e459d9f5-7ebd-44a5-8e06-bdfe8dac11a5" "ForCard2"), AddWarrantCard("It’s wrong to hurt someone’s feelings. " "e459d9f5-7ebd-44a5-8e06-bdfe8dac11a5" "ForCard2")
+AddGroundCard("Other faculty and students saw the video and started talking about the teacher behind her back." "e459d9f5-7ebd-44a5-8e06-bdfe8dac11a5" "ForCard3"), AddWarrantCard("Her actions led people to treat the teacher poorly." "e459d9f5-7ebd-44a5-8e06-bdfe8dac11a5" "ForCard3")
+
+
+AddAgainstClaim("Hershey should not get detention because of the video she posted." "b1d45c93-2ad4-40bb-9590-db33b64f5edd" 2)
+AddGroundCard("Separating school life and personal life is important for students’ mental health." "b1d45c93-2ad4-40bb-9590-db33b64f5edd" "AgainstCard1"), AddWarrantCard("Good mental health is important for student well-being." "b1d45c93-2ad4-40bb-9590-db33b64f5edd" "AgainstCard1")
+AddGroundCard("She didn’t mean to hurt the teacher or make people think poorly of her. " "b1d45c93-2ad4-40bb-9590-db33b64f5edd" "AgainstCard2"), AddWarrantCard("Her intentions weren’t bad so she shouldn't be punished despite the outcome. " "b1d45c93-2ad4-40bb-9590-db33b64f5edd" "AgainstCard2")
+
+
+AddIrrelevantClaim("TikTok videos are a good source of information." "216a8378-7b75-4947-b555-843a2e7dbdb4" 2)
+AddGroundCard("Sometimes people get recommended videos about science facts." "216a8378-7b75-4947-b555-843a2e7dbdb4" "IrrelevantCard1"), AddWarrantCard("Being given access to informative videos helps people learn new things. " "216a8378-7b75-4947-b555-843a2e7dbdb4" "IrrelevantCard1")
+AddGroundCard("TikTok often recommends people videos about current news. " "216a8378-7b75-4947-b555-843a2e7dbdb4" "IrrelevantCard2"), AddWarrantCard("People are more likely to hear about current news through TikTok." "216a8378-7b75-4947-b555-843a2e7dbdb4" "IrrelevantCard2")
+
+
+AddGroundCard("BINI is the new number 1 OPM group on Spotify."), AddWarrantCard("BINI probably makes good music. ")
+
+
+PlayCardGame("Detention Due to TikTok")

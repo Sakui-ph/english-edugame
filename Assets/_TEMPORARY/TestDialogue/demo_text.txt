@@ -1,0 +1,28 @@
+CreateCharacter(Nanami -e true), CreateCharacter(Nagito -e true), SetPosition(Nagito 1:0.5), SetPosition(Nanami 0:0.5) 
+setlayermedia(-p background -m "kitchen night")
+
+playtrack("JDSherbert/Cosmic Star")
+narrator "As the school day starts, the students begin to fill the halls. Among these wandering voices, you can hear arguing." 
+Nanami "test"
+Nanami [0:inform] "Hello {name}, {sp}, {op}, {pp} did you hear? {sp} is exploding!"
+Nagito [0:smile] "There is no way {sp} knows. {name} is always out of the loop isn't {sp}?"
+
+setlayermedia(cinematic "~/Graphics/Gallery/Wasteland" feathers)
+
+playsoundeffect("FilmCow Recorded SFX/anvil hit 1")
+Nanami "They want to ban sugary drinks in school!"
+Nagito [0:think0] "What? Like all schools?"
+Nanami [0:angry] "Yeah! All schools! Can you believe that?"
+Nagito "I mean… sure. I don't really mind."
+Nanami [0:angry1] "What do you mean?! Sugary drinks are one of the only reasons the food I eat tastes good!" 
+
+Nagito [0:think1] "Well…{wa 1} sugary can be really bad for you though. Sugar can rot your teeth if you're not careful."
+clearlayermedia(-p cinematic)
+Nanami [0:angry] "But they make me so happy!"
+clearlayermedia(-p background -blendtex hypno)
+
+Nagito "That doesn't mean they’re healthy though. You know, my cousin ended up losing teeth because of drinking too many sodas. After that, my mom said we couldn’t have more than one in a week. Now that I got used to that, it's honestly not that bad."
+
+Nanami [0:pout] "Well… I guess that's fine but I’m still not happy about it. I’m really against the idea that we can't at least have the choice."
+Nagito [0:relax] "That's fair but I don't think it's that big of a deal. I’m pretty for the idea actually."
+

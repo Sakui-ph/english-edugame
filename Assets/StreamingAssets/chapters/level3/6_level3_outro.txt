@@ -1,0 +1,56 @@
+Ezekiel "A lot of our friends feel like they can’t do anything about him." 
+
+Express(Sammy sad)
+
+StopTrack(0)
+
+[wait]MoveCharacter(Sammy 0.1:0 0.2 true)
+Sammy "I’m…" 
+
+[wait]MoveCharacter(Sammy 0.2:0 0.2 true)
+
+FlipCharacter(Sammy)
+
+narrator  "Sammy’s voice was weak." 
+"He couldn’t look directly at Ezekiel." 
+
+
+Sammy "I’m sorry." 
+
+FlipCharacter(Ezekiel)
+Express(Ezekiel happy)
+TriggerAnimation(Ezekiel Hop)
+narrator  "Ezekiel nods and pats Sammy on the back." 
+
+narrator  "The rest of the conversation turned into a calm back and forth."
+
+FlipCharacter(Sammy)
+[wait]MoveCharacter(Sammy 0:0 0.2 true)
+
+Express(Ezekiel happy)
+Express(Sammy happy)
+Express(Anjelo happy)
+
+"Ezekiel would explain how Sammy’s action hurt his friends then Sammy would explain why he did it." 
+"Then they would come to a compromise about what Sammy can do next to get forgiveness from his friends."
+
+SetPosition(Anjelo 1.5:0)
+ShowCharacter(Anjelo)
+[wait]MoveCharacter(Anjelo 1:0 2 true)
+
+
+"The conversation was long but very worthwhile." 
+
+TriggerAnimation(Ezekiel Hop)
+"By the end of it, Sammy looked drained"
+TriggerAnimation(Sammy Hop) 
+"and you and Anjelo started getting sleepy." 
+
+SetLayerMedia(background 0 pitchBlack)
+PlaySoundEffect(WoodsNearSuburbs)
+
+"In the end, you all walked out of school just before they closed the campus." 
+StopSoundEffect(WoodsNearSuburbs)
+
+SetLayerMedia(foreground 0 pitchBlack)
+[wait]PlayTitle("Case 3" "Case Closed" 5)

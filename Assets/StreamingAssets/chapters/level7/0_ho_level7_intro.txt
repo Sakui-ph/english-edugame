@@ -1,0 +1,61 @@
+SetWeekday("Friday")
+SetLayerMedia(background 0 "ClubRoom_1")
+CreateCharacter(Anjelo true true)
+CreateCharacter(Tris false false), SetPosition(Tris 0.9:0)
+CreateCharacter(Sammy false false), SetPosition(Sammy 0.1:0)
+
+PlayTrack(LateAfternoonPlans 0.2 -l true)
+
+TriggerAnimation(Anjelo Hop)
+Anjelo "That’s one down!" 
+"Do you remember what happened in our second case?" 
+PC "A bit." 
+"Though, a recap would be nice." 
+Anjelo "Alright!" 
+
+
+HideCharacter(Anjelo)
+SetWeekday("Monday")
+PlaySoundEffect(MovieProjectorEffect 0.1 -l true)
+SetLayerMedia(background 1 "RecapOverlay_2")
+SetLayerMedia(background 0 Hallway_2)
+
+ShowCharacter(Tris)
+Anjelo "So Case 2 was Tris"
+
+ShowCharacter(Sammy)
+Anjelo "and Sammy’s" 
+
+Express(Tris embarrass) 
+Express(Sammy embarrass)
+
+Anjelo "love letter issue!" 
+
+TriggerAnimation(Sammy Hop)
+"Sammy liked this girl from another class and then…" 
+narrator  "Anjelo waits for you to respond." 
+PC "And then he tells Tris…" 
+
+TriggerAnimation(Tris Hop)
+narrator  "Anjelo nods excitedly."
+PC "She gives the girl a love letter that she says is from Sammy." 
+
+TriggerAnimation(Sammy Hop)
+"Then, Sammy finds out and talks to his crush to clear things up." 
+"And now he wants Tris to be punished for lying and sharing his secrets." 
+
+HideCharacter(Sammy Tris)
+[wait]ClearLayerMedia(background 1)
+SetLayerMedia(background 0 "ClubRoom_1")
+StopSoundEffect(MovieProjectorEffect)
+SetWeekday("Friday")
+[wait]ShowCharacter(Anjelo)
+
+
+TriggerAnimation(Anjelo Hop)
+Anjelo "Exactly! Great job, {name}"
+"Since we’re all caught up, let’s check out the file!"
+
+StopTrack(0)
+[wait]SetLayerMedia(foreground 0 pitchBlack)
+QueueChapter(1_ho_level7)

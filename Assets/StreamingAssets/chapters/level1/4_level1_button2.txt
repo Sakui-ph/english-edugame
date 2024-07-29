@@ -1,0 +1,3 @@
+PrepareClassTrialButton("Continue" Level1_Branch2_Continue false) 
+PrepareClassTrialButton("Inconsistency" Level1_Branch2_Incon true)  
+[wait]ShowButtons() 

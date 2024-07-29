@@ -1,0 +1,9 @@
+PC "Sammy, are you aware that your crush likes you back?" 
+Express(Sammy embarrass)
+
+Sammy "Yeah she told me a few days ago." 
+"We’re gonna get ice cream this weekend." 
+TriggerAnimation(Tris Hop)
+Tris [0:happy] "See, now they’ve planned a date!" 
+
+ReturnBranch(5_Level2_Outro)

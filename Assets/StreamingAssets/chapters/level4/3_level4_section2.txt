@@ -1,0 +1,6 @@
+Ejay "The logo being seen, even slightly, means that it’s the school’s problem now too."
+[I]Ejay [0:angry] "Additionally, <color=\"yellow\">Hershey said Ms. Em’s real name</color>."
+
+PrepareClassTrialButton("Continue" Level4_Branch2_Continue false) 
+PrepareClassTrialButton("Inconsistency" Level4_Branch2_Incon true)  
+[wait]ShowButtons()

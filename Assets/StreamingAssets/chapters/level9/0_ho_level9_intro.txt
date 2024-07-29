@@ -1,0 +1,53 @@
+SetWeekday("Friday")
+SetLayerMedia(background 0 "ClubRoom_1")
+CreateCharacter(Anjelo true true)
+CreateCharacter(Ejay false false), SetPosition(Ejay 0.1:0)
+CreateCharacter(Hershey false false), SetPosition(Hershey 0.9:0)
+
+PlayTrack(LateAfternoonPlans 0.2 -l true)
+
+TriggerAnimation(Anjelo Hop)
+TriggerAnimation(Anjelo Hop)
+Anjelo "Just two cases left!" 
+"Are you excited to be done with judge duties?" 
+PC "A little." 
+"This week has been really tiring" 
+"but nice." 
+narrator  "Anjelo smiles" 
+"but underneath that you see a bit of sadness." 
+Anjelo "Well, do you remember Case 4?" 
+PC "Yep, this was Ejay and Hershey’s TikTok issue." 
+Anjelo "Correct! Do you still know the details?" 
+PC "Uhh.." 
+
+HideCharacter(Anjelo)
+SetWeekday("Wednesday")
+SetLayerMedia(background 1 "RecapOverlay_2")
+SetLayerMedia(background 0 "ArtRoom_1") 
+PlaySoundEffect(MovieProjectorEffect 0.1 -l true)
+
+ShowCharacter(Hershey)
+ShowCharacter(Ejay)
+
+"Hershey and one of the school’s art teachers don’t get along well." 
+"So she posted a video about her on TikTok," 
+"and it went viral." 
+"Ms. Em ended up getting hurt because of what Hershey said" 
+"and people started talking about her behind her back." 
+"Ejay, who is Ms. Em’s brother, apparently," 
+"brought this to school court because he wants Hershey to get detention," 
+"for posting that video." 
+
+SetWeekday("Friday")
+ShowCharacter(Anjelo)
+[wait]ClearLayerMedia(background 1)
+StopSoundEffect(MovieProjectorEffect)
+SetLayerMedia(background 0 "ClubRoom_1")
+
+TriggerAnimation(Anjelo Hop)
+Anjelo "You basically don’t even need me anymore!" 
+"You are officially an expert judge!" 
+
+StopTrack(0)
+[wait]SetLayerMedia(foreground 0 pitchBlack)
+QueueChapter(1_ho_level9)

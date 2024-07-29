@@ -1,0 +1,12 @@
+AddForClaim("Tris should be punished." "20f7d414-e518-4f96-afca-f0a0fdba21e6" 3)
+AddGroundCard("Sammy’s secret was revealed without his permission. " "20f7d414-e518-4f96-afca-f0a0fdba21e6" "ForCard1"), AddWarrantCard("It’s bad to reveal friends’ secrets especially when they asked you not to. " "20f7d414-e518-4f96-afca-f0a0fdba21e6" "ForCard1")
+AddGroundCard("Sammy’s trust was broken. " "20f7d414-e518-4f96-afca-f0a0fdba21e6" "ForCard2"), AddWarrantCard("Breaking someone’s trust hurts them which is bad. " "20f7d414-e518-4f96-afca-f0a0fdba21e6" "ForCard2")
+AddGroundCard("The girl Sammy liked was lied to." "20f7d414-e518-4f96-afca-f0a0fdba21e6" "ForCard3"), AddWarrantCard("Lying and tricking people is wrong." "20f7d414-e518-4f96-afca-f0a0fdba21e6" "ForCard3")
+
+
+AddAgainstClaim("Tris shouldn’t be punished." "bd84e048-6b7f-4373-89ee-330af8b8343e" 3)
+AddGroundCard("Sammy and his crush are now closer as friends!" "bd84e048-6b7f-4373-89ee-330af8b8343e" "AgainstCard1"), AddWarrantCard("Tris’s actions helped them become better friends which is good." "bd84e048-6b7f-4373-89ee-330af8b8343e" "AgainstCard1")
+AddGroundCard("Sammy learned that his crush had a crush on him as well." "bd84e048-6b7f-4373-89ee-330af8b8343e" "AgainstCard2"), AddWarrantCard("Finding out that your crush likes you makes you happy. " "bd84e048-6b7f-4373-89ee-330af8b8343e" "AgainstCard2")
+AddGroundCard("Tris didn’t mean to hurt anyone. She thought she was helping." "bd84e048-6b7f-4373-89ee-330af8b8343e" "AgainstCard3"), AddWarrantCard("Trying to help is a good thing to do." "bd84e048-6b7f-4373-89ee-330af8b8343e" "AgainstCard3")
+
+PlayCardGame("Tris' Punishment for the Love Letter Dilemma")

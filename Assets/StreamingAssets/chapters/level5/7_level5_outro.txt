@@ -1,0 +1,46 @@
+
+[wait]MoveCharacter(Anjelo 0:0 1 true)
+narrator  "The afternoon goes on."
+"Tris and Anjelo exchange arguments" 
+
+Express(Anjelo angry)
+TriggerAnimation(Anjelo Hop)
+"while you moderate." 
+
+Express(Tris embarrass)
+TriggerAnimation(Tris Hop)
+TriggerAnimation(Tris Hop)
+"You do your best to clear up misunderstandings" 
+
+Express(Anjelo happy)
+TriggerAnimation(Tris Hop)
+"and you’ve gotten really good at keeping everyone calm." 
+"In the end," 
+
+Express(Tris happy)
+TriggerAnimation(Tris Hop)
+"both students still think that they were more right than the other." 
+"But the situation was calmer" 
+TriggerAnimation(Tris Hop)
+"and no one was left feeling unheard." 
+TriggerAnimation(Tris Hop)
+
+StopTrack(0)
+PlaySoundEffect(SchoolBell 0.3)
+"As the school started to close," 
+
+HideCharacter(Tris Anjelo)
+SetLayerMedia(background 0 pitchBlack)
+
+SetPosition(Tris -0.5:0)
+
+"you all decided to walk home together" 
+
+ShowCharacter(Tris)
+MoveCharacter(Tris 0:0 1 true)
+"and Tris bought you all fishball to share." 
+MoveCharacter(Tris -0.5:0 1 true)
+HideCharacter(Tris)
+
+SetLayerMedia(foreground 0 pitchBlack)
+[wait]PlayTitle("Case 5" "Case Closed" 5)

@@ -1,0 +1,10 @@
+narrator  "You decided that they should kick Sammy off the team!" 
+"Because of your decision," 
+"the group ended up becoming one man short." 
+"They asked you to sub in and" "
+"you quickly become a well-liked new member!" 
+"Despite the good chemistry in the new group," 
+"everyone agrees that they still feel like something is missing."
+
+StopTrack(0)
+[wait]SetLayerMedia(foreground 0 pitchBlack)

@@ -1,0 +1,10 @@
+PC "Did you know about this, Hershey?" 
+
+ToggleAnimation(Hershey Shiver)
+TriggerAnimation(Hershey Shiver)
+Hershey [0:sad] "I wasn’t sure but I heard some people whispering…" 
+"I didn’t mean for that to happen though!" 
+ToggleAnimation(Hershey Shiver)
+Ejay [0:sad] "Well, it did happen, sadly." 
+
+ReturnBranch(6_Level4_Outro)

@@ -1,0 +1,19 @@
+AddForClaim("Sammy should be kicked off the team." "e548bdb3-5fe4-47a6-9493-9ae0055e1de3" 3)
+AddGroundCard("Sammy brings down group morale." "e548bdb3-5fe4-47a6-9493-9ae0055e1de3" "ForCard1"), AddWarrantCard("Good morale is important for a team to function well." "e548bdb3-5fe4-47a6-9493-9ae0055e1de3" "ForCard1")
+AddGroundCard("Even if the team calls out Sammy his toxic attitude comes back." "e548bdb3-5fe4-47a6-9493-9ae0055e1de3" "ForCard2"), AddWarrantCard("The team feels like they can't do anything about it. " "e548bdb3-5fe4-47a6-9493-9ae0055e1de3" "ForCard2")
+AddGroundCard("Sammy takes credit when winning a game." "e548bdb3-5fe4-47a6-9493-9ae0055e1de3" "ForCard3"), AddWarrantCard("Some players feel unappreciated." "e548bdb3-5fe4-47a6-9493-9ae0055e1de3" "ForCard3")
+
+
+AddAgainstClaim("Sammy should stay in the team." "597e3641-b5f1-4b3b-8529-018b76ccc8f9" 3)
+AddGroundCard("Sammy is the best player in the team." "597e3641-b5f1-4b3b-8529-018b76ccc8f9" "AgainstCard1"), AddWarrantCard("Because of him they win most of their games." "597e3641-b5f1-4b3b-8529-018b76ccc8f9" "AgainstCard1")
+AddGroundCard("Sammy gives good advice that helps the team be better" "597e3641-b5f1-4b3b-8529-018b76ccc8f9" "AgainstCard2"), AddWarrantCard("Helpful comments improve the team's performance." "597e3641-b5f1-4b3b-8529-018b76ccc8f9" "AgainstCard2")
+AddGroundCard("Sammy is open to change for the better." "597e3641-b5f1-4b3b-8529-018b76ccc8f9" "AgainstCard3"), AddWarrantCard("Accepting criticism helps everyone do better." "597e3641-b5f1-4b3b-8529-018b76ccc8f9" "AgainstCard3")
+
+
+AddIrrelevantClaim("Ezekiel and Sammy play Valorant." "62b1d00f-d607-439a-80d3-11ffc1feccbb" 1)
+AddGroundCard("They mostly play duos." "62b1d00f-d607-439a-80d3-11ffc1feccbb" "IrrelevantCard1"), AddWarrantCard("They spend a lot of time with each other." "62b1d00f-d607-439a-80d3-11ffc1feccbb" "IrrelevantCard1")
+
+
+
+
+PlayCardGame("The Toxic Teammate's Gotta Go")

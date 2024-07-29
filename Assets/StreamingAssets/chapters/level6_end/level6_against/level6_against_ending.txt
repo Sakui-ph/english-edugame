@@ -1,0 +1,14 @@
+narrator  "You decided not to adopt the cat!" 
+"Because of your decisions"
+"the school decided to officially get Ming Ming off campus grounds."
+"No cat allergies were ever triggered on campus again!" 
+"And no one ever needed to go to the nurse’s office for cat scratches!" 
+"Ming Ming still likes to hang around though." 
+"Sometimes students see her walking around the nearby barangay," 
+"where she lives with her new adoptive family" 
+"and her litter of four kittens!" 
+[wait]SetLayerMedia(foreground 0 pitchBlack)
+
+
+StopTrack(0)
+[wait]SetLayerMedia(foreground 0 pitchBlack)

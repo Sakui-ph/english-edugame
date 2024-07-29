@@ -1,0 +1,17 @@
+narrator "You decided not to allow Anjelo to submit assignments late!" 
+"Because of your decision,"
+"Anjelo fell behind on a few classes, but eventually," 
+"he learned to manage his time more effectively!"
+"At some point, Tris asked the school to help Anjelo by raising money for him"
+"and they were able to raise enough to help him for as long as he needed!" 
+"Eventually, the school set up a fund to help all working students in Haraya!" 
+"In the end, you’ve helped create a new system that’s made a lot of lives better!" 
+
+StopTrack(0)
+[wait]SetLayerMedia(foreground 0 pitchBlack)
+
+
+[wait]SetLayerMedia(foreground 0 EndScene)
+
+wait(5)
+[wait]SetLayerMedia(foreground 0 pitchBlack)

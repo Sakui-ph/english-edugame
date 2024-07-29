@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd4e047a00c8e724fb6f3ac71b49a700, type: 3}
+  m_Name: Main Menu Configuration Asset
+  m_EditorClassIdentifier: 
+  buttonHoverSound: {fileID: 8300000, guid: b9c393c0bb385e2449aede43522b1cae, type: 3}
+  buttonClickSound: {fileID: 8300000, guid: a7b377769bdc9f84e856f1a8f125c520, type: 3}

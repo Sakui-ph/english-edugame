@@ -1,0 +1,63 @@
+// there should be dialogue on top of the notebook image  
+SetWeekday("Friday")
+SetLayerMedia(background 0 "ClubRoom_1")
+CreateCharacter(Hershey false false), SetPosition(Hershey 0.9:0)
+CreateCharacter(Ezekiel false false), SetPosition(Ezekiel 0.1:0)
+HideCharacter(Anjelo)
+
+Anjelo "Before we begin, let’s make sure..."
+"Do you remember this case?" 
+PC "Kinda…" 
+Anjelo "I think that means we need a recap!" 
+
+SetLayerMedia(background 1 "RecapOverlay_2")
+SetWeekday("Saturday")
+PlaySoundEffect(MovieProjectorEffect 0.1 -l true)
+
+Anjelo "Well, firstly, we know that" 
+
+ShowCharacter(Ezekiel true)
+ShowCharacter(Hershey true)
+"Ezekiel was the one who found Ming Ming."
+
+[wait]MoveCharacter(Ezekiel 0.2:0 1 true)
+
+"He was feeding cats at the back of the canteen"
+
+[wait]MoveCharacter(Hershey 0.8:0 1 true)
+
+"and this one white cat, Ming Ming, kept coming back." 
+
+TriggerAnimation(Hershey Hop)
+narrator  "You nod." 
+
+TriggerAnimation(Ezekiel Hop)
+PC "Then lots of students started getting attached to the cat." 
+
+[wait]MoveCharacter(Hershey 0.9:0 1 true)
+"which led classes to start asking the school to adopt her officially." 
+
+[wait]MoveCharacter(Ezekiel 0.1:0 1 true)
+"But some people disagreed with that." 
+PC "With Hershey," 
+
+PC "specifically, being very against it." 
+
+HideCharacter(Hershey Ezekiel -i true)
+SetPosition(Anjelo 0.5:0)
+SetWeekday("Friday")
+StopSoundEffect(MovieProjectorEffect)
+StopSoundEffect(Aircon)
+[wait]ClearLayerMedia(background 1)
+wait(1)
+
+
+TriggerAnimation(Anjelo Hop)
+Anjelo "Yep! And that’s why they ended up in our school court room." 
+narrator  "Anjelo absentmindedly turns the page." PlaySoundEffect(PaperFlip)
+StopTrack(0)
+wait(1)
+
+[wait]SetLayerMedia(foreground 0 pitchBlack)
+
+QueueChapter(2_ho_level6)

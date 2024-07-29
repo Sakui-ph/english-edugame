@@ -1,0 +1,12 @@
+PC "So you don’t really have an option?" 
+Anjelo "Not really." 
+
+TriggerAnimation(Anjelo Hop)
+"I don’t mind!" 
+
+FlipCharacter(Anjelo)
+"Though it kinda takes my attention away from school." 
+"Still…" 
+
+FlipCharacter(Anjelo)
+ReturnBranch(3_Level5_Section2) 

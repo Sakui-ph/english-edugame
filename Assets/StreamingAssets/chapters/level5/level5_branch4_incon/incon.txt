@@ -1,0 +1,14 @@
+PC "But Tris said that everyone should be treated equally because we all have about the same responsibilities." 
+Anjelo "I don’t think Tris ever asked what my responsibilities are." 
+
+Express(Tris shock)
+Tris "I–" 
+TriggerAnimation(Tris Hop)
+"Well, I just assumed." 
+PC "Since it’s an assumption," 
+"let’s not count that as one of our facts."
+
+Express(Tris sad)
+// sad tris nod if we can do that, if we can't, we don't gotta  
+
+ReturnBranch(6_Level5_Section5)

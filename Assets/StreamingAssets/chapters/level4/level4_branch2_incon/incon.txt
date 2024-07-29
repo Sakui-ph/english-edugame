@@ -1,0 +1,11 @@
+PC "But Hershey said that she didn’t say the teacher’s real name." 
+
+TriggerAnimation(Hershey Hop)
+Hershey [0:angry] "Yeah! Because I didn’t!" 
+
+FlipCharacter(Ejay)
+TriggerAnimation(Ejay Hop)
+Ejay [0:angry] "People call her as Ms. Em, all the time." 
+"Just because you said her nickname doesn't mean that you didn’t say her real name." 
+
+ReturnBranch(4_Level4_Section3)

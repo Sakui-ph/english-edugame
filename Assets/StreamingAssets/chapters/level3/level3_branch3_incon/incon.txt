@@ -1,0 +1,14 @@
+PC "Sammy said that he always commends the team." 
+Ezekiel "He thinks he does. After he says ‘good job, and then he starts talking about what each person did wrong." 
+
+"That really bothered people. Some never felt good enough because of that."
+
+Sammy [0:shock] "I didn’t know…" 
+
+FlipCharacter(Ezekiel)
+Express(Ezekiel stoic)
+narrator  "Ezekiel just shrugs."
+
+Express(Sammy sad)
+
+ReturnBranch(5_Level3_Section4) 

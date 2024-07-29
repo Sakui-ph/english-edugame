@@ -1,0 +1,5 @@
+[I]Anjelo "Aside from that, as a working student, <color=\"yellow\">I have more responsibilities</color> than regular students."
+
+PrepareClassTrialButton("Continue" Level5_Branch4_Continue false) 
+PrepareClassTrialButton("Inconsistency" Level5_Branch4_Incon true)  
+[wait]ShowButtons() 

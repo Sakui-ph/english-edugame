@@ -1,0 +1,12 @@
+SetLayerMedia(background 0 "ClubRoom_1")
+PlayTrack(MorningAfterTheRain 0.2 -l true)
+
+CreateCharacter(Anjelo true true)
+
+Anjelo "So, {name}, what stance will you take on this case?"
+
+PrepareNormalButton("Tris should be punished [For]" level7_for)
+PrepareNormalButton("Tris should not be punished [Against]" level7_against)
+[wait]ShowButtons()
+
+[wait]SetLayerMedia(cinematic 0 pitchBlack)

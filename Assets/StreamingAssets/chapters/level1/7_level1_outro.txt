@@ -1,0 +1,32 @@
+StopTrack(0)
+SetLayerMedia(background 0 "pitchBlack")
+
+HideCharacter(Anjelo Hershey Ezekiel)
+
+narrator  "Both you and Anjelo continue to talk to Hershey and Ezekiel."
+"You help make the conversation go smoothly and continue to point out inconsistencies and misunderstandings."
+"By the end of things, the sun had already set." 
+"The problems weren’t fully resolved but both students seemed to better understand each other."
+
+SetPosition(Hershey 0.9:0)
+SetPosition(Ezekiel 0.1:0)
+
+
+PlaySoundEffect(WoodsNearSuburbs 0.4 -l true)
+SetLayerMedia(background 0 "Hallway_5")
+ShowCharacter(Hershey Ezekiel)
+Hershey [0:happy] "This was really nice!" 
+PlaySoundEffect("Distant Bird" 0.3)
+Ezekiel [0:happy] "Yeah, thank you for the perspective." 
+Hershey "No, thank you! Hehe"
+
+
+HideCharacter(Hershey Ezekiel)
+SetLayerMedia(background 0 "pitchBlack")
+narrator  "The night ended with jokes and conversation."
+"And you all decide to walk home together." 
+StopSoundEffect(WoodsNearShrubs)
+
+SetLayerMedia(foreground 0 pitchBlack)
+[wait]PlayTitle("Case 1" "Case Closed" 5)
+

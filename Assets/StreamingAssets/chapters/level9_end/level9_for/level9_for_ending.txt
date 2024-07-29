@@ -1,0 +1,8 @@
+narrator "You decided to let Hershey get detention!" 
+"Because of your decision, Hershey had time to reflect on her actions."
+"She became more considerate and sensitive, and learned the importance of thinking before posting things online, especially when it involves other people."
+"After detention, Hershey apologized to Ms. Em and she forgave her."
+"She also apologized to Ejay, the whole experience helped them build a stronger friendship."
+
+StopTrack(0)
+[wait]SetLayerMedia(foreground 0 pitchBlack)

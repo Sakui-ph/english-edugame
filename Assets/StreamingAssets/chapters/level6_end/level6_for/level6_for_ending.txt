@@ -1,0 +1,11 @@
+narrator  "You decided to adopt the cat!" 
+"Because of your decision," 
+"Ming Ming was officially made the school’s cat companion!" 
+"She now lives at the back of the canteen," 
+"happily getting fed by the lunch ladies and getting daily pets from all the students who need an extra bit of joy during the day!" 
+"Because Ming Ming has a designated spot, Tris never had to worry about Ming Ming triggering her allergies!" 
+"In the end, Ming Ming became a well-loved part of the Haraya Family!’
+[wait]SetLayerMedia(foreground 0 pitchBlack)
+
+StopTrack(0)
+[wait]SetLayerMedia(foreground 0 pitchBlack)

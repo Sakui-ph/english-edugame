@@ -1,0 +1,7 @@
+Ezekiel [0:sad] "The others said that, even if we win"
+"they still feel less happy to play when Sammy’s around."
+[I]Ezekiel "Also, whenever we win a game, <color=\"yellow\">he doesn’t commend the team</color>."
+
+PrepareClassTrialButton("Continue" Level3_Branch3_Continue false) 
+PrepareClassTrialButton("Inconsistency" Level3_Branch3_Incon true)  
+[wait]ShowButtons()

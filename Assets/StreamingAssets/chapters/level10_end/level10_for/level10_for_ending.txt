@@ -1,0 +1,17 @@
+narrator "You decided to allow Anjelo to submit assignments late!"
+"Because of your decision,"
+"Anjelo felt understood and supported."
+"He felt more encouraged, less stressed,
+"and with Tris’s support,"
+"he was better able to balance school and work!"
+"Eventually, he was able to not only submit things on time" 
+"but now he’s also on the honor roll!" 
+"In the end, you helped make their friendship stronger than ever."
+
+StopTrack(0)
+[wait]SetLayerMedia(foreground 0 pitchBlack)
+
+[wait]SetLayerMedia(foreground 0 EndScene)
+
+wait(5)
+[wait]SetLayerMedia(foreground 0 pitchBlack)

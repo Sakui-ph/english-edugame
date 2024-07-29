@@ -1,0 +1,5 @@
+Ejay [0:angry] "And worst of all, <color=\"yellow\">other faculty and students</color> saw the video and <color=\"yellow\">started talking about her behind her back."
+
+PrepareClassTrialButton("Continue" Level4_Branch4_Continue false) 
+PrepareClassTrialButton("Inconsistency" Level4_Branch4_Incon true)  
+[wait]ShowButtons()

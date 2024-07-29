@@ -1,0 +1,65 @@
+Anjelo "Alright. So, here are the facts, my facts!" 
+
+MoveCharacter(Anjelo 0.5:0 1 true)
+
+TriggerAnimation(Anjelo Hop)
+"Umm, well everyday, before school, I head to the market to sell stuff for my family." 
+TriggerAnimation(Anjelo Hop)
+"Things are a little tough, so I’m doing my best to bring in some money!" 
+Anjelo [0:sad] "Because of the work though, I haven’t really had much time to finish assignments." 
+
+"Most of the teachers are okay with me submitting things late" 
+
+FlipCharacter(Anjelo)
+"but Tris thinks that it’s unfair that I get special treatment." 
+
+TriggerAnimation(Anjelo Hop)
+Anjelo [0:happy] "So now we need to figure out if I should be allowed to continue submitting assignments late!" 
+
+StopTrack(0)
+[wait]PlayTitle("Case 5" "Should Anjelo be allowed to submit assignments late?" 5)
+
+PC "Since Anjelo gave the recap," 
+"let’s start with you, Tris." 
+
+MoveCharacter(Anjelo 0:0 1 true)
+MoveCharacter(Tris 0.5:0 1 true)
+
+"Why shouldn’t Anjelo be allowed to submit assignments late?"
+
+[wait]PlayTitle("Case 5" "Tris's Stance" 5)
+PlayTrack(EavesdroppingLady 0.3 -p 0.8 -l true)
+
+TriggerAnimation(Tris Hop) //her embarrass texture kinda fits HAHAH
+Tris [0:embarrass] "Well, firstly, everyone should be treated equally since <color=\"yellow\">we all have about the same responsibilities</color>." // key statement 
+
+TriggerAnimation(Tris Hop)
+Tris "Secondly, <color=\"yellow\">it’s really unfair when some students get special treatment</color>." // key statement
+Tris "Because, <color=\"yellow\">I’m also busy but I make sure I submit things on time</color> and so should he!" // key statement
+Tris "You see, I help my parents with their business at home." 
+"I bake bread and account sales for them every night!" 
+Tris [0:angry] "Plus I’m part of lots of after school clubs but I still finish all my work on time!"
+
+TriggerAnimation(Tris Hop)
+Tris "Aside from that though, <color=\"yellow\">he can do our assignments during class</color>!"  // key statement
+Tris "And lastly, the reason why I called us here at all is because <color=\"yellow\">I’ve had to do both my parts and Anjelo’s in every group work since last quarter</color>!"  // key statement
+TriggerAnimation(Tris Hop)
+Tris "I don’t think making me do double work is fair!" 
+
+
+
+// have the following text be in large font, preferably shown in the middle of the screen like a movie title card  
+StopTrack(0)
+[wait]PlayTitle("Case 5" "Anjelo's Stance" 5)
+PlayTrack(AfterschoolThoughts 0.3 -p 1 -l true)
+MoveCharacter(Anjelo 0.5:0 1 true)
+MoveCharacter(Tris 1:0 1 true)
+
+PC "How about you, Anjelo?" 
+"Why should you be allowed to submit assignments late?" 
+
+Anjelo "Well, firstly, <color=\"yellow\">my family has been struggling lately</color> so it’s something that I really have to do." 
+
+PrepareClassTrialButton("Continue" Level5_Branch1_Continue false) 
+PrepareClassTrialButton("Inconsistency" Level5_Branch1_Incon true)  
+[wait]ShowButtons() 

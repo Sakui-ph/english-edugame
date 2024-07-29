@@ -1,0 +1,15 @@
+narrator  "You decided to punish Tris!" 
+"Because of your decision," 
+"Tris was made to stay after school to help clean classrooms." 
+"While cleaning, Tris realized that what she did was wrong and" 
+"after a few days of cleaning alone," 
+"Sammy and his, now, girlfriend, decide to stay late to help her!" 
+"Sammy and Tris have never been closer" 
+"and Tris and Sammy’s girlfriend are basically best friends now!" 
+"You’ve helped make some friendships stronger," 
+"and since you often have lunch with them," 
+"you’ve now become a fourth best friend!" 
+
+
+StopTrack(0)
+[wait]SetLayerMedia(foreground 0 pitchBlack)

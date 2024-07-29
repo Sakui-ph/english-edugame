@@ -1,0 +1,9 @@
+TriggerAnimation(Tris Hop)
+Tris [0:happy] "Well, I knew that they talked before but now they talk even outside of ML!" 
+"And that happened thanks to me!" 
+
+[I]Tris [0:angry] "Secondly, <color=\"yellow\">I didn’t even lie to the girl he liked</color>!" 
+
+PrepareClassTrialButton("Continue" Level2_Branch2_Continue false) 
+PrepareClassTrialButton("Inconsistency" Level2_Branch2_Incon true)  
+[wait]ShowButtons() 

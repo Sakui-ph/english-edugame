@@ -1,0 +1,13 @@
+PC "But Sammy said earlier that you did?" 
+
+TriggerAnimation(Tris Hop)
+Tris [0:angry] "Everything in the letter is what Sammy really felt!" 
+Sammy [0:angry] "But you told her that the letter was from me." 
+"That was a lie." 
+Tris [0:embarrass] "I mean… It was technically words you said…"
+Sammy [0:stoic] "But telling her that the letter was from me was?" 
+[wait]MoveCharacter(Tris 0.5:-0.8 0.6 true) 
+Tris [0:sad] "It was a lie." 
+
+
+ReturnBranch(4_Level2_Section3)

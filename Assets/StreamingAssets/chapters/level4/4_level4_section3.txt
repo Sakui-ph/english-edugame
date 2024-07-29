@@ -1,0 +1,6 @@
+FlipCharacter(Ejay)
+[I]Ejay "Also <color=\"yellow\">Ms. Em's feelings were really hurt</color> by the video."
+
+PrepareClassTrialButton("Continue" Level4_Branch3_Continue false) 
+PrepareClassTrialButton("Inconsistency" Level4_Branch3_Incon true)  
+[wait]ShowButtons()

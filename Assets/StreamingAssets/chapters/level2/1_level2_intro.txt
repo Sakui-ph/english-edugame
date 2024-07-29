@@ -1,0 +1,104 @@
+SetWeekday("Monday")
+
+//Images used 
+//classroom 
+//club_room 
+
+SetLayerMedia(background 0 "LastClassroom_1")
+CreateCharacter(Anjelo false false), SetPosition(Anjelo 1.4:0)
+CreateCharacter(Tris false false), SetPosition(Tris 0.5:0)
+CreateCharacter(Sammy false false)
+
+narrator "You sit in class staring at the clock. It’s about 5 minutes till dismissal." 
+"Your thoughts wander and you ask yourself" 
+"‘How has nothing happened for almost 8 hours straight?’" 
+"As you watch your teacher finish writing her last word on the chalkboard" 
+"the school bell finally rings." PlaySoundEffect(SchoolBell 0.3)
+PlaySoundEffect(BusyClassroom 0.1 -l true)
+
+narrator  "As she dismisses you, you start to put your things into your backpack." 
+
+Anjelo "Ready for your second day, Judge {name}?" 
+
+PlayTrack(LateAfternoonPlans 0 0.2 1 -sv 0 -l true)
+
+ShowCharacter(Anjelo -i true)
+[wait]MoveCharacter(Anjelo 0.9:0 0.6 true)
+TriggerAnimation(Anjelo Hop)
+
+narrator  "You look up and see Anjelo’s head peeking through your classroom door." 
+"You continue to pack your bag as he walks to your desk." 
+
+PC "Did you run here? We just got dismissed." 
+narrator  "Now that he’s closer, you can tell he’s out of breath." 
+Anjelo [0:embarrass] "Yes, yes I did." 
+
+TriggerAnimation(Anjelo Hop)
+Anjelo [0:angry] "Let’s go already! Pack your bag faster!" TriggerAnimation(Anjelo Hop)
+TriggerAnimation(Anjelo Hop)
+Anjelo [0:happy] "This case is really dramatic and I’m excited!" 
+
+
+narrator  "You roll your eyes a bit but you smile at his excitement." 
+"You decide to pack your bag faster."
+"As soon as he sees that you’re done, he grabs you by the arm and drags you to the club room." 
+[wait]MoveCharacter(Anjelo 0.8:0 3 true), PlaySoundEffect(Swoosh 1), [wait]MoveCharacter(Anjelo 2:0 0.6 true)
+StopSoundEffect(BusyClassroom)
+
+SetLayerMedia(background 0 "pitchBlack")
+HideCharacter(Anjelo) 
+
+SetLayerMedia(background 0 "ClubRoom_1")
+PlaySoundEffect(DoorOpen4 1)
+PlaySoundEffect(Aircon 0.2 -l true)
+narrator  "You open the door to a mostly empty room." 
+"The moment you walk in, however, you spot a girl you recognize." 
+
+ShowCharacter(Tris true)
+
+PlayTrack(LateAfternoonPlans 0 0.2 1 -sv 0 -l true)
+TriggerAnimation(Tris Hop)
+Tris "{name}! I didn’t realize you were this week's judge!" 
+PC "Oh, hey Tris." 
+
+ShowCharacter(Anjelo)
+[wait]MoveCharacter(Anjelo 0.9:0 0.6 true)
+
+Anjelo "You already know each other?" 
+Tris "Yeah! We talk in class sometimes!" 
+narrator  "As you continue to chat," 
+"you glance around and notice a boy you don’t recognize." 
+
+SetPosition(Sammy 0.1:0)
+Express(Sammy stoic)
+ShowCharacter(Sammy)
+
+[wait]MoveCharacter(Anjelo 0.5:0 0.6 true)
+[wait]MoveCharacter(Tris 0.9:0 0.6 true)
+
+"He seems annoyed that you haven't started yet." 
+Anjelo "{name}, this is Sammy." 
+FlipCharacter(Sammy)
+
+"He’s the other person that this case is about!"
+
+TriggerAnimation(Anjelo Hop)
+"Also he’s in the same section as me!"
+
+Sammy "Hey." 
+
+FlipCharacter(Anjelo)
+
+narrator  "Sammy looks up at you and nods as he speaks." 
+"You do your best to acknowledge him but he still doesn’t look very happy." 
+"You decide it’s probably best to start as soon as possible." 
+
+PC "Maybe we should start talking about the case?" 
+"Do you mind giving me the facts?" 
+
+TriggerAnimation(Anjelo Hop)
+TriggerAnimation(Anjelo Hop)
+Anjelo "Right, right! Let’s get to it!" 
+StopSoundEffect(Aircon) 
+
+QueueChapter(2_Level2_Section1)

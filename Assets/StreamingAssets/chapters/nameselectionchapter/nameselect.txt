@@ -1,0 +1,25 @@
+SetFocusMode(true)
+CreateCharacter("Anjelo" false false), SetPosition(Anjelo 1:0)
+SetCharacterColor(Anjelo 0 0 0 1)
+
+PlayTrack(LateAfternoonPlans 0 0.2 1 -p 0.8 -sv 0 -l true)
+
+ShowCharacter(Anjelo)
+Anjelo as ??? "Hello! You must be the new student. Don't be shy! <color=\"yellow\">tap on the screen to move the text forwards!</color>"
+"Who am I? Well, you'll find out sooner or later." TriggerAnimation(Anjelo Hop)
+"Do you mind telling me your name?"
+
+[wait]GetPlayerName()
+
+"And, are you a boy or a girl?"
+
+[wait]GetPlayerGender()
+
+"Nice to meet you, {name}! Welcome to Haraya."
+
+[wait]SetLayerMedia(foreground 0 "IntroOutroBG" -spd 2)
+SetLayerMedia(foreground 1 "Intro_Letter" -spd 0.2)
+wait(20)
+
+playerwait
+

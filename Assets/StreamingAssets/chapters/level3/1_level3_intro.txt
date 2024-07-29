@@ -1,0 +1,113 @@
+SetWeekday("Tuesday")
+
+//Images used
+//classroom 
+//outside 
+//club_room
+
+SetLayerMedia(background 0 "LastClassroom_1")
+PlaySoundEffect(BusyClassroom 0.1 -l true)
+CreateCharacter(Anjelo false false), SetPosition(Anjelo 0.5:0)
+CreateCharacter(Sammy false false), SetPosition(Sammy 1:-0.8)
+CreateCharacter(Ezekiel false false), SetPosition(Ezekiel 0:-0.8)
+
+narrator  "This week is pretty uneventful."
+"To be fair, they said it would be." 
+"Hours pass and you have nothing to do."
+"Today, your teacher dismissed you early"
+"so you decide to walk around school before you head to the club room." 
+
+PlaySoundEffect(DoorOpen4 0.3)
+StopSoundEffect(BusyClassroom)
+SetLayerMedia(background 0 "Bench_1")
+narrator  "As you walk outside, you spot Sammy and Ezekiel on their phones." 
+ShowCharacter(Sammy Ezekiel)
+"They’re playing ML."
+
+PlayTrack(MorningAfterTheRain 0 0.2 1 -p 1 -sv 0 -l true)
+PlaySoundEffect(WoodsNearSuburbs 0.2 -l true)
+
+ToggleAnimation(Sammy Shiver)
+TriggerAnimation(Sammy Shiver)
+Sammy [0:angry] "Man, we suck!"
+ToggleAnimation(Sammy Shiver)
+
+Ezekiel [0:shock] "Take it easy dude. It’s just one game." 
+
+TriggerAnimation(Sammy Hop)
+Sammy "We’ve lost every game this week, man!" 
+
+Express(Ezekiel stoic)
+narrator  "Ezekiel shrugs." 
+
+PC "Hey guys." 
+Sammy [0:stoic] "Oh hey {name}." // sammy neutral 
+Sammy [0:happy] "Thanks again for yesterday." // sammy happy 
+PC "No problem. What’s up with you guys though?" 
+Ezekiel "Sammy’s a sore loser." 
+Sammy [0:shock] "That’s rude. I just" 
+Sammy [0:embarrass] "like winning"
+[wait]MoveCharacter(Sammy 1:-0.5 1 true)
+Sammy [0:embarrass] "a lot." 
+
+Ezekiel "Okay but we finished the game already." 
+"Let’s head to the club room." 
+Sammy [0:shock] "You were serious about that?" 
+Ezekiel [0:angry] "Yeah man. It’s either that or they just kick you out no questions." 
+
+TriggerAnimation(Sammy Hop)
+[wait]MoveCharacter(Sammy 1:-0.8 1 true)
+Sammy [0:angry] "But that’s not fair!" 
+
+Ezekiel "That’s why we’re going to school court." 
+narrator  "Sammy argues for a little longer but eventually agrees."
+"They stand up."
+
+Express(Sammy stoic)
+Express(Ezekiel stoic)
+
+[wait]MoveCharacter(Ezekiel 0:0 1 true)
+[wait]MoveCharacter(Sammy 1:0 1 true)
+
+PC "Well, I’m headed there too. Let’s walk together." 
+HideCharacter(Sammy), HideCharacter(Ezekiel)  
+
+PlaySoundEffect(DoorOpen4 0.5)
+SetLayerMedia(background 0 "ClubRoom_1")
+
+narrator "You find Anjelo already inside the room, he seems to be waiting for someone."
+
+ShowCharacter(Anjelo true)
+
+TriggerAnimation(Anjelo Hop)
+Anjelo [0:shock] "Oh, there you are!" 
+"I didn’t see you in your classroom, {name}." 
+Anjelo [0:happy] "So I just came directly here!"
+
+SetPosition(Sammy -0.5:0)
+SetPosition(Ezekiel 1.5:0)
+
+ShowCharacter(Sammy)
+[wait]MoveCharacter(Sammy 0:0 1 true)
+Sammy "Hey Anjelo." 
+// move Anjelo 
+ShowCharacter(Sammy true)
+
+Anjelo [0:shock] "You’re back so soon man. I just saw you yesterday!" 
+Sammy [0:embarrass] "Haha well, I’m the one being taken to court this time." 
+
+Express(Anjelo happy)
+
+ShowCharacter(Ezekiel)
+[wait]MoveCharacter(Ezekiel 0.85:0 1 true)
+narrator  "Ezekiel nods as Sammy scratches the back of his head shyly." 
+
+FlipCharacter(Anjelo)
+
+Anjelo "Well, since everyone’s here…" 
+
+FlipCharacter(Anjelo)
+TriggerAnimation(Anjelo Hop)
+"Let’s just get straight to it!" 
+
+QueueChapter(2_Level3_Section1) 

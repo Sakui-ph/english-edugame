@@ -1,0 +1,7 @@
+Anjelo [0:happy] "Without that, I can’t really do homework! Haha"
+[I]Anjelo "After that, I’d say that working keeps me really <color=\"yellow\">busy so it's hard to submit things on time</color>."
+
+PrepareClassTrialButton("Continue" Level5_Branch3_Continue false) 
+PrepareClassTrialButton("Inconsistency" Level5_Branch3_Incon true)  
+[wait]ShowButtons() 
+

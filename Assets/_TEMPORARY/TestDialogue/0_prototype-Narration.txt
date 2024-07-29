@@ -1,0 +1,12 @@
+Ame "Well, my mom said that sugary drinks are really bad for you. I once overheard her and my aunt talking about how my cousin lost teeth because he drank too many sodas!" 
+AddToNotebook("sugary drinks are really bad for you" "cousin lost teeth because he drank too many sodas" "Here is a third parameter")
+
+Ame "This is an argument. This is an argument. Here is a bunch of text that isn't This with an argument an argument. This argument. and This, and This, and This, and argument, and argument."
+AddToNotebook("This is an argument" "This is an argument" "This argument")
+
+StartNotebookMinigame()
+
+Ron as Gamer at 1:0 [1:Smiling, 2:Jumping] "A student has recently been attacking our freedom to sugary drinks in school."
+
+Ron "They have pressured our school's admin to ban these drinks for several reasons. I have no idea what any of this is about though." playSong("Minecraft" -v 1 -p 2), sleep("Exu" -s 10 -t 20)
+Ron "Father always tells me to understand a situation before making my own ideas on the topic, so I probably need to start talking to people."

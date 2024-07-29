@@ -1,0 +1,14 @@
+narrator  "You decided not to punish Tris!" 
+"Because of your decision," 
+"Tris never really fully understands why what she did was wrong." 
+"Sammy still brings it up to this day" 
+"and he’s working hard to help her understand" 
+"the ideas of keeping secrets and respecting friends." 
+"They’re sibling-like relationship stays strong" 
+"and Sammy and Tris invite you out with them now." 
+"Sammy still gives you a hard time for not punishing Tris," 
+"but everything turned out okay."
+
+
+StopTrack(0)
+[wait]SetLayerMedia(foreground 0 pitchBlack)

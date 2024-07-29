@@ -1,0 +1,33 @@
+Tris "All I want is for Sammy to be happy!"
+"And I got impatient waiting for him to realize he liked her!" 
+
+Express(Sammy shock)
+
+Anjelo "We are actually surprised he didn’t figure it out sooner." 
+FlipCharacter(Sammy)
+Sammy "Anjelo, you knew too!?" 
+narrator  "Anjelo shrugged." 
+
+HideCharacter(Sammy Tris -i true)
+[wait]SetLayerMedia(background 0 pitchBlack)
+
+SetPosition(Sammy 0.5:0), Express(Sammy happy)
+SetPosition(Tris 0.5:0), Express(Tris happy)
+
+StopTrack(0)
+
+
+PlaySoundEffect(WoodsNearSuburbs 0.2 -l true)
+narrator  "As the rest of the session went on, the conversations became more lively." 
+ShowCharacter(Sammy)
+"Sammy felt less mad"
+HideCharacter(Sammy)
+ShowCharacter(Tris)
+"and Tris started to understand that her actions, even though she didn't mean to, hurt her friend." 
+HideCharacter(Tris)
+"The seriousness slowly turned into jokes and laughter." 
+"As the sun started to set, you all decided it was time to head home." 
+StopSoundEffect(WoodsNearSuburbs)
+
+SetLayerMedia(foreground 0 pitchBlack)
+[wait]PlayTitle("Case 2" "Case Closed" 5)

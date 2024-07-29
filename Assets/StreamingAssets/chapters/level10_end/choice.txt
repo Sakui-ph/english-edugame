@@ -1,0 +1,12 @@
+SetLayerMedia(background 0 "ClubRoom_1")
+PlayTrack(MorningAfterTheRain 0.2 -l true)
+
+CreateCharacter(Anjelo true true)
+
+Anjelo "So, {name}, what stance will you take on this case?"
+
+PrepareNormalButton("Anjelo's case should be considered [For]" level10_for)
+PrepareNormalButton("Anjelo should not be allowed to submit late [Against]" level10_against)
+[wait]ShowButtons()
+
+[wait]SetLayerMedia(cinematic 0 pitchBlack)

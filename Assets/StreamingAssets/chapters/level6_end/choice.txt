@@ -1,0 +1,12 @@
+SetLayerMedia(background 0 "ClubRoom_1")
+PlayTrack(MorningAfterTheRain 0.2 -l true)
+
+CreateCharacter(Anjelo true true)
+
+Anjelo "So, {name}, what stance will you take on this case?"
+
+PrepareNormalButton("Let's adopt this cat [For]" level6_for)
+PrepareNormalButton("Its too dangerous to adopt the cat [Against]" level6_against)
+[wait]ShowButtons()
+
+[wait]SetLayerMedia(cinematic 0 pitchBlack)

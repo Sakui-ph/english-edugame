@@ -1,0 +1,11 @@
+SetLayerMedia(background 0 "ClubRoom_1")
+PlayTrack(MorningAfterTheRain 0.2 -l true)
+
+CreateCharacter(Anjelo true true)
+
+Anjelo "So, {name}, what stance will you take on this case?"
+
+PrepareNormalButton("Sammy should be kicked from the team [For]" level8_for)
+PrepareNormalButton("Sammy should not be kicked from the team [Against]" level8_against)
+[wait]ShowButtons()
+[wait]SetLayerMedia(cinematic 0 pitchBlack)

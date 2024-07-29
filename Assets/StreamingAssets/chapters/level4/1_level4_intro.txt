@@ -1,0 +1,120 @@
+SetWeekday("Wednesday")
+
+PlaySoundEffect(Aircon 0.2 -l true)
+
+SetLayerMedia(background 0 "ArtRoom_1")
+CreateCharacter(Anjelo false false),  SetPosition(Anjelo 0.5:0)
+CreateCharacter(Hershey false false), SetPosition(Hershey 1:0)
+CreateCharacter(Ejay false false), SetPosition(Ejay 0.5:0)
+
+
+
+narrator  "Usually, your last class is a lecture, today, however, your school day ends with art class." 
+
+SetCharacterColor(Ejay 0 0 0 1)
+ShowCharacter(Ejay)
+"The teacher dismissed you all about five minutes ago but you notice that there’s still one boy left painting." 
+"Not wanting to disturb him, you do your best to leave the room quietly." 
+"But as you’re about to walk out, you knock over a small cup of pencils." 
+
+PlaySoundEffect("PencilsFalling" 0.5)
+
+TriggerAnimation(Ejay Hop)
+FlipCharacter(Ejay)
+"The boy, surprised by the sound, accidentally messes up his painting" 
+"and looks back at you." 
+
+
+
+Express(Ejay shock)
+
+TransitionCharacterColor(Ejay 1 1 1 1 1), FreeColor(Ejay)
+
+PlayTrack(MorningAfterTheRain 0 0.2 1 -sv 0 -l true)
+
+PC "Sorry. I’m just," 
+"heading out." 
+StopSoundEffect(PencilsFalling)
+Ejay [0:happy] "Oh, no worries." 
+narrator  "The boy looks around and sees that the classroom is empty." 
+
+TriggerAnimation(Ejay Hop)
+Ejay [0:shock] "Wait, are we dismissed?" 
+PC "Yeah, we have been for a while." 
+"You didn’t notice?" 
+Ejay [0:embarrass] "Nope…" 
+"I guess I was too focused."
+
+PC "Sorry about the painting, by the way." 
+Ejay [0:happy] "It’s no problem."
+
+Ejay [0:happy] "Honestly, I think the smear looks cool." 
+narrator  "His smile seems really warm and very genuine." 
+PC "Well, I think the whole painting looks cool."
+Ejay "Haha thanks."
+
+Ejay "It’s for my sister." 
+"She’s been having a really rough we–" 
+narrator  "His words are cut off as another student enters the room." 
+
+
+SetPosition(Anjelo 1.5:0)
+ShowCharacter(Anjelo true)
+[wait]MoveCharacter(Anjelo 1:0 1 true)
+
+
+Anjelo [0:happy] "Ejay!!! School court time!" 
+"Oh! Hey {name}!" 
+
+TriggerAnimation(Anjelo Hop)
+"I see you’ve met Ejay!"
+
+narrator  "You nod." 
+
+PC "Yep. Turns out we’re in the same class." 
+Ejay "It is a very small school." 
+Anjelo "And that is why we have a school court!" 
+PC "Yeah, the longer I stay here, the more that starts to make sense." 
+
+Anjelo "That means you’re starting to become part of the Haraya drama–"
+TriggerAnimation(Anjelo Hop) 
+Anjelo [0:embarrass] "I mean-"
+TriggerAnimation(Anjelo Hop) 
+Anjelo [0:happy] "family!"
+
+narrator  "Ejay laughs a bit and you snort at his joke." 
+
+SetPosition(Hershey 1.5:0)
+Express(Hershey angry)
+
+ShowCharacter(Hershey)
+[wait]MoveCharacter(Ejay 0:0 1 true)
+[wait]MoveCharacter(Anjelo 0.8:0 1 true)
+[wait]MoveCharacter(Hershey 1:-0.5 1 true)
+
+"From behind Anjelo you can see Hershey’s head peeking out."
+
+
+
+"She looks a little annoyed but waves at both you and Ejay anyway." 
+
+Express(Ejay shock)
+[wait]FlipCharacter(Ejay)
+Express(Ejay sad)
+
+"Ejay doesn’t look at her." 
+
+TriggerAnimation(Anjelo Hop) 
+
+
+Anjelo "Well, we’re all here! So let’s head to the club room!" 
+
+[wait]FlipCharacter(Anjelo)
+[wait]MoveCharacter(Anjelo 0.7:0 3 true), [wait]MoveCharacter(Anjelo 1.5:0 2 true)
+
+PC "Is he... always that fast?"
+narrator "The other two just walk out normally, and you follow along."
+
+StopSoundEffect(Aircon) 
+
+QueueChapter(2_Level4_Section1) 

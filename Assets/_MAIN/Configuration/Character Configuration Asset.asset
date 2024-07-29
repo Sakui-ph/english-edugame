@@ -1,0 +1,208 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436edc20b4956044293a2f59259067ed, type: 3}
+  m_Name: Character Configuration Asset
+  m_EditorClassIdentifier: 
+  characters:
+  - name: Anjelo
+    alias: Angjelo
+    characterType: 1
+    nameColor: {r: 1, g: 1, b: 1, a: 0.99215686}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 0.99215686}
+    nameFont: {fileID: 11400000, guid: f8159b8dcd037354db1749aa213becd6, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 3316cc2cc1980f8448900b3ff50c25bd, type: 2}
+    fontSize: 60
+    nameFontSize: 80
+    voice:
+    - {fileID: 8300000, guid: b1fd31e619e2170448ea896c8c73e25c, type: 3}
+    - {fileID: 8300000, guid: 4eeb3da7a3b08cf4486571167dfffc6a, type: 3}
+    - {fileID: 8300000, guid: fb914a1ed47da374ab8d26702a2e79cf, type: 3}
+    - {fileID: 8300000, guid: f476dae623f602648b04a12386aa18a1, type: 3}
+    - {fileID: 8300000, guid: be652e68e217db944b52eba3de923e01, type: 3}
+    - {fileID: 8300000, guid: 2f42a8e19243e834ca94a8d8648d79c7, type: 3}
+    - {fileID: 8300000, guid: d5189fc3630c97b4997ae419cbde472e, type: 3}
+    - {fileID: 8300000, guid: 2e6c06b62b3f2ad46bc48448b9c9d32b, type: 3}
+    - {fileID: 8300000, guid: 24afa6c84c859724daf5d373fc5296da, type: 3}
+    - {fileID: 8300000, guid: 394365535bf438243841a4b4cb78a5bc, type: 3}
+    - {fileID: 8300000, guid: 14a1846df5911a6449bf16cab30fa625, type: 3}
+    - {fileID: 8300000, guid: d02e1b218fa941e4ba74ba3f336c61b5, type: 3}
+    - {fileID: 8300000, guid: aa968f99f5dbd994091cc07d5c3ef586, type: 3}
+    - {fileID: 8300000, guid: c5cf101ecdbb1614db1a5afea0102e2c, type: 3}
+    - {fileID: 8300000, guid: 20677d7c216ebd24f86958805144ed86, type: 3}
+    - {fileID: 8300000, guid: 084ef71d41c2cd044bb688edba52ae6a, type: 3}
+    - {fileID: 8300000, guid: 4894dbb0e59dac144bbbe81ff9319f11, type: 3}
+    - {fileID: 8300000, guid: 52bff4f3fde161f49b3c0e065b91605c, type: 3}
+    - {fileID: 8300000, guid: b0c85b28ada01cd4cb449169628b38ad, type: 3}
+    - {fileID: 8300000, guid: bd8c5d93c5626424fa49ead7590e4293, type: 3}
+    - {fileID: 8300000, guid: a7fd4b34d97c6b54f83548749803238b, type: 3}
+  - name: Ejay
+    alias: Ejay
+    characterType: 1
+    nameColor: {r: 1, g: 1, b: 1, a: 0.99215686}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 0.99215686}
+    nameFont: {fileID: 11400000, guid: f8159b8dcd037354db1749aa213becd6, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 3316cc2cc1980f8448900b3ff50c25bd, type: 2}
+    fontSize: 60
+    nameFontSize: 80
+    voice:
+    - {fileID: 8300000, guid: 6d78ab3fcde2a0849bfe1e79f103217f, type: 3}
+    - {fileID: 8300000, guid: 4862c447af787ba4eb1bc087b2177543, type: 3}
+    - {fileID: 8300000, guid: eb97d7ecf80b01a4ca399914d3ffdd2d, type: 3}
+    - {fileID: 8300000, guid: 2657aab4384283044bc95f624b3526bf, type: 3}
+    - {fileID: 8300000, guid: addfe34950296c04bafa38f43b2cfff6, type: 3}
+    - {fileID: 8300000, guid: b1268655a03fd85439927eb4a9e3f82d, type: 3}
+  - name: Hershey
+    alias: Hershey
+    characterType: 1
+    nameColor: {r: 1, g: 1, b: 1, a: 0.99215686}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 0.99215686}
+    nameFont: {fileID: 11400000, guid: f8159b8dcd037354db1749aa213becd6, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 3316cc2cc1980f8448900b3ff50c25bd, type: 2}
+    fontSize: 60
+    nameFontSize: 80
+    voice:
+    - {fileID: 8300000, guid: a5645d2fc285dfa409c980090ab4a0fb, type: 3}
+    - {fileID: 8300000, guid: 35150be6d698c384daf494c5f0ae1f61, type: 3}
+    - {fileID: 8300000, guid: d9f165f2d0524ad4a9b64a3250154b03, type: 3}
+    - {fileID: 8300000, guid: 2f9260444c4105840b048d101ed6bcd9, type: 3}
+    - {fileID: 8300000, guid: 7f887171899f58a48ab31dbfdfefdebd, type: 3}
+    - {fileID: 8300000, guid: 6b49d241274c6194cac259e35ac02702, type: 3}
+    - {fileID: 8300000, guid: f0372208016b12a45a6b0a156919b704, type: 3}
+    - {fileID: 8300000, guid: 53e840e53c3e6e64c8f9d970374df1aa, type: 3}
+    - {fileID: 8300000, guid: d7da162a84127de43b297a09de0d3b9e, type: 3}
+    - {fileID: 8300000, guid: 66b0727bbfa303943814c452b5d0f601, type: 3}
+  - name: Tris
+    alias: Tris
+    characterType: 1
+    nameColor: {r: 1, g: 1, b: 1, a: 0.99215686}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 0.99215686}
+    nameFont: {fileID: 11400000, guid: f8159b8dcd037354db1749aa213becd6, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 3316cc2cc1980f8448900b3ff50c25bd, type: 2}
+    fontSize: 60
+    nameFontSize: 80
+    voice:
+    - {fileID: 8300000, guid: e5e3555ff0c146d45803f87d557cba09, type: 3}
+    - {fileID: 8300000, guid: f7529739282cad04a87f33989bf379df, type: 3}
+    - {fileID: 8300000, guid: 352bc49387954a44eb55c3b366c4a7c7, type: 3}
+    - {fileID: 8300000, guid: ae139ca01668d5640b18dc9eec528f20, type: 3}
+    - {fileID: 8300000, guid: 691cc0db9062c4548bf4cef909369879, type: 3}
+    - {fileID: 8300000, guid: 2c6ab92882aeb874e8aaed988f6a48f5, type: 3}
+    - {fileID: 8300000, guid: ffab1d3deca0c444e83781f924f159ec, type: 3}
+    - {fileID: 8300000, guid: 4ebe2ed837404354eb160f1df9abd754, type: 3}
+    - {fileID: 8300000, guid: 3c6874db57dcb434e9e59bd44b67a158, type: 3}
+    - {fileID: 8300000, guid: 5fd185a89e067dc47aa5c0513b25441b, type: 3}
+    - {fileID: 8300000, guid: 67164db60319e4b46961824bb869576e, type: 3}
+  - name: Sammy
+    alias: Sammy
+    characterType: 1
+    nameColor: {r: 1, g: 1, b: 1, a: 0.99215686}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 0.99215686}
+    nameFont: {fileID: 11400000, guid: f8159b8dcd037354db1749aa213becd6, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 3316cc2cc1980f8448900b3ff50c25bd, type: 2}
+    fontSize: 60
+    nameFontSize: 80
+    voice:
+    - {fileID: 8300000, guid: 1f365fd511e5aab41a87a185ef1d6d11, type: 3}
+    - {fileID: 8300000, guid: 0b5e2e3dc7d209d45bbb61770c60d4bf, type: 3}
+    - {fileID: 8300000, guid: dc40b82d2f4932f47b0ab3804cad299d, type: 3}
+    - {fileID: 8300000, guid: f46db64b2d820594984fe6c1cac56022, type: 3}
+    - {fileID: 8300000, guid: 2536c01e8b35449499ab3e375accad1e, type: 3}
+    - {fileID: 8300000, guid: b2f06857b9046b143a984556459e317a, type: 3}
+    - {fileID: 8300000, guid: 40fcf89d586b28742ad0270744b26644, type: 3}
+    - {fileID: 8300000, guid: 47e9e0991e29f9c4691531491dfd80cb, type: 3}
+    - {fileID: 8300000, guid: 50d5dcfe28c1e364b8d9c55f3add45ad, type: 3}
+    - {fileID: 8300000, guid: bf7fbfb303625174a90abd061aeeb1ef, type: 3}
+    - {fileID: 8300000, guid: 2057daaf25fbd5f4491f22731b2ce1c5, type: 3}
+    - {fileID: 8300000, guid: e8230d6f7ef17f94f91deee1d76c08e0, type: 3}
+    - {fileID: 8300000, guid: dcc38026e8568114db3a88047d6b1b9d, type: 3}
+  - name: Ezekiel
+    alias: Ezekiel
+    characterType: 1
+    nameColor: {r: 1, g: 1, b: 1, a: 0.99215686}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 0.99215686}
+    nameFont: {fileID: 11400000, guid: f8159b8dcd037354db1749aa213becd6, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 3316cc2cc1980f8448900b3ff50c25bd, type: 2}
+    fontSize: 60
+    nameFontSize: 80
+    voice:
+    - {fileID: 8300000, guid: 05513b6c7a138b944bf6aac35a767f8b, type: 3}
+    - {fileID: 8300000, guid: 74d51ef78fa9d0942b4fd1bfd78adea5, type: 3}
+    - {fileID: 8300000, guid: f5919556e4b9c0b4ea13cf1b7e4b892b, type: 3}
+    - {fileID: 8300000, guid: 7b6fab349b8bfa54cb5cd324065586aa, type: 3}
+    - {fileID: 8300000, guid: 2cf465d3131fc044fa71bea019a99032, type: 3}
+    - {fileID: 8300000, guid: 486db4fefadfad14084651b304c11c17, type: 3}
+    - {fileID: 8300000, guid: b052f01049e9b0a49b603993332d6585, type: 3}
+    - {fileID: 8300000, guid: 1e74402e65454b7439fe1337660ee52f, type: 3}
+    - {fileID: 8300000, guid: bfa76eae0a69cf042b4844b31754461f, type: 3}
+    - {fileID: 8300000, guid: 26301f2aa52d3bb479cd39cf4a203b73, type: 3}
+    - {fileID: 8300000, guid: 60616b0d395c43542a7b7e99a2a27380, type: 3}
+    - {fileID: 8300000, guid: 0373f87772ed2b34d94326939205fffe, type: 3}
+  - name: narrator
+    alias: narrator
+    characterType: 0
+    nameColor: {r: 1, g: 1, b: 1, a: 0.99215686}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 0.99215686}
+    nameFont: {fileID: 11400000, guid: 3316cc2cc1980f8448900b3ff50c25bd, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 3316cc2cc1980f8448900b3ff50c25bd, type: 2}
+    fontSize: 60
+    nameFontSize: 80
+    voice: []
+  - name: Dokutah
+    alias: Doctor
+    characterType: 1
+    nameColor: {r: 1, g: 1, b: 1, a: 1}
+    dialogueColor: {r: 0.42973477, g: 0.640284, b: 0.8207547, a: 1}
+    nameFont: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+    fontSize: 0
+    nameFontSize: 0
+    voice: []
+  - name: Exusiai
+    alias: Exia
+    characterType: 1
+    nameColor: {r: 0.7169812, g: 0.26717696, b: 0.34074646, a: 0.99215686}
+    dialogueColor: {r: 0.745283, g: 0.28475437, b: 0.33211356, a: 0.99215686}
+    nameFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    fontSize: 0
+    nameFontSize: 0
+    voice: []
+  - name: Frieren
+    alias: Frie
+    characterType: 1
+    nameColor: {r: 0.1462264, g: 0.6817748, b: 1, a: 0.99215686}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 0.99215686}
+    nameFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    fontSize: 0
+    nameFontSize: 0
+    voice: []
+  - name: Nanami
+    alias: Nanami
+    characterType: 1
+    nameColor: {r: 0, g: 0, b: 0, a: 0.99215686}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 0.99215686}
+    nameFont: {fileID: 11400000, guid: b750f6d690962b245917367e51fd0b64, type: 2}
+    dialogueFont: {fileID: 11400000, guid: b750f6d690962b245917367e51fd0b64, type: 2}
+    fontSize: 65
+    nameFontSize: 0
+    voice: []
+  - name: Nagito
+    alias: Nagito
+    characterType: 1
+    nameColor: {r: 0, g: 0, b: 0, a: 0.99215686}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 0.99215686}
+    nameFont: {fileID: 11400000, guid: b750f6d690962b245917367e51fd0b64, type: 2}
+    dialogueFont: {fileID: 11400000, guid: b750f6d690962b245917367e51fd0b64, type: 2}
+    fontSize: 65
+    nameFontSize: 0
+    voice: []

@@ -1,0 +1,13 @@
+SetLayerMedia(background 0 "ClubRoom_1")
+PlayTrack(MorningAfterTheRain 0.2 -l true)
+
+CreateCharacter(Anjelo true true)
+
+Anjelo "So, {name}, what stance will you take on this case?"
+
+PrepareNormalButton("Hershey should get detention [For]" level9_for)
+PrepareNormalButton("Hershey should not get detention [Against]" level9_against)
+[wait]ShowButtons()
+
+
+[wait]SetLayerMedia(cinematic 0 pitchBlack)

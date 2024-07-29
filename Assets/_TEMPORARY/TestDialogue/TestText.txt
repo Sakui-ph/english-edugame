@@ -1,0 +1,15 @@
+CreateCharacter("Nanami" -e true), CreateCharacter("Nagito" -e true), SetPosition("Nanami" 1:0), SetPosition("Nagito" 0:0)
+
+FlipCharacter(Nagito -i true), FlipCharacter(Nanami)
+
+MoveCharacter("Nanami" 0.7:0 1 -s)
+InitializeLevel()
+Nanami as Player [0:angry] "Hello, what are your thoughts on current gun laws?"
+Nagito "Uhh, I think we should have the right to own firearms as defense measures."
+AddToNotebook("should have the right to own firearms as defense measures" 1)
+Nagito "However...{wa 1} there is a chance for it to be abused."
+AddToNotebook("chance for it to be abused" 2)
+
+Wait(3);
+
+StartNotebookMinigame()

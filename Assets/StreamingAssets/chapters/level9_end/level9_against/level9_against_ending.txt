@@ -1,0 +1,8 @@
+narrator  "You decided not to let Hershey get detention!" 
+"Because of your decision, Ejay chose to talk to Hershey about the impact of what she did."
+"After that, she felt so bad that she decided to talk to Ms. Em directly to apologize." 
+"Their conversation helped them understand each other more and at then end of that talk, they both really helped each other grow."
+"Ms. Em has since returned to school and is slowly becoming as appreciated as she’s always deserved." 
+
+StopTrack(0)
+[wait]SetLayerMedia(foreground 0 pitchBlack)

@@ -1,0 +1,12 @@
+PC "But Hershey said that no one got hurt from what she did." 
+
+FlipCharacter(Ejay)
+Ejay [0:sad] "Hershey, did you ask Ms. Em what she felt?" 
+Hershey [0:embarrass] "..." 
+"No." 
+
+TriggerAnimation(Ejay Hop)
+Ejay "Then, you couldn't have known how much what you said hurt her."
+narrator  "Hershey looks ashamed." 
+
+ReturnBranch(5_Level4_Section4)

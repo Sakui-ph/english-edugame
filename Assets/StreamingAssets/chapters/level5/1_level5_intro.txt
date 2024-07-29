@@ -1,0 +1,92 @@
+SetWeekday("Thursday")
+
+//Images used
+//classroom
+//outside ← we can cycle through any stuff that like show off what bgs we have 
+//club_room
+
+SetLayerMedia(background 0 LastClassroom_1)
+CreateCharacter(Anjelo false false),  SetPosition(Anjelo 0:0)
+CreateCharacter(Tris false false), SetPosition(Tris 1:0)
+CreateCharacter(Ezekiel false false), SetPosition(Ezekiel 1:0)
+CreateCharacter(Sammy false false), SetPosition(Sammy 0.8:0)
+CreateCharacter(Ejay false false), SetPosition(Ejay 0:0)
+CreateCharacter(Hershey false false), SetPosition(Hershey 1:0)
+FlipCharacter(Anjelo)
+
+narrator  "The day passed as normal." 
+"Classes finished quickly and your teacher decided to dismiss early again."
+"You’ve been on campus for a week now and you realized that," 
+"you barely know how to get around" 
+"so you decide to pack your bag and just wander for a bit before club time." 
+
+PlaySoundEffect(DoorOpen4 0.4)
+PlaySoundEffect(WoodsNearSuburbs 0.3 -p 1.1 -l true)
+
+SetLayerMedia(background 0 "Outside_1")   
+"As you walk, you take note of the different buildings and open areas." 
+
+wait(1)
+
+PlaySoundEffect(LeavesRustle 1.3)
+SetLayerMedia(background 0 "Outside_2")  
+
+Express(Sammy stoic)
+Express(Ezekiel stoic)
+ShowCharacter(Sammy Ezekiel)
+Express(Sammy happy)
+TriggerAnimation(Sammy Hop)
+"People you’ve gotten to know in class and from school court wave \"hello\" as you pass by." 
+Express(Ezekiel happy), TriggerAnimation(Ezekiel Hop)
+MoveCharacter(Ezekiel 1.5:0 5 true)
+[wait]MoveCharacter(Sammy 1.5:0 5 true)
+HideCharacter(Ezekiel Sammy)
+
+wait(1)
+
+PlaySoundEffect(LeavesRustle 1.3)
+SetLayerMedia(background 0 "Outside_4")  
+
+ShowCharacter(Ejay Hershey)
+TriggerAnimation(Ejay Hop)
+TriggerAnimation(Hershey Hop)
+"In a way, you really do start to feel like you’re becoming a part of Haraya." 
+MoveCharacter(Hershey 1.5:0 5 true)
+[wait]MoveCharacter(Ejay -0.5:0 5 true)
+HideCharacter(Ejay Hershey)
+
+"And it’s nice." // school bell sfx 
+PlaySoundEffect(SchoolBell 0.3)
+
+PC "Oh, I guess it's club time already." 
+SetLayerMedia(background 0 "Hallway_3")
+narrator  "You take your time to walk to the club room." 
+
+PlaySoundEffect(Footsteps 0.7)
+wait(2)
+
+StopSoundEffect(WoodsNearSuburbs)
+PlaySoundEffect(DoorOpen4)
+SetLayerMedia(background 0 "ClubRoom_1")
+narrator  "Inside the club room, you see only two people." 
+
+PlayTrack(MorningAfterTheRain 0.2 -p 0.9 -l true)
+ShowCharacter(Anjelo true), ShowCharacter(Tris true)
+PC "Hey Anjelo." 
+"Hey Tris." 
+Anjelo "Oh hey, {name}!" 
+Tris "Hi {name}! It’s nice to see you again." 
+PC "Why is it just you guys? Aren’t there usually two people per case?" 
+
+Anjelo [0:embarrass] "Haha, yep! And I’m the second person this time!" 
+PC "Oh, I see." 
+"Well, I’d ask questions, but I’m pretty sure they’ll be answered in the recap." 
+Anjelo [0:happy] "Yep!"
+
+FlipCharacter(Anjelo)
+TriggerAnimation(Anjelo Hop)
+"I guess we should just get to it then!" 
+
+QueueChapter(2_Level5_Section1) 
+
+

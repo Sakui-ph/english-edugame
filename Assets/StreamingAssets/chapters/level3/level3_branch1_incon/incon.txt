@@ -1,0 +1,8 @@
+PC "He’s bad at teamwork?" 
+Ezekiel "Yep." 
+"He’s good at the game" 
+Ezekiel [0:angry] "but he’s really bad at listening to his teammates."
+
+FlipCharacter(Sammy)
+
+ReturnBranch(3_Level3_Section2)

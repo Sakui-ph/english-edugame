@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436edc20b4956044293a2f59259067ed, type: 3}
+  m_Name: Interrogation Character Configuration Asset 1
+  m_EditorClassIdentifier: 
+  characters:
+  - name: Anjelo
+    alias: Angjelo
+    characterType: 1
+    nameColor: {r: 0.6924617, g: 0.8584906, b: 0.85192263, a: 0.99215686}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 0.99215686}
+    nameFont: {fileID: 11400000, guid: c99ff6890e94fc94a8a118eb94305e92, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 4484145c8f1adcf489a4960245973b25, type: 2}
+    fontSize: 42
+  - name: Ejay
+    alias: Ejay
+    characterType: 1
+    nameColor: {r: 0.45296368, g: 0.8207547, b: 0.47234, a: 0.99215686}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 0.99215686}
+    nameFont: {fileID: 11400000, guid: 4d3822a594f6a484abda8b8d10fedee7, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 7babacc4f2d08854e884d66746f0d147, type: 2}
+    fontSize: 40
+  - name: Tris
+    alias: Tris
+    characterType: 1
+    nameColor: {r: 0.754717, g: 0.2741189, b: 0.2741189, a: 0.99215686}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 0.99215686}
+    nameFont: {fileID: 11400000, guid: 1b21004c963c9b040af5d0ad4da090e7, type: 2}
+    dialogueFont: {fileID: 11400000, guid: f4433aad5876ebc49a2c78fc7e14f1ab, type: 2}
+    fontSize: 40
+  - name: Hershey
+    alias: Hershey
+    characterType: 1
+    nameColor: {r: 0.6557017, g: 0.5284354, b: 0.8962264, a: 0.99215686}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 0.99215686}
+    nameFont: {fileID: 11400000, guid: fe82a991b964aa144b051e4b54121b18, type: 2}
+    dialogueFont: {fileID: 11400000, guid: fcda396173054cd47b7239751a281ca8, type: 2}
+    fontSize: 44
+  - name: Sammy
+    alias: Sammy
+    characterType: 1
+    nameColor: {r: 0.8490566, g: 0.5013525, b: 0.25231397, a: 0.99215686}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 0.99215686}
+    nameFont: {fileID: 11400000, guid: f63976fa061305e4fb0eb4eba8aa9c06, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 1f4d03dea1b17094990c1eac8d83dcc3, type: 2}
+    fontSize: 43
+  - name: Ezekiel
+    alias: Ezekiel
+    characterType: 1
+    nameColor: {r: 0.82843095, g: 0.8490566, b: 0.43654326, a: 0.99215686}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 0.99215686}
+    nameFont: {fileID: 11400000, guid: c0015093999e86343ac7b0e94d66778f, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 9ccee8281f872f546ad665b80945ed69, type: 2}
+    fontSize: 35
+  - name: narrator
+    alias: narrator
+    characterType: 0
+    nameColor: {r: 1, g: 1, b: 1, a: 0.99215686}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 0.99215686}
+    nameFont: {fileID: 11400000, guid: c99ff6890e94fc94a8a118eb94305e92, type: 2}
+    dialogueFont: {fileID: 11400000, guid: c99ff6890e94fc94a8a118eb94305e92, type: 2}
+    fontSize: 42
+  - name: Dokutah
+    alias: Doctor
+    characterType: 1
+    nameColor: {r: 1, g: 1, b: 1, a: 1}
+    dialogueColor: {r: 0.42973477, g: 0.640284, b: 0.8207547, a: 1}
+    nameFont: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+    fontSize: 0
+  - name: Exusiai
+    alias: Exia
+    characterType: 1
+    nameColor: {r: 0.7169812, g: 0.26717696, b: 0.34074646, a: 0.99215686}
+    dialogueColor: {r: 0.745283, g: 0.28475437, b: 0.33211356, a: 0.99215686}
+    nameFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    fontSize: 0
+  - name: Frieren
+    alias: Frie
+    characterType: 1
+    nameColor: {r: 0.1462264, g: 0.6817748, b: 1, a: 0.99215686}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 0.99215686}
+    nameFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    fontSize: 0
+  - name: Nanami
+    alias: Nanami
+    characterType: 1
+    nameColor: {r: 0, g: 0, b: 0, a: 0.99215686}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 0.99215686}
+    nameFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    fontSize: 0
+  - name: Nagito
+    alias: Nagito
+    characterType: 1
+    nameColor: {r: 0, g: 0, b: 0, a: 0.99215686}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 0.99215686}
+    nameFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    fontSize: 0

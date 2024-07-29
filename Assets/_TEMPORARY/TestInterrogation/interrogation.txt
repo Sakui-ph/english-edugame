@@ -1,0 +1,8 @@
+CreateCharacter(Ejay true), SetPosition(Ejay 1:0), CreateCharacter(Anjelo true), SetPosition(Anjelo 0:0)
+Anjelo "Test"
+[I]Ejay "Wassup"
+"Pretty chill right"
+[I]"I guess"
+"This is a lie"
+"This should still count as a lie because the text box says the same thing"
+"This shouldn't count as a lie anymore"

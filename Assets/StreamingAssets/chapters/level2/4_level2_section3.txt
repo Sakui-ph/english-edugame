@@ -1,0 +1,8 @@
+Express(Tris happy)
+[wait]MoveCharacter(Tris 0.5:0 0.1 true)
+TriggerAnimation(Tris Hop)
+Tris "Lastly, because of my help, <color=\"yellow\">Sammy finally figured out that she liked him too</color>!" 
+
+PrepareClassTrialButton("Continue" Level2_Branch3_Continue false) 
+PrepareClassTrialButton("Inconsistency" Level2_Branch3_Incon true)  
+[wait]ShowButtons() 

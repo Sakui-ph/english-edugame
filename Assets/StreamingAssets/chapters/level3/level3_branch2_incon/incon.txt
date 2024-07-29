@@ -1,0 +1,12 @@
+PC "Sammy said he was good for morale, though."
+Ezekiel [0:stoic] "Sammy thinks that winning is the only thing that matters." 
+"Yes, he helps us win" 
+
+"but he makes the game less fun so our teammates lose morale anyway." 
+
+Express(Sammy shock)
+TriggerAnimation(Sammy Hop)
+wait(1)
+Express(Sammy sad)
+
+ReturnBranch(4_Level3_Section3)
