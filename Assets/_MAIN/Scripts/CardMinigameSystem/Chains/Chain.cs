@@ -3,46 +3,74 @@ using UnityEngine;
 
 namespace CARD_GAME
 {
-    public class Chain
+    public class Chain : MonoBehaviour
     {   
-        public Claim parent;
-        private ChainButton chainButton;
-        public CardSlot warrantSlot;
-        public CardSlot groundSlot;
-        public string claimKey {get; private set;}
-        public bool isFinished;
-        public event Action correctCombo;
-        public event Action incorrectCombo;
-        public bool complete = false;
+        public ChainData chainData;
+        public ChainButton chainButton;
+        [SerializeField] private CardSlot warrantSlot;
+        [SerializeField] private CardSlot groundSlot;
+        private CardData warrantCardData => warrantSlot.GetComponentInChildren<Card>() 
+                                            ? warrantSlot.GetComponentInChildren<Card>().cardData
+                                            : null;
 
-        public Chain(Claim parent, string claimKey)
+        private CardData groundCardData => groundSlot.GetComponentInChildren<Card>() 
+                                            ? groundSlot.GetComponentInChildren<Card>().cardData
+                                            : null;
+
+        void Awake()
         {
-            this.parent = parent;
-            // warrantSlot = new CardSlot(CardType.warrant);
-            // groundSlot = new CardSlot(CardType.ground);
-            this.claimKey = claimKey;
+            chainButton.onClick.AddListener(() => CheckChain());
         }
 
-        public void SetChainButton(ChainButton chainButton)
+        private void CheckChain()
         {
-            this.chainButton = chainButton;
-            chainButton.claimParent = this.parent;
-            chainButton.claimKey = claimKey;
-            chainButton.incorrectCombo += IncorrectCombo;
-            chainButton.correctCombo += CorrectCombo;
+            switch (ValidateAnswer())
+            {
+                case AnswerState.NONE:
+                    Debug.Log("Nothing happens");
+                    break;
+                case AnswerState.CORRECT:
+                // change to lock
+                    CardMinigameSystem.instance.cardGamePlayer.ChangeHealth(1);
+                    break;
+                case AnswerState.INCORRECT:
+                    CardMinigameSystem.instance.cardGamePlayer.ChangeHealth(-1);
+                    break;
+            }
         }
 
-        private void IncorrectCombo()
+        private AnswerState ValidateAnswer()
         {
-            CardGamePlayerDataManager.instance.ReduceHP();
-            incorrectCombo?.Invoke();
-        }
+            // EITHER SLOT EMPTY
+            if (warrantCardData == null || groundCardData == null)
+                return AnswerState.NONE;
+            
+            // EITHER SLOT RED HERRING
+            if (!warrantCardData.hasConnectionKey || !groundCardData.hasConnectionKey)
+            {
+                return AnswerState.INCORRECT;
+            }
+                
 
-        private void CorrectCombo()
-        {
-            complete = true;
-            correctCombo?.Invoke();
+            // IF EITHER CLAIM KEY DOES NOT LINE UP
+            if (chainData.claimKey != warrantCardData.claimKey 
+                || chainData.claimKey != groundCardData.claimKey)
+            {
+                return AnswerState.INCORRECT;
+            }
+                
+                
+            if (warrantCardData.connectionKey == groundCardData.connectionKey)
+                return AnswerState.CORRECT;
+            
+            
+            return AnswerState.INCORRECT;
         }
     }   
+
+    public enum AnswerState
+    {
+        CORRECT, INCORRECT, NONE
+    }
 }
 

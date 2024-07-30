@@ -4,10 +4,10 @@ public class CardData
 {
     public string cardText {get; private set;} // the text displayed in the card
     public CardType cardType {get; private set;} // the type of card we have
-    public bool inSlot = false;
-    private string claimKey = null;
-    private string connectionKey = null;
-    public bool hasConnectionKey => connectionKey == null;  
+    
+    public string claimKey {get; private set;} = null;
+    public string connectionKey {get; private set;} = null;
+    public bool hasConnectionKey => connectionKey != null;  
 
     public CardData(string cardText, CardType cardType, string claimKey, string connectionKey)
     {

@@ -29,7 +29,6 @@ namespace CARD_GAME
             forButton.OnClickAction += SetClaimFor;
             irrelevantButton.OnClickAction += SetClaimIrrelevant;
             againstButton.OnClickAction += SetClaimAgainst;
-            checker.onClick.AddListener(CheckClaim);
         }
 
         private void SetClaimFor()
@@ -70,16 +69,6 @@ namespace CARD_GAME
                     mcg.SetAllIdle();
                     return;
             }
-        }
-
-        private void CheckClaim()
-        {
-            if(currentClaim.CheckSortedType())
-            {
-                AudioManager.instance.PlaySoundEffect("CorrectSound");
-                HideChecker();
-            }
-            TutorialHelper?.Invoke(ClaimType.NONE.ToString());
         }
 
         public void HideChecker()

@@ -6,36 +6,22 @@ namespace CARD_GAME
 {
     public class ChainManager : MonoBehaviour
     {
-        // Supposed to know which slots are a pair, and handle their data updates as well
-
-        // The point is the chains manager only loads the chains for the page thats set on screen, so the chains list only contains at a max 3-5 chains;
-
         public const string WARRANT_SLOT_KEY = "WarrantSlot";
         public const string GROUND_SLOT_KEY = "GroundSlot";
         [SerializeField] private GameObject chainPrefab;
         public GameObject chainGroup;
         [SerializeField] private GameObject chainRootPrefab;
 
-        public void SpawnChains(List<Chain> chains, string gameObjectName = "Chain Root")
+        public void SpawnChains(List<ChainData> chainDataList, string gameObjectName = "Chain Root")
         {
             GameObject chainRoot = Instantiate(chainRootPrefab, chainGroup.transform);
-            foreach(var chain in chains)
+            foreach(var chainData in chainDataList)
             {
                 GameObject chainObject = Instantiate(chainPrefab, chainRoot.transform);
                 chainRoot.name = gameObjectName;
-
-                // bind the monobehaviours
-                DroppableSlot[] cardSlots = chainObject.GetComponentsInChildren<DroppableSlot>();
-                DroppableSlot warrantSlotUI = cardSlots[0];
-                DroppableSlot groundSlotUI = cardSlots[1];
-
+                Chain chain = chainObject.GetComponent<Chain>();
+                chain.chainData = chainData;
                 
-                // bind the data
-                ChainButton chainButton = chainObject.GetComponentInChildren<ChainButton>();
-                chain.SetChainButton(chainButton);
-
-                // warrantSlotUI.cardSlot = chain.warrantSlot;
-                // groundSlotUI.cardSlot = chain.groundSlot;
             }
         }
 

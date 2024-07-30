@@ -12,13 +12,13 @@ namespace CARD_GAME
     {
         private static CardMinigameLevel level;
         public static List<Claim> claims = new();
-        public static HashSet<CardData> cards = new();
+        public static HashSet<CardData> cardDataSet = new();
         public static string subject = "";
         public static event Action OnCardGameEnd;
         
         public static CardMinigameLevel LoadLevel()
         {
-            if (claims.Count == 0 || cards.Count == 0)
+            if (claims.Count == 0 || cardDataSet.Count == 0)
             {
                 Debug.LogError("There are no claims or cards");
                 return null;
@@ -30,7 +30,7 @@ namespace CARD_GAME
                 return null;
             }
 
-            level = new(claims, cards, subject);
+            level = new(claims, cardDataSet, subject);
             return level;
         }
 
@@ -38,18 +38,18 @@ namespace CARD_GAME
         {
             level = null;
             claims = new();
-            cards = new();
+            cardDataSet = new();
             subject = "";
         }
 
         public static void AddCard(string cardText, string claimKey, CardType cardType, string connectionKey)
         {
-            cards.Add(new CardData(cardText, cardType, claimKey, connectionKey));
+            cardDataSet.Add(new CardData(cardText, cardType, claimKey, connectionKey));
         }
 
         public static void AddCard(string cardText, CardType cardType)
         {
-            cards.Add(new CardData(cardText, cardType));
+            cardDataSet.Add(new CardData(cardText, cardType));
         }
 
         public static void AddClaim(string claimText, string claimKey, ClaimType claimType, int numChains)

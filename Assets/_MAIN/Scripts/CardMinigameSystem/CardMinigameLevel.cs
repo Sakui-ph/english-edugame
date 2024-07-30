@@ -23,7 +23,7 @@ namespace CARD_GAME
             int totalChains = 0;
             foreach(Claim claim in claims)
             {
-                totalChains += claim.chains.Count;
+                totalChains += claim.chainDataList.Count;
             }
             return totalChains;
         }

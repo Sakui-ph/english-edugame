@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using AUDIO_SYSTEM;
 using TMPro;
 using UnityEngine;
@@ -9,13 +10,13 @@ namespace CARD_GAME
 {
     public class CardMinigameSystem : MonoBehaviour
     {
-        private const int DEFAULT_STARTING_HP = 3;
-        public ChainManager chainManager;
-        public ClaimManager claimManager;
-        private CardManager cardManager => CardManager.instance;
-        private CardGamePlayerDataManager playerDataManager => CardGamePlayerDataManager.instance;
         public static CardMinigameSystem instance;
         public CardGameConfigSO config;
+        public CardGamePlayer cardGamePlayer = new();
+        public ChainManager chainManager;
+        public ClaimManager claimManager;
+        public CardGameHealthDisplay cardGameHealthDisplay;
+        private CardManager cardManager => CardManager.instance;
         private CardMinigameLevel level;
         private int claimCount => level.claims.Count;
         private Coroutine process = null;
@@ -54,8 +55,8 @@ namespace CARD_GAME
         private IEnumerator RunMinigame(CardMinigameLevel level)
         {
             this.level = level;
-            InitializePlayerData();
             LoadLevelObjects(level.claims, level.cardDataSet, level.subject);
+            InitializePlayer();
             yield return null;
         }
 
@@ -71,24 +72,13 @@ namespace CARD_GAME
             claimManager.SetupClaimTabs(claimCount);
             for (int i = 0; i < claimCount; i++)
             {
-                chainManager.SpawnChains(claims[i].chains, $"Chain Root {i + 1}");
+                chainManager.SpawnChains(claims[i].chainDataList, $"Chain Root {i + 1}");
             }
             claimManager.MapChainToTabGroup(chainManager.chainGroup);
 
             this.subjectText.text = subjectText;
 
             SpawnCards(cards);
-        }
-
-        private void InitializePlayerData()
-        {
-            if (level == null)
-            {
-                Debug.LogWarning("Tried to initialize the player without a loaded level!");
-                return;
-            }
-                
-            playerDataManager.Initialize(config.startingHP);
         }
 
         public void CheckFinished()
@@ -98,6 +88,13 @@ namespace CARD_GAME
                 CardMinigameLevelLoader.EndGame();
             }
         }
+
+        private void InitializePlayer()
+        {
+            cardGamePlayer.HealthChanged += cardGameHealthDisplay.OnHealthChange; 
+            cardGamePlayer.ChangeHealth(config.startingHP);
+        }
+
 
         void OnDestroy()
         {

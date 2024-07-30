@@ -6,51 +6,45 @@ namespace CARD_GAME
 {
     public class CardGameHealthDisplay : MonoBehaviour
     {
-        CardGamePlayerDataManager cardGamePlayerData => CardGamePlayerDataManager.instance;
         [SerializeField] GameObject healthSprite;
         private int spriteCount => transform.childCount;
 
 
         void Start()
         {
-            cardGamePlayerData.HealthUpdate += HealthUpdate;
-
-            cardGamePlayerData.initialHP = CardMinigameSystem.instance.config.startingHP;
-
             if (CardMinigameSystem.instance.config.healthSprite != null)
                 healthSprite.GetComponent<Image>().sprite = CardMinigameSystem.instance.config.healthSprite;
-
-            SetupInitialHP(cardGamePlayerData.initialHP);
         }
 
-        private void HealthUpdate(int playerHealth)
+        public void OnHealthChange(int amount)
         {
-            if (spriteCount < playerHealth)
-                IncreaseHealthSprite();
-            if (spriteCount > playerHealth)
-                DecreaseHealthSprite();
+            Debug.Log("Health change detected");
+            UpdateHealth(amount);
         }
 
-        private void SetupInitialHP(int currentHP)
+        private void UpdateHealth(int health)
         {
-            while (spriteCount < currentHP)
+            Debug.Log( Math.Abs(spriteCount - health));
+            for (int i = 0; i <= Math.Abs(spriteCount - health); i++)
             {
-                IncreaseHealthSprite();
+                if (spriteCount > health)
+                    DestroyHealthSprite();
+                else if (spriteCount < health)
+                    InstantiateHealthSprite();
             }
         }
 
-        private void DecreaseHealthSprite()
+        private void InstantiateHealthSprite()
+        {   
+            Instantiate(healthSprite, transform);
+        }
+
+        private void DestroyHealthSprite()
         {
             if (spriteCount > 0)
             {
                 Destroy(transform.GetChild(0).gameObject);
             }
-        }
-
-        private void IncreaseHealthSprite()
-        {
-            if (spriteCount != cardGamePlayerData.maxHP)
-                Instantiate(healthSprite, transform);
         }
     }
 }
