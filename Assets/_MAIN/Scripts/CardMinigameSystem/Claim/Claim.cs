@@ -8,36 +8,40 @@ namespace CARD_GAME
         public string claimText;
         public ClaimType claimType {get; private set;}
         public ClaimType currentSortedType = ClaimType.NONE;
-        private bool _isComplete = false;
-        private bool _isCorrect = false;
+        private bool _isChainsCompleted = false;
+        private bool _isAnsweredCorrect = false;
 
-        public bool isComplete {
+        public bool isChainsCompleted {
             get 
             {
-                return _isComplete;
+                return _isChainsCompleted;
             } 
             set {
-                _isComplete = value;
-                if (_isComplete == true)
+                _isChainsCompleted = value;
+                if (_isChainsCompleted == true)
                 {
                     CardMinigameSystem.instance.CheckFinished();
                 }
             }
         }
 
-        public bool isCorrect {
+        public bool isAnsweredCorrect {
             get 
             {
-                return _isCorrect;
+                return _isAnsweredCorrect;
             } 
             set {
-                _isCorrect = value;
-                if (_isCorrect == true)
+                _isAnsweredCorrect = value;
+                if (_isAnsweredCorrect == true)
                 {
                     CardMinigameSystem.instance.CheckFinished();
                 }
             }
         }
+
+        public delegate void ClaimCheckEvent();
+        public event ClaimCheckEvent ListenForCorrectAnswer;
+        public event ClaimCheckEvent ListenForIncorrectAnswer; 
 
         public Claim(string claimKey, int numChains, string claimText, ClaimType claimType)
         {
@@ -48,6 +52,39 @@ namespace CARD_GAME
             }
             this.claimType = claimType;
             this.claimText = claimText;
+        }
+
+        public void CheckClaim()
+        {
+            switch(ValidateAnswer())
+            {
+                case AnswerState.CORRECT:
+                    OnCorrectAnswer();
+                    break;
+                case AnswerState.INCORRECT:
+                    OnIncorrectAnswer();
+                    break;
+            }
+        }
+
+        private AnswerState ValidateAnswer()
+        {
+            if (currentSortedType == claimType)
+                return AnswerState.CORRECT;
+            return AnswerState.INCORRECT;
+        }
+
+        private void OnCorrectAnswer()
+        {
+            isAnsweredCorrect = true;
+            CardMinigameSystem.instance.cardGamePlayer.ChangeHealth(1);
+            ListenForCorrectAnswer?.Invoke();
+        }
+
+        private void OnIncorrectAnswer()
+        {
+            CardMinigameSystem.instance.cardGamePlayer.ChangeHealth(-1);
+            ListenForIncorrectAnswer?.Invoke();
         }
     }
 

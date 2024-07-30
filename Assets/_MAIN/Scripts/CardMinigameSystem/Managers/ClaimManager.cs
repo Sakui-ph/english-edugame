@@ -73,7 +73,7 @@ namespace CARD_GAME
             ClaimType claimType = currentClaim.currentSortedType;
             claimSortButtons.UpdateClaimType(claimType);
 
-            if (currentClaim.isCorrect)
+            if (currentClaim.isAnsweredCorrect)
             {
                 claimSortButtons.HideChecker();
             }
@@ -85,7 +85,7 @@ namespace CARD_GAME
         {
             foreach (Claim claim in claims)
             {
-                if (!claim.isCorrect || !claim.isComplete)
+                if (!claim.isAnsweredCorrect || !claim.isChainsCompleted)
                     return false;
             }
             return true;

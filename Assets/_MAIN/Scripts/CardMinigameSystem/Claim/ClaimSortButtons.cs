@@ -13,7 +13,7 @@ namespace CARD_GAME
         public MultipleChoiceButton forButton;
         public MultipleChoiceButton irrelevantButton;
         public MultipleChoiceButton againstButton;
-        public MultipleChoiceGroup mcg => forButton.multipleChoiceGroup;
+        public MultipleChoiceGroup multipleChoiceGroup => forButton.multipleChoiceGroup;
         public static event Action<string> TutorialHelper;
         public Button checker;
         private bool hidden = false;
@@ -26,56 +26,50 @@ namespace CARD_GAME
 
         public void InitializeButtons()
         {
-            forButton.OnClickAction += SetClaimFor;
-            irrelevantButton.OnClickAction += SetClaimIrrelevant;
-            againstButton.OnClickAction += SetClaimAgainst;
+            forButton.OnClickAction += () => SetClaimType(ClaimType.FOR);
+            irrelevantButton.OnClickAction += () => SetClaimType(ClaimType.IRRELEVANT);
+            againstButton.OnClickAction += () => SetClaimType(ClaimType.AGAINST);
+            checker.onClick.AddListener(CheckClaim);
         }
 
-        private void SetClaimFor()
+        private void SetClaimType(ClaimType claimType)
         {
-            currentClaim.currentSortedType = ClaimType.FOR;
-            TutorialHelper?.Invoke(ClaimType.FOR.ToString());
-        }
-
-        private void SetClaimAgainst()
-        {
-            currentClaim.currentSortedType = ClaimType.AGAINST;
-            TutorialHelper?.Invoke(ClaimType.AGAINST.ToString());
-        }
-
-        private void SetClaimIrrelevant()
-        {
-            currentClaim.currentSortedType = ClaimType.IRRELEVANT;
-            TutorialHelper?.Invoke(ClaimType.IRRELEVANT.ToString());
+            currentClaim.currentSortedType = claimType;
+            TutorialHelper?.Invoke(claimType.ToString());
         }
 
         public void UpdateClaimType(ClaimType claimType)
         {
+            
             switch (claimType)
             {
                 case ClaimType.IRRELEVANT:
-                    mcg.OnClick(irrelevantButton);
-                    SetClaimIrrelevant();
+                    multipleChoiceGroup.OnClick(irrelevantButton);
                     break;
                 case ClaimType.FOR:
-                    mcg.OnClick(forButton);
-                    SetClaimFor();
+                    multipleChoiceGroup.OnClick(forButton);
                     break;
                 case ClaimType.AGAINST:
-                    mcg.OnClick(againstButton);
-                    SetClaimAgainst();
+                    multipleChoiceGroup.OnClick(againstButton);
                     break;
                 default:
-                    mcg.SetAllIdle();
+                    multipleChoiceGroup.SetAllIdle();
                     return;
             }
+        }
+
+        private void CheckClaim()
+        {
+            currentClaim.ListenForCorrectAnswer += HideChecker;
+            currentClaim.CheckClaim();
+            currentClaim.ListenForCorrectAnswer -= HideChecker;
         }
 
         public void HideChecker()
         {
             if (!hidden)
             {
-                mcg.Lock();
+                multipleChoiceGroup.Lock();
                 checker.enabled = false; 
                 hidden = true;
                 LeanTween.rotateAround(checkerObject, Vector3.right, 360, 1);
@@ -87,7 +81,7 @@ namespace CARD_GAME
         {
             if (hidden)
             {
-                mcg.Unlock();
+                multipleChoiceGroup.Unlock();
                 checker.enabled = true; 
                 hidden = false;
                 LeanTween.scale(checkerObject, Vector2.one, 1f);
