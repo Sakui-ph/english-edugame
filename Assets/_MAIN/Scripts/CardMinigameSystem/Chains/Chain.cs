@@ -27,11 +27,15 @@ namespace CARD_GAME
             switch (ValidateAnswer())
             {
                 case AnswerState.NONE:
-                    Debug.Log("Nothing happens");
                     break;
                 case AnswerState.CORRECT:
                 // change to lock
-                    CardMinigameSystem.instance.cardGamePlayer.ChangeHealth(1);
+                    groundSlot.Lock();
+                    warrantSlot.Lock();
+                    chainButton.animationHandler.CorrectAnimation(() => 
+                    {
+                        // todo: add the final check for if the game is done
+                    });
                     break;
                 case AnswerState.INCORRECT:
                     CardMinigameSystem.instance.cardGamePlayer.ChangeHealth(-1);

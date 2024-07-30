@@ -7,9 +7,14 @@ using UnityEngine.EventSystems;
 public class DroppableSlot : MonoBehaviour, IDropHandler
 {
     public DraggableItem occupyingItem => transform.GetComponentInChildren<DraggableItem>() ? transform.GetComponentInChildren<DraggableItem>() : null;
+    
+    private bool isLocked = false;
 
     public void OnDrop(PointerEventData eventData)
     {
+        if (isLocked)
+            return;
+
         GameObject droppedObject = eventData.pointerDrag;
 
         if (!droppedObject.GetComponent<DraggableItem>())
@@ -46,5 +51,17 @@ public class DroppableSlot : MonoBehaviour, IDropHandler
             occupyingItem.ResetParent();
 
         draggable.parentAfterDrag = transform;
+    }
+
+    public void Lock()
+    {
+        occupyingItem.isDisabled = true;
+        isLocked = true;
+    }
+
+    public void UnlocK()
+    {
+        occupyingItem.isDisabled = false;
+        isLocked = false;
     }
 }

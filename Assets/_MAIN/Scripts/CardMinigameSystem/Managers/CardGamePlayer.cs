@@ -19,7 +19,6 @@ public class CardGamePlayer
         if (currentHP <= 0)
             currentHP = 0;
 
-        Debug.Log($"Health changed to {amount}");
         
         UpdateHealth();
     }
