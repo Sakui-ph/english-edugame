@@ -30,9 +30,7 @@ namespace CARD_GAME
                     break;
                 case AnswerState.CORRECT:
                 // change to lock
-                    groundSlot.Lock();
-                    warrantSlot.Lock();
-                    chainData.complete = true;
+                    CompleteChain();
                     chainButton.animationHandler.CorrectAnimation(() => 
                     {
                         // todo: add the final check for if the game is done
@@ -70,6 +68,13 @@ namespace CARD_GAME
             
             
             return AnswerState.INCORRECT;
+        }
+
+        private void CompleteChain()
+        {
+            groundSlot.Lock();
+            warrantSlot.Lock();
+            chainData.complete = true;
         }
     }   
 
