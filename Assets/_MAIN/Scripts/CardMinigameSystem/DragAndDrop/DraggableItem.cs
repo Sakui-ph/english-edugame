@@ -110,7 +110,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void ChangeParent(Transform parent)
     {
-        transform.parent = parent;
+        transform.SetParent(parent);
         HandleDrop();
     }
 
