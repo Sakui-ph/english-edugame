@@ -22,26 +22,6 @@ namespace CARD_GAME
             chainButton.onClick.AddListener(() => CheckChain());
         }
 
-        private void CheckChain()
-        {
-            switch (ValidateAnswer())
-            {
-                case AnswerState.NONE:
-                    break;
-                case AnswerState.CORRECT:
-                // change to lock
-                    CompleteChain();
-                    chainButton.animationHandler.CorrectAnimation(() => 
-                    {
-                        // todo: add the final check for if the game is done
-                    });
-                    break;
-                case AnswerState.INCORRECT:
-                    CardMinigameSystem.instance.cardGamePlayer.ChangeHealth(-1);
-                    break;
-            }
-        }
-
         private AnswerState ValidateAnswer()
         {
             // EITHER SLOT EMPTY
@@ -70,11 +50,36 @@ namespace CARD_GAME
             return AnswerState.INCORRECT;
         }
 
-        private void CompleteChain()
+        private void CheckChain()
+        {
+            switch (ValidateAnswer())
+            {
+                case AnswerState.NONE:
+                    break;
+                case AnswerState.CORRECT:
+                // change to lock
+                    OnCorrectAnswer();
+                    break;
+                case AnswerState.INCORRECT:
+                    OnIncorrectAnswer();
+                    break;
+            }
+        }
+
+        private void OnCorrectAnswer()
         {
             groundSlot.Lock();
             warrantSlot.Lock();
             chainData.complete = true;
+            chainButton.animationHandler.CorrectAnimation(() => 
+            {
+                // todo: add the final check for if the game is done
+            });
+        }
+
+        private void OnIncorrectAnswer()
+        {
+            CardMinigameSystem.instance.cardGamePlayer.ChangeHealth(-1);
         }
     }   
 
