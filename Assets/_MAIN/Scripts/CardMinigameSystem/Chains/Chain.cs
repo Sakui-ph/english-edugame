@@ -32,6 +32,7 @@ namespace CARD_GAME
                 // change to lock
                     groundSlot.Lock();
                     warrantSlot.Lock();
+                    chainData.complete = true;
                     chainButton.animationHandler.CorrectAnimation(() => 
                     {
                         // todo: add the final check for if the game is done
