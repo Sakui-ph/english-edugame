@@ -73,7 +73,6 @@ namespace CARD_GAME
 
         private Deck SortCardDeck(CardType cardType)
         {
-            Debug.Log(cardType);
             switch(cardType)
             {
                 case CardType.warrant:

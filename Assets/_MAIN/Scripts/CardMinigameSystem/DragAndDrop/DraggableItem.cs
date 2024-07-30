@@ -116,7 +116,6 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     private void DropIntoLayoutGroup()
     {
-        Debug.Log("Dropped into layout group");
         LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)parentAfterDrag);
         FitToLayoutGroup();
         isInSlot = false;
@@ -124,7 +123,6 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     private void DropIntoDroppableSlot()
     {
-        Debug.Log("Dropped into slot");
         FitToSlot();
         isInSlot = true;
     }

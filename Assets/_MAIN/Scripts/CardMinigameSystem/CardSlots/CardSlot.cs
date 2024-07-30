@@ -10,7 +10,6 @@ namespace CARD_GAME
         {
             CardData cardData = droppedObject.GetComponent<Card>().cardData;
 
-            Debug.Log(cardData.cardType);
             if (cardData.cardType == expectedOccupantType)
                 return true;
             return false;
