@@ -23,24 +23,24 @@ namespace TESTING
        
 
             CardMinigameLevelLoader.AddCard("fake warrant 1", CardType.warrant);
-            CardMinigameLevelLoader.AddCard("WARRANT ONE", CARD_PAIR_1, CardType.warrant, CLAIM_KEY_1);
-            CardMinigameLevelLoader.AddCard("WARRANT TWO", CARD_PAIR_2, CardType.warrant, CLAIM_KEY_1);
-            CardMinigameLevelLoader.AddCard("WARRANT THREE", CARD_PAIR_3, CardType.warrant, CLAIM_KEY_1);
+            CardMinigameLevelLoader.AddCard("WARRANT ONE", CLAIM_KEY_1, CardType.warrant, CARD_PAIR_1);
+            CardMinigameLevelLoader.AddCard("WARRANT TWO", CLAIM_KEY_1, CardType.warrant, CARD_PAIR_2);
+            CardMinigameLevelLoader.AddCard("WARRANT THREE", CLAIM_KEY_1, CardType.warrant, CARD_PAIR_3);
 
-            CardMinigameLevelLoader.AddCard("GROUND ONE", CARD_PAIR_1, CardType.ground, CLAIM_KEY_1);
-            CardMinigameLevelLoader.AddCard("GROUND TWO", CARD_PAIR_2, CardType.ground, CLAIM_KEY_1);
-            CardMinigameLevelLoader.AddCard("GROUND THREE", CARD_PAIR_3, CardType.ground, CLAIM_KEY_1);
+            CardMinigameLevelLoader.AddCard("GROUND ONE", CLAIM_KEY_1, CardType.ground, CARD_PAIR_1);
+            CardMinigameLevelLoader.AddCard("GROUND TWO", CLAIM_KEY_1, CardType.ground, CARD_PAIR_2);
+            CardMinigameLevelLoader.AddCard("GROUND THREE", CLAIM_KEY_1, CardType.ground, CARD_PAIR_3);
 
 
-            CardMinigameLevelLoader.AddCard("WARRANT FOUR", CARD_PAIR_4, CardType.warrant, CLAIM_KEY_2);
-            CardMinigameLevelLoader.AddCard("WARRANT FIVE", CARD_PAIR_5, CardType.warrant, CLAIM_KEY_2);
+            CardMinigameLevelLoader.AddCard("WARRANT FOUR", CLAIM_KEY_2, CardType.warrant, CARD_PAIR_4);
+            CardMinigameLevelLoader.AddCard("WARRANT FIVE", CLAIM_KEY_2, CardType.warrant, CARD_PAIR_5);
 
-            CardMinigameLevelLoader.AddCard("GROUND FOUR", CARD_PAIR_4, CardType.ground, CLAIM_KEY_2);
-            CardMinigameLevelLoader.AddCard("GROUND FIVE", CARD_PAIR_5, CardType.ground, CLAIM_KEY_2);
+            CardMinigameLevelLoader.AddCard("GROUND FOUR", CLAIM_KEY_2, CardType.ground, CARD_PAIR_4);
+            CardMinigameLevelLoader.AddCard("GROUND FIVE", CLAIM_KEY_2, CardType.ground, CARD_PAIR_5);
 
-            CardMinigameLevelLoader.AddCard("WARRANT SIX", CARD_PAIR_6, CardType.warrant, CLAIM_KEY_3);
+            CardMinigameLevelLoader.AddCard("WARRANT SIX", CLAIM_KEY_3, CardType.warrant, CARD_PAIR_6);
 
-            CardMinigameLevelLoader.AddCard("GROUND SIX", CARD_PAIR_6, CardType.ground, CLAIM_KEY_3);
+            CardMinigameLevelLoader.AddCard("GROUND SIX", CLAIM_KEY_3, CardType.ground, CARD_PAIR_6);
 
             CardMinigameLevelLoader.AddClaim("Claim One", CLAIM_KEY_1, ClaimType.AGAINST, 3);
             CardMinigameLevelLoader.AddClaim("Claim Two", CLAIM_KEY_2, ClaimType.FOR, 2);
