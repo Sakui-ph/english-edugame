@@ -12,7 +12,7 @@ namespace CARD_GAME
     {
         private static CardMinigameLevel level;
         public static List<Claim> claims = new();
-        public static HashSet<Card> cards = new();
+        public static HashSet<CardData> cards = new();
         public static string subject = "";
         public static event Action OnCardGameEnd;
         
@@ -44,12 +44,12 @@ namespace CARD_GAME
 
         public static void AddCard(string cardText, string claimKey, CardType cardType, string connectionKey)
         {
-            cards.Add(new Card(cardText, cardType, claimKey, connectionKey));
+            cards.Add(new CardData(cardText, cardType, claimKey, connectionKey));
         }
 
         public static void AddCard(string cardText, CardType cardType)
         {
-            cards.Add(new Card(cardText, cardType));
+            cards.Add(new CardData(cardText, cardType));
         }
 
         public static void AddClaim(string claimText, string claimKey, ClaimType claimType, int numChains)

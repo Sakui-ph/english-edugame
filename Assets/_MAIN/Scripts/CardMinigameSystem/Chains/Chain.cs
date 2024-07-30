@@ -18,8 +18,8 @@ namespace CARD_GAME
         public Chain(Claim parent, string claimKey)
         {
             this.parent = parent;
-            warrantSlot = new CardSlot(CardType.warrant);
-            groundSlot = new CardSlot(CardType.ground);
+            // warrantSlot = new CardSlot(CardType.warrant);
+            // groundSlot = new CardSlot(CardType.ground);
             this.claimKey = claimKey;
         }
 

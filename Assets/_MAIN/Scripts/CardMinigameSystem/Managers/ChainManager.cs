@@ -25,17 +25,17 @@ namespace CARD_GAME
                 chainRoot.name = gameObjectName;
 
                 // bind the monobehaviours
-                CardSlotInteraction[] cardSlots = chainObject.GetComponentsInChildren<CardSlotInteraction>();
-                CardSlotInteraction warrantSlotUI = cardSlots[0];
-                CardSlotInteraction groundSlotUI = cardSlots[1];
+                DroppableSlot[] cardSlots = chainObject.GetComponentsInChildren<DroppableSlot>();
+                DroppableSlot warrantSlotUI = cardSlots[0];
+                DroppableSlot groundSlotUI = cardSlots[1];
 
                 
                 // bind the data
                 ChainButton chainButton = chainObject.GetComponentInChildren<ChainButton>();
                 chain.SetChainButton(chainButton);
 
-                warrantSlotUI.cardSlot = chain.warrantSlot;
-                groundSlotUI.cardSlot = chain.groundSlot;
+                // warrantSlotUI.cardSlot = chain.warrantSlot;
+                // groundSlotUI.cardSlot = chain.groundSlot;
             }
         }
 

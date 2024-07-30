@@ -55,18 +55,17 @@ namespace CARD_GAME
         {
             this.level = level;
             InitializePlayerData();
-            LoadLevelObjects(level.claims, level.cards, level.subject);
+            LoadLevelObjects(level.claims, level.cardDataSet, level.subject);
             yield return null;
         }
 
-        private void SpawnCards(HashSet<Card> cards)
+        private void SpawnCards(HashSet<CardData> cards)
         {
-            cardManager.SortCardsByType(cards);
             cardManager.SpawnCard(cards);
             cardManager.ShuffleDecks();
         }
     
-        private void LoadLevelObjects(List<Claim> claims, HashSet<Card> cards, string subjectText)
+        private void LoadLevelObjects(List<Claim> claims, HashSet<CardData> cards, string subjectText)
         {
             claimManager.SetClaimData(claims);
             claimManager.SetupClaimTabs(claimCount);

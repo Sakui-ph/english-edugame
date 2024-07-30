@@ -8,13 +8,13 @@ namespace CARD_GAME
         
         public int totalChains => CalculateTotalChains();
         public List<Claim> claims {get; private set;}
-        public HashSet<Card> cards {get; private set;}
+        public HashSet<CardData> cardDataSet {get; private set;}
         public string subject;
 
-        public CardMinigameLevel(List<Claim> claims, HashSet<Card> cards, string subject)
+        public CardMinigameLevel(List<Claim> claims, HashSet<CardData> cards, string subject)
         {
             this.claims = claims;
-            this.cards = cards;
+            this.cardDataSet = cards;
             this.subject = subject;
         }
 

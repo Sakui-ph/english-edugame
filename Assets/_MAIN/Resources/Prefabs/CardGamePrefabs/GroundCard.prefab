@@ -220,9 +220,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7779777482495953994}
-  - component: {fileID: 4396614611320121366}
   - component: {fileID: 842794709672971058}
   - component: {fileID: 3048762605340837385}
+  - component: {fileID: 7864239744188205603}
   m_Layer: 5
   m_Name: GroundCard
   m_TagString: Untagged
@@ -250,19 +250,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 435.61, y: 148.29}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4396614611320121366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3365629512569730338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9243d78d12f13e54a96f26c6f3635a63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentAfterDrag: {fileID: 0}
 --- !u!225 &842794709672971058
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -295,3 +282,22 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &7864239744188205603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3365629512569730338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d689a69d341bad4e9aedd05d936b7e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentAfterDrag: {fileID: 0}
+  isDisabled: 0
+  isSnapToParent: 0
+  isInSlot: 0
+  cardParent: {fileID: 0}
+  inSlot: 0
+  deckParent: {fileID: 0}

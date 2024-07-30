@@ -85,9 +85,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5024446481887446799}
-  - component: {fileID: 2098863122205524252}
   - component: {fileID: 4129095267082183389}
   - component: {fileID: 2761236861981451580}
+  - component: {fileID: 8033965004842822463}
   m_Layer: 5
   m_Name: WarrantCard
   m_TagString: Untagged
@@ -115,19 +115,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 435.61, y: 148.29}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2098863122205524252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3934249642098199065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9243d78d12f13e54a96f26c6f3635a63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentAfterDrag: {fileID: 0}
 --- !u!225 &4129095267082183389
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -160,6 +147,25 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &8033965004842822463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3934249642098199065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d689a69d341bad4e9aedd05d936b7e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentAfterDrag: {fileID: 0}
+  isDisabled: 0
+  isSnapToParent: 0
+  isInSlot: 0
+  cardParent: {fileID: 0}
+  inSlot: 0
+  deckParent: {fileID: 0}
 --- !u!1 &6677977753119529450
 GameObject:
   m_ObjectHideFlags: 0

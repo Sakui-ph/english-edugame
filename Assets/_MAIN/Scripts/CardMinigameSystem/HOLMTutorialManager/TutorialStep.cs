@@ -107,9 +107,9 @@ public class TutorialStep : MonoBehaviour
     private IEnumerator WaitForCardDrop()
     {
         allowInputs?.Invoke();
-        CardSlotInteraction.TutorialHelper += UserPrompt;
+        // CardSlotInteraction.TutorialHelper += UserPrompt;
         yield return WaitForUser();
-        CardSlotInteraction.TutorialHelper -= UserPrompt;
+        // CardSlotInteraction.TutorialHelper -= UserPrompt;
     }
 
     private IEnumerator WaitForUser()

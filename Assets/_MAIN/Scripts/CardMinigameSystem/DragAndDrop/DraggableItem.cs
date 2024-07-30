@@ -28,7 +28,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         canvas = GetComponentInParent<Canvas>();
     }
 
-    void Start()
+    public virtual void Start()
     {
         parentOnGameStart = transform.parent;
     }

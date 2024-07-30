@@ -21,63 +21,63 @@ namespace CARD_GAME
         void Awake()
         {
             chainButton = GetComponent<Button>();
-            chainButton.onClick.AddListener(CheckAnswers);
+            // chainButton.onClick.AddListener(CheckAnswers);
             animationHandler = gameObject.GetComponent<ChainButtonEffects>();
         }
 
-        private void CheckAnswers()
-        {
-            AudioManager.instance.PlaySoundEffect("Switch");
+        // private void CheckAnswers()
+        // {
+        //     AudioManager.instance.PlaySoundEffect("Switch");
 
-            if (claimKey == null)
-            {
-                Debug.LogWarning("Chain has no claim key!");
-                incorrectCombo?.Invoke();
-                return;
-            }
+        //     if (claimKey == null)
+        //     {
+        //         Debug.LogWarning("Chain has no claim key!");
+        //         incorrectCombo?.Invoke();
+        //         return;
+        //     }
 
-            CardSlotInteraction[] cardSlots = transform.parent.GetComponentsInChildren<CardSlotInteraction>();
-            CardInteraction cardUIOne = cardSlots[0].GetOccupyingCardUI();
-            CardInteraction cardUITwo = cardSlots[1].GetOccupyingCardUI();
+        //     CardSlotInteraction[] cardSlots = transform.parent.GetComponentsInChildren<CardSlotInteraction>();
+        //     CardInteraction cardUIOne = cardSlots[0].GetOccupyingCardUI();
+        //     CardInteraction cardUITwo = cardSlots[1].GetOccupyingCardUI();
 
-            if (!cardUIOne || !cardUITwo)
-            {
-                return;
-            }
+        //     if (!cardUIOne || !cardUITwo)
+        //     {
+        //         return;
+        //     }
 
-            Card cardOne = cardUIOne.card;
-            Card cardTwo = cardUITwo.card;
+        //     Card cardOne = cardUIOne.card;
+        //     Card cardTwo = cardUITwo.card;
 
-            if (cardOne == null || cardTwo == null)
-            {
-                return;
-            }
+        //     if (cardOne == null || cardTwo == null)
+        //     {
+        //         return;
+        //     }
 
-            if (cardOne.CheckPair(cardTwo, claimKey, claimParent.claimText, claimParent.currentSortedType.ToString()))
-            {
-                TutorialHelper?.Invoke("CORRECT");
+        //     if (cardOne.CheckPair(cardTwo, claimKey, claimParent.claimText, claimParent.currentSortedType.ToString()))
+        //     {
+        //         TutorialHelper?.Invoke("CORRECT");
 
-                AudioManager.instance.PlaySoundEffect("CorrectSound");
-                animationHandler.CorrectAnimation(() => 
-                {
-                    claimParent.CheckComplete();
-                });
-                LockCardSlots();
-                correctCombo?.Invoke();
-                return;
-            }
+        //         AudioManager.instance.PlaySoundEffect("CorrectSound");
+        //         animationHandler.CorrectAnimation(() => 
+        //         {
+        //             claimParent.CheckComplete();
+        //         });
+        //         LockCardSlots();
+        //         correctCombo?.Invoke();
+        //         return;
+        //     }
 
-            TutorialHelper?.Invoke("INCORRECT");
-            incorrectCombo?.Invoke();     
-            return;  
-        }
+        //     TutorialHelper?.Invoke("INCORRECT");
+        //     incorrectCombo?.Invoke();     
+        //     return;  
+        // }
 
-        private void LockCardSlots()
-        {
-            CardSlotInteraction[] cardSlots = transform.parent.GetComponentsInChildren<CardSlotInteraction>();
-            cardSlots[0].Lock();
-            cardSlots[1].Lock();
-        }
+        // private void LockCardSlots()
+        // {
+        //     CardSlotInteraction[] cardSlots = transform.parent.GetComponentsInChildren<CardSlotInteraction>();
+        //     cardSlots[0].Lock();
+        //     cardSlots[1].Lock();
+        // }
     }
 
     

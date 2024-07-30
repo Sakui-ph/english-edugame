@@ -3735,9 +3735,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eb82bd47c9569f408f59c7fa655740d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  decks:
-  - {fileID: 1505001300}
-  - {fileID: 1149079534}
+  warrantDeck: {fileID: 1149079534}
+  groundDeck: {fileID: 1505001300}
   groundCardPrefab: {fileID: 3365629512569730338, guid: 13bbd12c4cc5428439086661cc66d3d7, type: 3}
   warrantCardPrefab: {fileID: 3934249642098199065, guid: b02e5b1911ea4944e802014c994eb136, type: 3}
   cardRoot: {fileID: 1473102209}

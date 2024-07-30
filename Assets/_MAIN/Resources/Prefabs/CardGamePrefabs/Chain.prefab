@@ -471,7 +471,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5725679446302811036}
   - component: {fileID: 6768774306782819068}
-  - component: {fileID: 8182394219895560557}
+  - component: {fileID: 5437506101646664512}
   m_Layer: 5
   m_Name: WarrantSlot
   m_TagString: Untagged
@@ -511,7 +511,7 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &8182394219895560557
+--- !u!114 &5437506101646664512
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -520,9 +520,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4767220729977369661}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afbac88ff8b9394c8cfde42d158854c, type: 3}
+  m_Script: {fileID: 11500000, guid: 1630986c4bfa87d448557984a1c9bffd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  expectedOccupantType: 1
 --- !u!1 &4992756844759430198
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,6 +826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chainButton: {fileID: 0}
   claimKey: 
+  animationHandler: {fileID: 0}
 --- !u!114 &667292481264465957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -924,7 +926,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4863741416531009667}
   - component: {fileID: 2239164161443387029}
-  - component: {fileID: 5476926976285802154}
+  - component: {fileID: 9003726832210035875}
   m_Layer: 5
   m_Name: GroundSlot
   m_TagString: Untagged
@@ -964,7 +966,7 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &5476926976285802154
+--- !u!114 &9003726832210035875
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -973,6 +975,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8015388776398540975}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afbac88ff8b9394c8cfde42d158854c, type: 3}
+  m_Script: {fileID: 11500000, guid: 1630986c4bfa87d448557984a1c9bffd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  expectedOccupantType: 0

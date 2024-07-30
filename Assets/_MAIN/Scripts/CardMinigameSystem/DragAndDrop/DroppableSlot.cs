@@ -7,11 +7,15 @@ using UnityEngine.EventSystems;
 public class DroppableSlot : MonoBehaviour, IDropHandler
 {
     public DraggableItem occupyingItem => transform.GetComponentInChildren<DraggableItem>() ? transform.GetComponentInChildren<DraggableItem>() : null;
+
     public void OnDrop(PointerEventData eventData)
     {
         GameObject droppedObject = eventData.pointerDrag;
 
         if (!droppedObject.GetComponent<DraggableItem>())
+            return;
+
+        if (!IsAllowedType(droppedObject))
             return;
         
         DraggableItem draggable = droppedObject.GetComponent<DraggableItem>();
@@ -20,6 +24,11 @@ public class DroppableSlot : MonoBehaviour, IDropHandler
             HandleEmptySlotDrop(draggable);
         else
             HandleOccupiedSlotDrop(draggable);
+    }
+
+    public virtual bool IsAllowedType(GameObject droppedObject)
+    {
+        return true;
     }
 
     public void HandleEmptySlotDrop(DraggableItem draggable)

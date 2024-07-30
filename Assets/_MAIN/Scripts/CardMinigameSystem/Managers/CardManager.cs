@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Collections;
+using Unity.VisualScripting;
 
 namespace CARD_GAME
 {
@@ -9,7 +11,8 @@ namespace CARD_GAME
         public static CardManager instance;
 
         [Header("Decks")]
-        [SerializeField] List<Deck> decks; // TODO (optional) make this cleaner by making it so that only one deck of one type can exist in this list
+        [SerializeField] Deck warrantDeck;
+        [SerializeField] Deck groundDeck;
 
         [Header("Card Game Objects")]
         [SerializeField] private GameObject groundCardPrefab;
@@ -20,7 +23,7 @@ namespace CARD_GAME
         public Color warrantColor = new();
         public Color groundColor = new();
 
-        private List<CardInteraction> cardUIs = new();
+        private List<Card> cards = new();
 
         void Awake()
         {
@@ -33,73 +36,55 @@ namespace CARD_GAME
         }
 
         // spawns a set of cards, the deck it belongs to is not yet taken to account
-        public void SpawnCard(HashSet<Card> cards)
+        public void SpawnCard(HashSet<CardData> cardDataSet)
         {
-            foreach (Card card in cards)
+            foreach (CardData card in cardDataSet)
             {
                 SpawnCard(card);
             }
         }
 
-        public void SpawnCard(Card card)
+        public void SpawnCard(CardData cardData)
         {
-            Transform parent;
-            GameObject prefab = card.cardType == CardType.ground? groundCardPrefab : warrantCardPrefab;
-            if (card.cardParent == null)
-                parent = card.deckParent != null? card.deckParent : cardRoot.transform;
-            else {
-                parent = card.cardParent;
-            }
-                
-            if (parent != null && parent.gameObject != null)
+            Deck deck = SortCardDeck(cardData.cardType);
+
+            if (deck == null)
             {
-                GameObject newCard = Instantiate(prefab, parent);
-                newCard.gameObject.name = $"{card.cardType} Card";
-
-                
-
-                CardInteraction cardUI = newCard.GetComponent<CardInteraction>();
-                cardUI.SetCard(card);
-                
-
-                TextMeshProUGUI[] TMPs = newCard.GetComponentsInChildren<TextMeshProUGUI>();
-                TMPs[0].text = card.cardText;
-
-                cardUIs.Add(cardUI);
+                Debug.LogError("No deck suitable for spawning card");
+                return;
             }
-            
-        }
 
-        public void SortCardsByType(HashSet<Card> cards)
-        {
-            foreach (Card card in cards)
-            {
-                foreach (Deck deck in decks)
-                {
-                    if (deck.cardType == card.cardType)
-                    {
-                        card.deckParent = deck.transform;
-                        continue;
-                    }
-                }
-            } 
+            Transform deckTransform = deck.transform;
+            GameObject prefab = cardData.cardType == CardType.ground? groundCardPrefab : warrantCardPrefab;
+        
+            GameObject cardObject = Instantiate(prefab, deckTransform);
+            cardObject.name = $"{cardData.cardType} Card";
+
+            Card card = cardObject.GetComponent<Card>();
+            card.cardData = cardData;
+            cards.Add(card);
         }
 
         public void ShuffleDecks()
         {
-            foreach (Deck deck in decks)
-                deck.ShuffleCards();
+            warrantDeck.ShuffleCards();
+            groundDeck.ShuffleCards();
         }
 
-        
-
-        public void DestroyAllCards()
+        private Deck SortCardDeck(CardType cardType)
         {
-            foreach (CardInteraction card in cardUIs)
+            Debug.Log(cardType);
+            switch(cardType)
             {
-                DestroyImmediate(card.gameObject);
+                case CardType.warrant:
+                    return warrantDeck;
+                case CardType.ground:
+                    return groundDeck;
+                default:
+                    Debug.LogError($"This card type {cardType.ToString()} does not exist");
+                    break;
             }
-            cardUIs = new();
+            return null;
         }
     }
 }
