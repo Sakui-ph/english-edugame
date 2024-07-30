@@ -18,13 +18,11 @@ namespace CARD_GAME
 
         public void OnHealthChange(int amount)
         {
-            Debug.Log("Health change detected");
             UpdateHealth(amount);
         }
 
         private void UpdateHealth(int health)
         {
-            Debug.Log( Math.Abs(spriteCount - health));
             for (int i = 0; i <= Math.Abs(spriteCount - health); i++)
             {
                 if (spriteCount > health)
