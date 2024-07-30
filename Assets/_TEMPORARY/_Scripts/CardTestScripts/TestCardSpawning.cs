@@ -18,35 +18,37 @@ namespace TESTING
             const string CARD_PAIR_2 = "flkjajdflfsdfka";
             const string CARD_PAIR_3 = "flkjajsadfadflka";
             const string CARD_PAIR_4 = "flkjajdasdfflka";
+            const string CARD_PAIR_5 = "flkjajdasfweqwedfflka";
+            const string CARD_PAIR_6 = "flkjajdwweqwasdfdflka";
+       
+
+            CardMinigameLevelLoader.AddCard("fake warrant 1", CardType.warrant);
+            CardMinigameLevelLoader.AddCard("WARRANT ONE", CARD_PAIR_1, CardType.warrant, CLAIM_KEY_1);
+            CardMinigameLevelLoader.AddCard("WARRANT TWO", CARD_PAIR_2, CardType.warrant, CLAIM_KEY_1);
+            CardMinigameLevelLoader.AddCard("WARRANT THREE", CARD_PAIR_3, CardType.warrant, CLAIM_KEY_1);
+
+            CardMinigameLevelLoader.AddCard("GROUND ONE", CARD_PAIR_1, CardType.ground, CLAIM_KEY_1);
+            CardMinigameLevelLoader.AddCard("GROUND TWO", CARD_PAIR_2, CardType.ground, CLAIM_KEY_1);
+            CardMinigameLevelLoader.AddCard("GROUND THREE", CARD_PAIR_3, CardType.ground, CLAIM_KEY_1);
 
 
-            HashSet<Card> cards = new()
-            {
-                new Card("Card One", CardType.ground, CLAIM_KEY_1, CARD_PAIR_1),
-                new Card("Card Two", CardType.warrant, CLAIM_KEY_1, CARD_PAIR_1),
+            CardMinigameLevelLoader.AddCard("WARRANT FOUR", CARD_PAIR_4, CardType.warrant, CLAIM_KEY_2);
+            CardMinigameLevelLoader.AddCard("WARRANT FIVE", CARD_PAIR_5, CardType.warrant, CLAIM_KEY_2);
 
-                new Card("Card Three", CardType.ground, CLAIM_KEY_2, CARD_PAIR_2),
-                new Card("Card Four", CardType.warrant, CLAIM_KEY_2, CARD_PAIR_2),
+            CardMinigameLevelLoader.AddCard("GROUND FOUR", CARD_PAIR_4, CardType.ground, CLAIM_KEY_2);
+            CardMinigameLevelLoader.AddCard("GROUND FIVE", CARD_PAIR_5, CardType.ground, CLAIM_KEY_2);
 
-                new Card("Card Five", CardType.ground, CLAIM_KEY_3, CARD_PAIR_3),
-                new Card("Card Six", CardType.warrant, CLAIM_KEY_3, CARD_PAIR_3),
-                new Card("Card Seven", CardType.ground, CLAIM_KEY_3, CARD_PAIR_4),
-                new Card("Card Eight", CardType.warrant,CLAIM_KEY_3, CARD_PAIR_4),
+            CardMinigameLevelLoader.AddCard("WARRANT SIX", CARD_PAIR_6, CardType.warrant, CLAIM_KEY_3);
 
-                new Card("Card Nine", CardType.ground),
-                new Card("Card Ten",  CardType.warrant),
-                new Card("Card Eleven", CardType.ground),
-                new Card("Card Twelve", CardType.warrant),
-                new Card("Card Thirteen", CardType.ground),
-            };
+            CardMinigameLevelLoader.AddCard("GROUND SIX", CARD_PAIR_6, CardType.ground, CLAIM_KEY_3);
 
-            List<Claim> claims = new() {
-                new(CLAIM_KEY_1, 1, "This is claim 1", ClaimType.FOR),
-                new(CLAIM_KEY_2, 3, "This is claim 2", ClaimType.IRRELEVANT),
-                new(CLAIM_KEY_3, 2, "This is claim 3", ClaimType.AGAINST),
-            };
-        
+            CardMinigameLevelLoader.AddClaim("Claim One", CLAIM_KEY_1, ClaimType.AGAINST, 3);
+            CardMinigameLevelLoader.AddClaim("Claim Two", CLAIM_KEY_2, ClaimType.FOR, 2);
+            CardMinigameLevelLoader.AddClaim("Claim Three", CLAIM_KEY_3, ClaimType.IRRELEVANT, 1);
 
+            CardMinigameLevelLoader.subject = "Test Subject";
+
+            GameSystem.instance.LoadCardGame(false);
         }
     }
 }

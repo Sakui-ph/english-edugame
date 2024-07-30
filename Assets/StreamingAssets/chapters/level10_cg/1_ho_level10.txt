@@ -1,0 +1,21 @@
+AddForClaim("Anjelo should be given considerations for deadlines." "2e18e9e5-5236-4ffc-aa05-83f1248e9b3b" 2)
+AddGroundCard("Working students have more responsibilities than non-working students." "2e18e9e5-5236-4ffc-aa05-83f1248e9b3b" "ForCard1"), AddWarrantCard("Since working students are doing more they should be given more time to do school work." "2e18e9e5-5236-4ffc-aa05-83f1248e9b3b" "ForCard1")
+AddGroundCard("Anjelo works because he doesn't have enough to buy school supplies." "2e18e9e5-5236-4ffc-aa05-83f1248e9b3b" "ForCard2"), AddWarrantCard("We should be considerate of those that work hard to get what they need. " "2e18e9e5-5236-4ffc-aa05-83f1248e9b3b" "ForCard2")
+
+
+AddAgainstClaim("Anjelo should not be given considerations for deadlines." "f03bacc6-0d2a-4389-8b3e-1e131d0ee773" 3)
+AddGroundCard("It’s unfair if some students will get special treatment. " "f03bacc6-0d2a-4389-8b3e-1e131d0ee773" "AgainstCard1"), AddWarrantCard("Things that are unfair aren’t good to be perpetuated. " "f03bacc6-0d2a-4389-8b3e-1e131d0ee773" "AgainstCard1")
+AddGroundCard("Tris had to do double the work because Anjelo couldn’t submit things on time." "f03bacc6-0d2a-4389-8b3e-1e131d0ee773" "AgainstCard2"), AddWarrantCard("It’s not good for Tris to be forced to do double the work. " "f03bacc6-0d2a-4389-8b3e-1e131d0ee773" "AgainstCard2")
+AddGroundCard("Anjelo has the ability to make time to do school work." "f03bacc6-0d2a-4389-8b3e-1e131d0ee773" "AgainstCard3"), AddWarrantCard("Anjelo can submit deadlines on time he just needs help with time management. " "f03bacc6-0d2a-4389-8b3e-1e131d0ee773" "AgainstCard3")
+
+
+AddIrrelevantClaim("Working for the library is fun." "f724760e-4d94-4859-af21-140daf59f14f" 2)
+AddGroundCard("The library lets you read as many books as you want." "f724760e-4d94-4859-af21-140daf59f14f" "IrrelevantCard1"), AddWarrantCard("Reading is a fun activity. " "f724760e-4d94-4859-af21-140daf59f14f" "IrrelevantCard1")
+AddGroundCard("Working in the library means you have access to the computers. " "f724760e-4d94-4859-af21-140daf59f14f" "IrrelevantCard2"), AddWarrantCard("Using computers is an interesting activity. " "f724760e-4d94-4859-af21-140daf59f14f" "IrrelevantCard2")
+
+
+AddGroundCard("Laptops let you type documents easily."), AddWarrantCard("Being able to type documents is important. ")
+AddGroundCard("Farming requires you to wake up early."), AddWarrantCard("Waking up early is hard so people who do it everyday should be respected. ")
+
+
+PlayCardGame("Considerations for Anjelo")

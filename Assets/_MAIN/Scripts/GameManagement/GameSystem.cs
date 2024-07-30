@@ -29,8 +29,8 @@ public class GameSystem : MonoBehaviour
 
     void Start()
     {
-        Screen.orientation = ScreenOrientation.LandscapeRight;
-        sh.LoadScene(SceneName.OpeningScene);
+        // Screen.orientation = ScreenOrientation.LandscapeRight;
+        // sh.LoadScene(SceneName.OpeningScene);
         
 
         // convert URP to SRP
