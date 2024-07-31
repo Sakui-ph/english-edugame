@@ -70,7 +70,7 @@ namespace CARD_GAME
         {
             groundSlot.Lock();
             warrantSlot.Lock();
-            chainData.complete = true;
+            chainData.isComplete = true;
             chainButton.animationHandler.CorrectAnimation(() => 
             {
                 // todo: add the final check for if the game is done

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using CARD_GAME;
 using UnityEngine;
 
 public class Level
@@ -20,11 +21,7 @@ public class Level
     public void EndLevel()
     {
         SaveLevelData(this);
-
-        if (postLevelChapterReference != "")
-            GameSystem.instance.LoadVisualNovel(postLevelChapterReference, () => GameSystem.instance.LoadMainMenu());
-        else
-            GameSystem.instance.LoadMainMenu();
+        GameSystem.instance.LoadMainMenu();
     }
 
 

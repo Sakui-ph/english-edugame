@@ -85,7 +85,7 @@ public class GameSystem : MonoBehaviour
     public void LoadCardGame(bool tutorialMode = false)
     {
         sh.LoadSceneWithCallback(SceneName.CardMinigame, () => {
-            CardMinigameSystem.instance.StartGame(CardMinigameLevelLoader.LoadLevel());
+            CardMinigameSystem.instance.StartGame();
 
             if (tutorialMode && !GetLoadedPlayer().hasSeenHOTutorial)
             {

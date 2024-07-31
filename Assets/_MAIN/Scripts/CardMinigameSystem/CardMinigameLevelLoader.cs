@@ -14,7 +14,7 @@ namespace CARD_GAME
         public static List<Claim> claims = new();
         public static HashSet<CardData> cardDataSet = new();
         public static string subject = "";
-        public static event Action OnCardGameEnd;
+        public static string postLevelChapterReference = "";
         
         public static CardMinigameLevel LoadLevel()
         {
@@ -30,7 +30,7 @@ namespace CARD_GAME
                 return null;
             }
 
-            level = new(claims, cardDataSet, subject);
+            level = new(claims, cardDataSet, subject, postLevelChapterReference);
             return level;
         }
 
@@ -55,12 +55,6 @@ namespace CARD_GAME
         public static void AddClaim(string claimText, string claimKey, ClaimType claimType, int numChains)
         {
             claims.Add(new Claim(claimKey, numChains, claimText, claimType));
-        }
-
-        public static void EndGame()
-        {
-            OnCardGameEnd?.Invoke();
-            OnCardGameEnd = null;
         }
     }
 }

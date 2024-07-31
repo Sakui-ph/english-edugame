@@ -8,7 +8,21 @@ namespace CARD_GAME
     {
         public Claim parent;
         public string claimKey {get; private set;}
-        public bool complete = false;
+        private bool _isComplete = false;
+
+        public bool isComplete {
+            get 
+            {
+                return _isComplete;
+            } 
+            set {
+                _isComplete = value;
+                if (_isComplete == true)
+                {
+                    parent.CheckChains();
+                }
+            }
+        }
 
         public ChainData(Claim parent, string claimKey)
         {

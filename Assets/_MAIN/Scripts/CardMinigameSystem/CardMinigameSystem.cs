@@ -35,8 +35,10 @@ namespace CARD_GAME
             }
         }
 
-        public void StartGame(CardMinigameLevel level) // TODO: Make card spawning happen here as well, since all cards belong to the level
+        public void StartGame() // TODO: Make card spawning happen here as well, since all cards belong to the level
         {
+            this.level = CardMinigameLevelLoader.LoadLevel();
+
             CardMinigameLevelLoader.Reset();
             if (isRunning) 
             {
@@ -49,12 +51,11 @@ namespace CARD_GAME
                 AudioManager.instance.PlayTrack(BGM, startingVolume:0, loop:true, volumeCap: 0.3f, pitch: 0.8f);
             }
 
-            process = StartCoroutine(RunMinigame(level));
+            process = StartCoroutine(RunMinigame());
         }   
 
-        private IEnumerator RunMinigame(CardMinigameLevel level)
+        private IEnumerator RunMinigame()
         {
-            this.level = level;
             LoadLevelObjects(level.claims, level.cardDataSet, level.subject);
             InitializePlayer();
             yield return null;
@@ -81,12 +82,15 @@ namespace CARD_GAME
             SpawnCards(cards);
         }
 
-        public void CheckFinished()
+        public void TryEndMinigame()
         {
-            if (claimManager.CheckFinished())
-            {
-                CardMinigameLevelLoader.EndGame();
-            }
+            if (!claimManager.CheckFinished())
+                return;
+
+            if (level.postLevelChapterReference != "")
+                GameSystem.instance.LoadVisualNovel(level.postLevelChapterReference);
+            else
+                GameSystem.instance.LoadMainMenu();
         }
 
         private void InitializePlayer()

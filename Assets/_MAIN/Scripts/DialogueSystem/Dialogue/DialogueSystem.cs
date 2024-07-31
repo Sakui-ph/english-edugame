@@ -175,6 +175,10 @@ namespace DIALOGUE
             {
                 ChapterManager.OnChapterEnd += callback;
             }
+            else
+            {
+                ChapterManager.OnChapterEnd += () => {GameSystem.instance.LoadMainMenu();};
+            }
 
             chapterManager.PlayChapter();       
         }

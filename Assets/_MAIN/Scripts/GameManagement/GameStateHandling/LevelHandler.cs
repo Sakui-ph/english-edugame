@@ -53,7 +53,7 @@ public class LevelHandler : MonoBehaviour
                 }
                 if (level.levelType == LevelType.CardGame)
                 {
-                    CardMinigameLevelLoader.OnCardGameEnd += EndLevel;
+                    CardMinigameLevelLoader.postLevelChapterReference = level.postLevelChapterReference;
                     GameSystem.instance.LoadVisualNovel(levelReference);
                 }
 

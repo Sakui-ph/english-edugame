@@ -1543,7 +1543,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3ff66866673e3314f9b7abe8d197e871, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 29b096d3904c9c4408439f126551c2cf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5850,10 +5850,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6979895fb8f9124c80254b98b2b8de1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  config: {fileID: 11400000, guid: 32e465c667dcddf4d9b53239aea324b1, type: 2}
   chainManager: {fileID: 1980329937}
   claimManager: {fileID: 484410784}
   cardGameHealthDisplay: {fileID: 1194249385}
-  config: {fileID: 11400000, guid: 32e465c667dcddf4d9b53239aea324b1, type: 2}
   subjectText: {fileID: 52986475}
   BGM: {fileID: 8300000, guid: ce67c3c3aa55cef4ead4f50082042349, type: 3}
 --- !u!1 &1464698240

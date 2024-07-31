@@ -20,7 +20,7 @@ namespace CARD_GAME
                 _isChainsCompleted = value;
                 if (_isChainsCompleted == true)
                 {
-                    CardMinigameSystem.instance.CheckFinished();
+                    CardMinigameSystem.instance.TryEndMinigame();
                 }
             }
         }
@@ -34,7 +34,7 @@ namespace CARD_GAME
                 _isAnsweredCorrect = value;
                 if (_isAnsweredCorrect == true)
                 {
-                    CardMinigameSystem.instance.CheckFinished();
+                    CardMinigameSystem.instance.TryEndMinigame();
                 }
             }
         }
@@ -52,6 +52,18 @@ namespace CARD_GAME
             }
             this.claimType = claimType;
             this.claimText = claimText;
+        }
+
+        public void CheckChains()
+        {
+            foreach (var chain in chainDataList)
+            {
+                if (!chain.isComplete)
+                {
+                    return;
+                }   
+            }
+            isChainsCompleted = true;
         }
 
         public void CheckClaim()
@@ -77,6 +89,7 @@ namespace CARD_GAME
         private void OnCorrectAnswer()
         {
             isAnsweredCorrect = true;
+
             CardMinigameSystem.instance.cardGamePlayer.ChangeHealth(1);
             ListenForCorrectAnswer?.Invoke();
         }
