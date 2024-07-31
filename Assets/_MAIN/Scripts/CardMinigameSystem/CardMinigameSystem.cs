@@ -24,6 +24,9 @@ namespace CARD_GAME
         [Header("Audio")]
         public AudioClip BGM;
         private bool isRunning => process != null;
+        
+        [Header("UI Elements")]
+        [SerializeField] private OverlayUIElements overlayUIElements;
 
         void Awake()
         {
@@ -57,6 +60,11 @@ namespace CARD_GAME
         public void RestartLevel()
         {
             StopCoroutine(process);
+            overlayUIElements.FadeToBlack().setOnComplete(() =>
+            {
+                process = StartCoroutine(RunMinigame());
+                overlayUIElements.FadeToWhite();
+            });
         }
 
         private IEnumerator RunMinigame()
@@ -68,6 +76,10 @@ namespace CARD_GAME
 
         private void LoadLevelObjects(List<Claim> claims, HashSet<CardData> cards, string subjectText)
         {
+            cardManager.DestroyAllCards();
+            chainManager.DestroyChains();
+
+
             claimManager.SetClaimData(claims);
             claimManager.SetupClaimTabs(claimCount);
             for (int i = 0; i < claimCount; i++)
@@ -91,6 +103,7 @@ namespace CARD_GAME
 
         private void InitializePlayer()
         {
+            Debug.Log("Initialize player");
             cardGamePlayer.HealthChanged += cardGameHealthDisplay.OnHealthChange; 
             cardGamePlayer.SetHealth(config.startingHP);
         }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,6 +21,7 @@ namespace CARD_GAME
         [SerializeField] private Button checker;
         private ClaimSortButtons claimSortButtons;
         private List<Claim> claims;
+        private List<GameObject> claimTabs = new();
         public Claim currentClaim;
 
         void Awake()
@@ -34,8 +36,7 @@ namespace CARD_GAME
             };
             claimSortButtons.InitializeButtons();
         }
-
-
+    
         public void SetClaimData(List<Claim> claims)
         {
             this.claims = claims;
@@ -43,6 +44,7 @@ namespace CARD_GAME
 
         public void SetupClaimTabs(int numClaimTabs)
         {            
+            ResetClaims();
             for (int i = 0; i < numClaimTabs; i++)
             {
                 GameObject claimTab = Instantiate(claimTabPrefab, claimTabGroup.transform);
@@ -53,17 +55,21 @@ namespace CARD_GAME
 
                 TabGroupButton tabButton = claimTab.GetComponentInChildren<TabGroupButton>();
                 tabButton.tabGroup = claimTabGroup;
+
+                claimTabs.Add(claimTab);
             }
         }
 
         public void MapChainToTabGroup(GameObject chainGroup)
         {
-            claimTabGroup.objectsToSwap = new List<GameObject>();
+            claimTabGroup.objectsToSwap = new();
             foreach (Transform child in chainGroup.transform)
             {
-                claimTabGroup.objectsToSwap.Add(child.gameObject);
+                if (!claimTabGroup.objectsToSwap.Contains(child.gameObject))
+                    claimTabGroup.objectsToSwap.Add(child.gameObject);
             }
         }
+
 
         private void UpdateClaimText(int index)
         {
@@ -89,6 +95,18 @@ namespace CARD_GAME
                     return false;
             }
             return true;
+        }
+
+
+        public void ResetClaims()
+        {
+            foreach (var claimTab in claimTabs)
+            {
+                claimTabGroup.Unsubscribe(claimTab.GetComponent<TabGroupButton>());
+                claimTab.transform.SetParent(GarbageHolder.instance.transform);
+                Destroy(claimTab);
+            }
+            claimTabs = new();
         }
 
     }

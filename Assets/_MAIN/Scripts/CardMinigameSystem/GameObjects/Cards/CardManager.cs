@@ -38,7 +38,6 @@ namespace CARD_GAME
         // spawns a set of cards, the deck it belongs to is not yet taken to account
         public void SpawnCard(HashSet<CardData> cardDataSet)
         {
-            DestroyAllCards();
             foreach (CardData card in cardDataSet)
             {
                 SpawnCard(card);
@@ -91,7 +90,10 @@ namespace CARD_GAME
         public void DestroyAllCards()
         {
             foreach(Card card in cards)
-                Destroy(card);
+            {   
+                Destroy(card.gameObject);
+            }
+            cards = new();
         }
     }
 }

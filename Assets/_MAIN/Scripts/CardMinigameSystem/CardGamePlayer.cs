@@ -20,7 +20,7 @@ public class CardGamePlayer
                 _currentHP = maxHP;
             else if (value <= 0) {
                 _currentHP = 0;
-                Debug.Log("Death");
+                CardMinigameSystem.instance.RestartLevel();
             }
             else
             {

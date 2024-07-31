@@ -29,11 +29,14 @@ public class TabGroup : MonoBehaviour
 
     public void Subscribe(TabGroupButton button)
     {
-        if (tabButtons == null)
+        
+        if (tabButtons == null || tabButtons.Count == 0)
         {
             tabButtons = new List<TabGroupButton>();
             SelectTab(button);
         }
+
+        Debug.Log(tabButtons.Count);
 
         if (button == firstSelectedTab)
         {
@@ -42,6 +45,11 @@ public class TabGroup : MonoBehaviour
 
         tabButtons.Add(button);
         ResetActiveChildren();
+    }
+
+    public void Unsubscribe(TabGroupButton button)
+    {
+        tabButtons.Remove(button);
     }
     
     public void OnTabEnter(TabGroupButton button)
@@ -130,5 +138,10 @@ public class TabGroup : MonoBehaviour
         }
             
         button.background.color = tabActiveColor;
+    }
+
+    public void ResetObjectsToSwap()
+    {
+        objectsToSwap = new();
     }
 }
