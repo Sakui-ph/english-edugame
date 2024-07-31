@@ -6,8 +6,7 @@ using UnityEngine.UI;
 
 namespace CARD_GAME
 {
-    [RequireComponent(typeof(Button))]
-    public class ChainButton : Button
+    public class ChainButton : MenuButton
     {
         public ChainButtonEffects animationHandler;
         public static event Action<string> TutorialHelper;

@@ -52,7 +52,12 @@ namespace CARD_GAME
             }
 
             process = StartCoroutine(RunMinigame());
-        }   
+        }  
+
+        public void RestartLevel()
+        {
+            StopCoroutine(process);
+        }
 
         private IEnumerator RunMinigame()
         {
@@ -61,12 +66,6 @@ namespace CARD_GAME
             yield return null;
         }
 
-        private void SpawnCards(HashSet<CardData> cards)
-        {
-            cardManager.SpawnCard(cards);
-            cardManager.ShuffleDecks();
-        }
-    
         private void LoadLevelObjects(List<Claim> claims, HashSet<CardData> cards, string subjectText)
         {
             claimManager.SetClaimData(claims);
@@ -79,7 +78,7 @@ namespace CARD_GAME
 
             this.subjectText.text = subjectText;
 
-            SpawnCards(cards);
+            cardManager.SpawnCard(cards);
         }
 
         public void TryEndMinigame()
@@ -93,7 +92,7 @@ namespace CARD_GAME
         private void InitializePlayer()
         {
             cardGamePlayer.HealthChanged += cardGameHealthDisplay.OnHealthChange; 
-            cardGamePlayer.ChangeHealth(config.startingHP);
+            cardGamePlayer.SetHealth(config.startingHP);
         }
 
 

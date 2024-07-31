@@ -10,7 +10,7 @@ namespace CARD_GAME
         public string claimKey {get; private set;}
         private bool _isComplete = false;
 
-        public bool isComplete {
+        public bool IsComplete {
             get 
             {
                 return _isComplete;

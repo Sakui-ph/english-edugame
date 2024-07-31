@@ -38,13 +38,15 @@ namespace CARD_GAME
         // spawns a set of cards, the deck it belongs to is not yet taken to account
         public void SpawnCard(HashSet<CardData> cardDataSet)
         {
+            DestroyAllCards();
             foreach (CardData card in cardDataSet)
             {
                 SpawnCard(card);
             }
+            ShuffleDecks();
         }
 
-        public void SpawnCard(CardData cardData)
+        private void SpawnCard(CardData cardData)
         {
             Deck deck = SortCardDeck(cardData.cardType);
 
@@ -84,6 +86,12 @@ namespace CARD_GAME
                     break;
             }
             return null;
+        }
+
+        public void DestroyAllCards()
+        {
+            foreach(Card card in cards)
+                Destroy(card);
         }
     }
 }

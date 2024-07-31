@@ -14,6 +14,7 @@ namespace CARD_GAME
 
         public void SpawnChains(List<ChainData> chainDataList, string gameObjectName = "Chain Root")
         {
+            DestroyChains();
             GameObject chainRoot = Instantiate(chainRootPrefab, chainGroup.transform);
             foreach(var chainData in chainDataList)
             {
@@ -31,7 +32,6 @@ namespace CARD_GAME
             {
                 Destroy(child.gameObject);
             }
-
         }
     }
 }

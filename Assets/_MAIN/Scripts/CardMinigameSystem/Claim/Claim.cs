@@ -58,7 +58,7 @@ namespace CARD_GAME
         {
             foreach (var chain in chainDataList)
             {
-                if (!chain.isComplete)
+                if (!chain.IsComplete)
                 {
                     return;
                 }   
@@ -81,6 +81,7 @@ namespace CARD_GAME
 
         private AnswerState ValidateAnswer()
         {
+            Debug.Log($"Current sorted type = {currentSortedType} and Current claim type = {claimType}");
             if (currentSortedType == claimType)
                 return AnswerState.CORRECT;
             return AnswerState.INCORRECT;
