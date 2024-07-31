@@ -80,7 +80,7 @@ namespace CHARACTERS
                 return thread_revealing;
             
             if (isHiding)
-                characterManager.StopCoroutine(thread_revealing);
+                characterManager.StopCoroutine(thread_hiding);
 
             thread_revealing = characterManager.StartCoroutine(ShowingOrHiding(true));
             return thread_revealing;

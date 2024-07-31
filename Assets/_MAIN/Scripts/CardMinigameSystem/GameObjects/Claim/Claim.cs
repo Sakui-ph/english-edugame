@@ -1,8 +1,10 @@
+using System;
 using System.Collections.Generic;
+using TUTORIAL_MANAGER;
 using UnityEngine;
 namespace CARD_GAME
 {
-    public class Claim
+    public class Claim : ITutorialHelper
     {
         public List<ChainData> chainDataList = new();
         public string claimText;
@@ -24,7 +26,6 @@ namespace CARD_GAME
                 }
             }
         }
-
         public bool isAnsweredCorrect {
             get 
             {
@@ -38,7 +39,7 @@ namespace CARD_GAME
                 }
             }
         }
-
+        public static event Action<string> TutorialHelper;
         public delegate void ClaimCheckEvent();
         public event ClaimCheckEvent ListenForCorrectAnswer;
         public event ClaimCheckEvent ListenForIncorrectAnswer; 
@@ -91,12 +92,14 @@ namespace CARD_GAME
             isAnsweredCorrect = true;
 
             CardMinigameSystem.instance.cardGamePlayer.ChangeHealth(1);
+            TutorialHelper?.Invoke(AnswerState.CORRECT.ToString());
             ListenForCorrectAnswer?.Invoke();
         }
 
         private void OnIncorrectAnswer()
         {
             CardMinigameSystem.instance.cardGamePlayer.ChangeHealth(-1);
+            TutorialHelper?.Invoke(AnswerState.INCORRECT.ToString());
             ListenForIncorrectAnswer?.Invoke();
         }
     }

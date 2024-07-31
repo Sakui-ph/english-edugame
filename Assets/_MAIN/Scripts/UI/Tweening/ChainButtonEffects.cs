@@ -14,7 +14,7 @@ public class ChainButtonEffects : MonoBehaviour
         
     }
 
-    public void CorrectAnimation(Action callback)
+    public void CorrectAnimation(Action callback = null)
     {
         Quaternion flowersRotation = flowers.transform.rotation;
         RectTransform redRT = (RectTransform)redChain.transform;
@@ -28,7 +28,7 @@ public class ChainButtonEffects : MonoBehaviour
         LockToPosition(pinkRT, 2f, callback);
     }
 
-    public void IncorrectAnimation(Action callback)
+    public void IncorrectAnimation(Action callback = null)
     {
         RectTransform flowersRotation = (RectTransform)flowers.transform;
 

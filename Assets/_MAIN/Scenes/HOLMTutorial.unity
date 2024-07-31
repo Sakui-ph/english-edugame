@@ -178,10 +178,8 @@ MonoBehaviour:
   - Hello! Do I look weird? Its still me, Anjelo!
   - I'm now going to explain how everything in this folder works. Sorry, but you'll
     have to listen to me talk for a while.
-  listenForCardDrop: 0
-  listenForChainCheck: 0
-  listenForTabChange: 0
-  listenForClaimSort: 0
+  complete: 0
+  tutorialCondition: 0
   ErrorMessage: Put something here if you wont to listen for something
   ExpectedString: Put expected result here
 --- !u!225 &3873480
@@ -966,10 +964,8 @@ MonoBehaviour:
   - I've now introduced you to CLAIMS, CHAINS, GROUNDS, and WARRANTS.
   - Now, let me explain how all of this works together in your role as a judge.
   - For now, let's go back to the claim tab switching.
-  listenForCardDrop: 0
-  listenForChainCheck: 0
-  listenForTabChange: 0
-  listenForClaimSort: 0
+  complete: 0
+  tutorialCondition: 0
   ErrorMessage: That isn't tab 3 silly!
   ExpectedString: 3
 --- !u!1 &68825328
@@ -1088,10 +1084,8 @@ MonoBehaviour:
   lines:
   - Remember how you can change claims here? We actually have three from the last
     case. So go to tab 3
-  listenForCardDrop: 0
-  listenForChainCheck: 0
-  listenForTabChange: 1
-  listenForClaimSort: 0
+  complete: 0
+  tutorialCondition: 4
   ErrorMessage: That isn't tab 3 silly!
   ExpectedString: 3
 --- !u!1 &72681063
@@ -1739,10 +1733,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - Try checking the chain we filled up earlier!
-  listenForCardDrop: 0
-  listenForChainCheck: 1
-  listenForTabChange: 0
-  listenForClaimSort: 0
+  complete: 0
+  tutorialCondition: 5
   ErrorMessage: Welp, you're soft locked. Ask the developers for help.
   ExpectedString: CORRECT
 --- !u!1 &178106319
@@ -1780,8 +1772,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -52.70781, y: 453.11267}
-  m_SizeDelta: {x: 1581.2656, y: 212.7439}
+  m_AnchoredPosition: {x: -52.70781, y: 381.8098}
+  m_SizeDelta: {x: 1581.2656, y: 355.3496}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &178106321
 MonoBehaviour:
@@ -1996,12 +1988,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - Good job! As you can see, it was correct! Now try checking the claim sort.
-  listenForCardDrop: 0
-  listenForChainCheck: 0
-  listenForTabChange: 0
-  listenForClaimSort: 1
-  ErrorMessage: Make sure its selected IRRELEVANT!
-  ExpectedString: NONE
+  complete: 0
+  tutorialCondition: 1
+  ErrorMessage: Welp, you're soft locked. Ask the developers for help.
+  ExpectedString: CORRECT
 --- !u!1 &192720500
 GameObject:
   m_ObjectHideFlags: 0
@@ -2341,10 +2331,8 @@ MonoBehaviour:
     LIFE.
   - Getting a CHAIN with the right combo of GROUND and WARRANT cards will LOCK it.
   - LOCKING all your chains means you're done!
-  listenForCardDrop: 0
-  listenForChainCheck: 0
-  listenForTabChange: 0
-  listenForClaimSort: 0
+  complete: 0
+  tutorialCondition: 0
   ErrorMessage: Make sure its related to our grounds! Its going to have something
     to do with being cute!
   ExpectedString: Being cute is an important trait for animals to have
@@ -2687,10 +2675,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - Since this claim isn't relevant to our case, click the IRRELEVANT button
-  listenForCardDrop: 0
-  listenForChainCheck: 0
-  listenForTabChange: 0
-  listenForClaimSort: 1
+  complete: 0
+  tutorialCondition: 3
   ErrorMessage: Click the IRRELEVANT button!
   ExpectedString: IRRELEVANT
 --- !u!1 &303441187
@@ -8533,10 +8519,8 @@ MonoBehaviour:
   - This here is a CLAIM. A folder can have more than one claim.
   - 'A CLAIM is what the speaker wants you to believe. '
   - CLAIMS can be either FOR, AGAINST, or IRRELEVANT to a subject.
-  listenForCardDrop: 0
-  listenForChainCheck: 0
-  listenForTabChange: 0
-  listenForClaimSort: 0
+  complete: 0
+  tutorialCondition: 0
   ErrorMessage: Put something here if you wont to listen for something
   ExpectedString: Put expected result here
 --- !u!225 &870466795
@@ -9035,10 +9019,8 @@ MonoBehaviour:
   - However, as you can probably tell...
   - That has absolutely nothing to do with our SUBJECT!
   - Its safe to say, this claim is IRRELEVANT to our case.
-  listenForCardDrop: 0
-  listenForChainCheck: 0
-  listenForTabChange: 0
-  listenForClaimSort: 0
+  complete: 0
+  tutorialCondition: 0
   ErrorMessage: Click the IRRELEVANT button!
   ExpectedString: IRRELEVANT
 --- !u!1 &955121797
@@ -10420,10 +10402,8 @@ MonoBehaviour:
   - CHAINS contain two slots for GROUNDS and WARRANTS.
   - GROUNDS are the facts and evidence given to us by someone to support the CLAIM
   - WARRANTS are the reasons why the GROUNDS work for the CLAIM.
-  listenForCardDrop: 0
-  listenForChainCheck: 0
-  listenForTabChange: 0
-  listenForClaimSort: 0
+  complete: 0
+  tutorialCondition: 0
   ErrorMessage: Put something here if you wont to listen for something
   ExpectedString: Put expected result here
 --- !u!225 &1112139980
@@ -11063,7 +11043,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 538, y: -257}
+  m_AnchoredPosition: {x: 455, y: -406}
   m_SizeDelta: {x: -1470.7625, y: -153.66138}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1213297567
@@ -11849,10 +11829,8 @@ MonoBehaviour:
   lines:
   - Now, we need to pick out a WARRANT.
   - For that, you need to change tab to see the WARRANT cards that we have!
-  listenForCardDrop: 0
-  listenForChainCheck: 0
-  listenForTabChange: 0
-  listenForClaimSort: 0
+  complete: 0
+  tutorialCondition: 0
   ErrorMessage: Click the IRRELEVANT button!
   ExpectedString: IRRELEVANT
 --- !u!1 &1314883971
@@ -12072,10 +12050,8 @@ MonoBehaviour:
   - Be careful when checking answers, as getting a wrong answer will reduce your
     lives
   - Emptying out your lives will cause a need to RESTART the level!
-  listenForCardDrop: 0
-  listenForChainCheck: 0
-  listenForTabChange: 0
-  listenForClaimSort: 0
+  complete: 0
+  tutorialCondition: 0
   ErrorMessage: Make sure its related to our grounds! Its going to have something
     to do with being cute!
   ExpectedString: Being cute is an important trait for animals to have
@@ -12145,10 +12121,8 @@ MonoBehaviour:
   lines:
   - Now, we will choose our GROUND and WARRANT cards.
   - We will be DRAGGING them to the slots in the chains.
-  listenForCardDrop: 0
-  listenForChainCheck: 0
-  listenForTabChange: 0
-  listenForClaimSort: 0
+  complete: 0
+  tutorialCondition: 0
   ErrorMessage: Click the IRRELEVANT button!
   ExpectedString: IRRELEVANT
 --- !u!1 &1362031641
@@ -12862,10 +12836,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - Switch between GROUNDS and WARRANTS here.
-  listenForCardDrop: 0
-  listenForChainCheck: 0
-  listenForTabChange: 0
-  listenForClaimSort: 0
+  complete: 0
+  tutorialCondition: 0
   ErrorMessage: Put something here if you wont to listen for something
   ExpectedString: Put expected result here
 --- !u!225 &1405991016
@@ -13338,10 +13310,8 @@ MonoBehaviour:
     you like.
   - So don't be too worried about making mistakes okay?
   - Our final step would be to CHECK OUR ANSWERS.
-  listenForCardDrop: 0
-  listenForChainCheck: 0
-  listenForTabChange: 0
-  listenForClaimSort: 0
+  complete: 0
+  tutorialCondition: 0
   ErrorMessage: Make sure its related to our grounds! Its going to have something
     to do with being cute!
   ExpectedString: Being cute is an important trait for animals to have
@@ -14131,10 +14101,8 @@ MonoBehaviour:
   lines:
   - This is where you can see our GROUNDS and WARRANTS.
   - This was mostly collected from Hershey and Ezekiel in that first case.
-  listenForCardDrop: 0
-  listenForChainCheck: 0
-  listenForTabChange: 0
-  listenForClaimSort: 0
+  complete: 0
+  tutorialCondition: 0
   ErrorMessage: Put something here if you wont to listen for something
   ExpectedString: Put expected result here
 --- !u!225 &1495977786
@@ -14750,10 +14718,8 @@ MonoBehaviour:
   lines:
   - Remember how I said theres more than one CLAIM?
   - This is where we can switch between them!
-  listenForCardDrop: 0
-  listenForChainCheck: 0
-  listenForTabChange: 0
-  listenForClaimSort: 0
+  complete: 0
+  tutorialCondition: 0
   ErrorMessage: Put something here if you wont to listen for something
   ExpectedString: Put expected result here
 --- !u!225 &1568248392
@@ -15885,10 +15851,8 @@ MonoBehaviour:
   - As you can probably see here, we only have one CHAIN on our CLAIM.
   - This makes it a little bit easier for us because we only need to pick two cards
     to fill these up.
-  listenForCardDrop: 0
-  listenForChainCheck: 0
-  listenForTabChange: 0
-  listenForClaimSort: 0
+  complete: 0
+  tutorialCondition: 0
   ErrorMessage: Click the IRRELEVANT button!
   ExpectedString: IRRELEVANT
 --- !u!1 &1745411887
@@ -15956,10 +15920,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - Select the WARRANT tab here!
-  listenForCardDrop: 0
-  listenForChainCheck: 0
-  listenForTabChange: 1
-  listenForClaimSort: 0
+  complete: 0
+  tutorialCondition: 4
   ErrorMessage: Click the WARRANT tab!
   ExpectedString: WARRANT
 --- !u!1 &1747754589
@@ -16027,10 +15989,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - Now this time, we need to select the WARRANT that works with the GROUNDS.
-  listenForCardDrop: 1
-  listenForChainCheck: 0
-  listenForTabChange: 0
-  listenForClaimSort: 0
+  complete: 0
+  tutorialCondition: 2
   ErrorMessage: Make sure its related to our grounds! Its going to have something
     to do with being cute!
   ExpectedString: Being cute is an important trait for animals to have
@@ -16903,10 +16863,8 @@ MonoBehaviour:
   lines:
   - This is the SUBJECT. This is what our case is all about.
   - Everything inside this folder will be about this SUBJECT.
-  listenForCardDrop: 0
-  listenForChainCheck: 0
-  listenForTabChange: 0
-  listenForClaimSort: 0
+  complete: 0
+  tutorialCondition: 0
   ErrorMessage: Put something here if you wont to listen for something
   ExpectedString: Put expected result here
 --- !u!225 &1856410521
@@ -17187,10 +17145,8 @@ MonoBehaviour:
   lines:
   - Pick a GROUND card here thats most related to dogs, and drag it to the same colored
     slot.
-  listenForCardDrop: 1
-  listenForChainCheck: 0
-  listenForTabChange: 0
-  listenForClaimSort: 0
+  complete: 0
+  tutorialCondition: 2
   ErrorMessage: Make sure its related to our claim! It should have something to do
     with dogs
   ExpectedString: Dogs are cute

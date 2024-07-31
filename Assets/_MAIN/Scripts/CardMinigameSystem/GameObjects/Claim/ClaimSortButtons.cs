@@ -1,12 +1,13 @@
 using System;
 using AUDIO_SYSTEM;
+using TUTORIAL_MANAGER;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace CARD_GAME 
 {
     [Serializable]
-    public class ClaimSortButtons
+    public class ClaimSortButtons : ITutorialHelper
     {
         private ClaimManager manager;
         private Claim currentClaim => manager.currentClaim;

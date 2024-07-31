@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
 using TMPro;
+using TUTORIAL_MANAGER;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TabGroup : MonoBehaviour
+public class TabGroup : MonoBehaviour, ITutorialHelper
 {
     private List<TabGroupButton> tabButtons;
     public List<GameObject> objectsToSwap;

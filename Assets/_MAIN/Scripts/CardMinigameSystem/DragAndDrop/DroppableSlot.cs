@@ -10,7 +10,7 @@ public class DroppableSlot : MonoBehaviour, IDropHandler
     
     private bool isLocked = false;
 
-    public void OnDrop(PointerEventData eventData)
+    public virtual void OnDrop(PointerEventData eventData)
     {
         if (isLocked)
             return;

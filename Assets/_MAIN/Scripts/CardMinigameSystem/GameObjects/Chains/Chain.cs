@@ -71,15 +71,15 @@ namespace CARD_GAME
             groundSlot.Lock();
             warrantSlot.Lock();
             chainData.IsComplete = true;
-            chainButton.animationHandler.CorrectAnimation(() => 
-            {
-                // todo: add the final check for if the game is done
-            });
+            chainButton.NotifyTutorial(AnswerState.CORRECT.ToString());
+            chainButton.animationHandler.CorrectAnimation();
         }
 
         private void OnIncorrectAnswer()
         {
             CardMinigameSystem.instance.cardGamePlayer.ChangeHealth(-1);
+            chainButton.NotifyTutorial(AnswerState.INCORRECT.ToString());
+            chainButton.animationHandler.IncorrectAnimation();
         }
     }   
 
