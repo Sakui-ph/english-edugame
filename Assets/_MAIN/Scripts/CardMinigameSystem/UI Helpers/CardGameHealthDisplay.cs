@@ -1,4 +1,5 @@
 using System;
+using AUDIO_SYSTEM;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,6 +7,7 @@ namespace CARD_GAME
 {
     public class CardGameHealthDisplay : MonoBehaviour
     {
+        private CardMinigameSystem system => CardMinigameSystem.instance;
         [SerializeField] GameObject healthSprite;
         private int spriteCount => transform.childCount;
 
@@ -13,7 +15,7 @@ namespace CARD_GAME
         void Start()
         {
             if (CardMinigameSystem.instance.config.healthSprite != null)
-                healthSprite.GetComponent<Image>().sprite = CardMinigameSystem.instance.config.healthSprite;
+                healthSprite.GetComponent<Image>().sprite = system.config.healthSprite;
         }
 
         public void OnHealthChange(int amount)
@@ -34,11 +36,13 @@ namespace CARD_GAME
 
         private void InstantiateHealthSprite()
         {   
+            AudioManager.instance.PlaySoundEffect(system.correctSound);
             Instantiate(healthSprite, transform);
         }
 
         private void DestroyHealthSprite()
         {
+            AudioManager.instance.PlaySoundEffect(system.incorrectSound);
             if (spriteCount > 0)
             {
                 Destroy(transform.GetChild(0).gameObject);

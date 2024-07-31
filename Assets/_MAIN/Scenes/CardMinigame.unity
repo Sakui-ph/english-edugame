@@ -5994,6 +5994,8 @@ MonoBehaviour:
   cardGameHealthDisplay: {fileID: 1194249385}
   subjectText: {fileID: 52986475}
   BGM: {fileID: 8300000, guid: ce67c3c3aa55cef4ead4f50082042349, type: 3}
+  correctSound: {fileID: 8300000, guid: a04fb1357f024794eaa8b01ba43361a6, type: 3}
+  incorrectSound: {fileID: 8300000, guid: 6688188db48ce3040baacc949f4b2135, type: 3}
   overlayUIElements:
     overlayImage: {fileID: 1705562868}
 --- !u!1 &1464698240

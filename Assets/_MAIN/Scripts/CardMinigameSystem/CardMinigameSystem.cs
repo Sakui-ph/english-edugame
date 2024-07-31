@@ -12,9 +12,9 @@ namespace CARD_GAME
     {
         public static CardMinigameSystem instance;
         public CardGameConfigSO config;
-        public CardGamePlayer cardGamePlayer = new();
         public ChainManager chainManager;
         public ClaimManager claimManager;
+        public CardGamePlayer cardGamePlayer = new();
         public CardGameHealthDisplay cardGameHealthDisplay;
         private CardManager cardManager => CardManager.instance;
         private CardMinigameLevel level;
@@ -23,6 +23,8 @@ namespace CARD_GAME
         public TextMeshProUGUI subjectText;
         [Header("Audio")]
         public AudioClip BGM;
+        public AudioClip correctSound;
+        public AudioClip incorrectSound;    
         private bool isRunning => process != null;
         
         [Header("UI Elements")]
