@@ -1867,7 +1867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9a6b7b1e551224b915264a19775e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelReferenceRequired: Unavailable
+  levelReferenceRequired: Level3
   unlocked: 0
 --- !u!225 &354035059
 CanvasGroup:
@@ -2424,7 +2424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9a6b7b1e551224b915264a19775e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelReferenceRequired: 
+  levelReferenceRequired: Level1
   unlocked: 0
 --- !u!225 &435716667
 CanvasGroup:
@@ -5236,7 +5236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9a6b7b1e551224b915264a19775e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelReferenceRequired: Unavailable
+  levelReferenceRequired: Level2
   unlocked: 0
 --- !u!225 &788074655
 CanvasGroup:
@@ -6831,7 +6831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9a6b7b1e551224b915264a19775e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelReferenceRequired: Unavailable
+  levelReferenceRequired: Level4
   unlocked: 0
 --- !u!225 &1018918348
 CanvasGroup:
