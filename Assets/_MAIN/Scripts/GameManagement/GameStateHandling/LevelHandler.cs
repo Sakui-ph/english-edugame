@@ -14,7 +14,6 @@ public class LevelHandler : MonoBehaviour
     public MultipleChoiceButton[] higherOrderLevels = new MultipleChoiceButton[5];
     public GameObject[] levelData;
     public GameObject[] scoreData;
-    private static Level currentlyRunningLevel;
 
     void Awake()
     {
@@ -46,7 +45,7 @@ public class LevelHandler : MonoBehaviour
             string levelReference = levels[i].levelChapterReference;
             Level level = levels[i];
             button.OnClickAction += () => {
-                currentlyRunningLevel = level;
+                GameSystem.instance.currentLevel = level;
                 if (level.levelType == LevelType.ClassTrial)
                 {
                     GameSystem.instance.LoadVisualNovel(levelReference, EndLevel);
@@ -65,7 +64,7 @@ public class LevelHandler : MonoBehaviour
 
     public void EndLevel()
     {
-        currentlyRunningLevel.EndLevel();
+        GameSystem.instance.currentLevel.EndLevel();
     }
 
     public void LoadLevelData(GameObject levelObject, Level level)

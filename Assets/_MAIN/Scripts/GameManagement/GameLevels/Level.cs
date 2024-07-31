@@ -20,8 +20,13 @@ public class Level
 
     public void EndLevel()
     {
+        GameSystem.instance.currentLevel = null;
+
         SaveLevelData(this);
-        GameSystem.instance.LoadMainMenu();
+        if (postLevelChapterReference != "")
+                GameSystem.instance.LoadVisualNovel(postLevelChapterReference, () => GameSystem.instance.LoadMainMenu());
+            else
+                GameSystem.instance.LoadMainMenu();
     }
 
 

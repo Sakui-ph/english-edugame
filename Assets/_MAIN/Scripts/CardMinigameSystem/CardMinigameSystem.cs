@@ -87,10 +87,7 @@ namespace CARD_GAME
             if (!claimManager.CheckFinished())
                 return;
 
-            if (level.postLevelChapterReference != "")
-                GameSystem.instance.LoadVisualNovel(level.postLevelChapterReference);
-            else
-                GameSystem.instance.LoadMainMenu();
+            GameSystem.instance.currentLevel.EndLevel();
         }
 
         private void InitializePlayer()

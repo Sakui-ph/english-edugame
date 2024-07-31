@@ -14,6 +14,7 @@ public class GameSystem : MonoBehaviour
     public static GameSystem instance;
     public bool isFirstStart = true;
     public string cachedChapter;
+    public Level currentLevel = null;
     
     void Awake()
     {
@@ -31,7 +32,7 @@ public class GameSystem : MonoBehaviour
     {
         // Screen.orientation = ScreenOrientation.LandscapeRight;
         // sh.LoadScene(SceneName.OpeningScene);
-        
+        LoadMainMenu();
 
         // convert URP to SRP
         foreach (var material in Resources.FindObjectsOfTypeAll<Material>())
@@ -99,6 +100,7 @@ public class GameSystem : MonoBehaviour
 
     public void LoadMainMenu()
     {
+        Debug.Log("main menu loaded");
         sh.LoadScene(SceneName.MainMenu);
     }
 
