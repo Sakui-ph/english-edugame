@@ -72,3 +72,7 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 /plantuml
 /plantuml
+/out
+*.cd
+Assets/_MAIN/Scripts/ClassDiagram1.cd.meta
+ClassDiagram1.png

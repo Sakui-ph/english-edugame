@@ -105,7 +105,6 @@ namespace CARD_GAME
 
         private void InitializePlayer()
         {
-            Debug.Log("Initialize player");
             cardGamePlayer.HealthChanged += cardGameHealthDisplay.OnHealthChange; 
             cardGamePlayer.SetHealth(config.startingHP);
         }

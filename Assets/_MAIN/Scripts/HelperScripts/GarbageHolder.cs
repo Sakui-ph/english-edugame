@@ -9,7 +9,9 @@ public class GarbageHolder : MonoBehaviour
     void Awake()
     {
         if (instance == null)
+        {
             instance = this;
+        }   
         else
             Destroy(this);
     }

@@ -39,8 +39,17 @@ namespace CARD_GAME
     
         public void SetClaimData(List<Claim> claims)
         {
+            Debug.Log(claims.Count);
+            this.claims = null;
             this.claims = claims;
+            
+            foreach (Claim claim in claims)
+            {
+                claim.isAnsweredCorrect = false;
+                claim.isChainsCompleted = false;
+            }
         }
+
 
         public void SetupClaimTabs(int numClaimTabs)
         {            

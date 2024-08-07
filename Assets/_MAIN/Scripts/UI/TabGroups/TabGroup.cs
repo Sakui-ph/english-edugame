@@ -37,7 +37,6 @@ public class TabGroup : MonoBehaviour, ITutorialHelper
             SelectTab(button);
         }
 
-        Debug.Log(tabButtons.Count);
 
         if (button == firstSelectedTab)
         {
