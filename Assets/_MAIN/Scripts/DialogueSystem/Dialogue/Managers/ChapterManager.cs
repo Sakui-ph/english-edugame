@@ -8,7 +8,7 @@ namespace DIALOGUE
 {
     public class ChapterManager 
     {
-        private DialogueSystem ds => DialogueSystem.instance;
+        private DialogueSystem ds => VisualNovelSL.services.dialogueSystem;
         public CHAPTER_DATA chapterData;
         public static event Action OnChapterEnd;
 

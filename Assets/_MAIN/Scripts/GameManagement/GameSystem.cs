@@ -71,14 +71,15 @@ public class GameSystem : MonoBehaviour
     public void LoadVisualNovel(string levelReference, Action OnChapterEnd = null)
     {
         sh.LoadSceneWithCallback(SceneName.VisualNovel, () => {
-            DialogueSystem.instance.LoadChapter(levelReference, OnChapterEnd);
+            Debug.Log("Loading Visual Novel");
+            VisualNovelSL.services.dialogueSystem.LoadChapter(levelReference, OnChapterEnd);
         });
     }
 
     public void ResetLevel()
     {
         sh.LoadSceneWithCallback(SceneName.VisualNovel, () => {
-            DialogueSystem.instance.LoadChapter(cachedChapter);
+            VisualNovelSL.services.dialogueSystem.LoadChapter(cachedChapter);
         });
     }
 
@@ -116,7 +117,7 @@ public class GameSystem : MonoBehaviour
     
     private void RunGameIntro()
     {
-        DialogueSystem.instance.LoadChapter(INTRO_CHAPTER);
+        VisualNovelSL.services.dialogueSystem.LoadChapter(INTRO_CHAPTER);
         ChapterManager.OnChapterEnd += () =>
         {
             LoadMainMenu();

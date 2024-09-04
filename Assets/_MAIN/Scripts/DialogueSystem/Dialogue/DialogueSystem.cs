@@ -10,39 +10,32 @@ namespace DIALOGUE
     public class DialogueSystem : MonoBehaviour
     {
         [SerializeField] private DialogueSystemConfigurationSO _config;
-        public TitleCardController titleCardController;
-        public PlayerInputManager playerInputManager;
         public DialogueSystemConfigurationSO config => _config;
         public DialogueContainer dialogueContainer = new DialogueContainer();
-        public TutorialManager tutorialManager;
         public TextArchitect architect;
         private ConversationManager conversationManager;
         public bool isRunningConversation => conversationManager.isRunning;
-        public static DialogueSystem instance;
         public delegate void DialogueSystemEvent();
         public event DialogueSystemEvent onUserPrompt_Next;
-        public VisualNovelViewController viewController;
         private CharacterManager characterManager => CharacterManager.instance;
         public ChapterManager chapterManager;
 
-        private void Awake()
+        bool _initialized = false;
+
+
+        void Awake()
         {
-            if (instance == null)
-            {
-                instance = this;
-                Initialize();
-            }
-            else
-                DestroyImmediate(gameObject);
+            Initialize();
         }
 
-        bool _initialized = false;
         virtual public void Initialize()
         {   
             if (_initialized)
                 return;
+            
+            _initialized = true;
             HideDialogueBox();
-            viewController.Hide();
+            VisualNovelSL.services.viewController.Hide();
             architect = new TextArchitect(dialogueContainer.dialogueText);
             conversationManager = new ConversationManager(architect);
         }
@@ -187,7 +180,7 @@ namespace DIALOGUE
 
         public virtual Coroutine Say(List<string> conversation)
         {
-            viewController.Show();
+            VisualNovelSL.services.viewController.Show();
             return conversationManager.StartConversation(conversation);
         }
         public void CheckClassTrialAnswer(bool answer)
@@ -200,10 +193,6 @@ namespace DIALOGUE
 
         public string GetDialogue() => dialogueContainer.dialogueText.text;
         public string GetCurrentSentence() => conversationManager.currentDialogueSentence;
-
-        public void ResumeConversation() => conversationManager.Resume();
-        public void PauseForNotebook() => conversationManager.Pause();
-
         public void RestartLevel() => conversationManager.ResetConversation();
     }
 }

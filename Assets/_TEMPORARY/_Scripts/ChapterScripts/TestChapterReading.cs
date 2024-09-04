@@ -5,7 +5,7 @@ namespace TESTING
 {
     public class TestChapterReading : MonoBehaviour
     {
-        DialogueSystem ds => DialogueSystem.instance;
+        DialogueSystem ds => VisualNovelSL.services.dialogueSystem;
         
         void Start()
         {

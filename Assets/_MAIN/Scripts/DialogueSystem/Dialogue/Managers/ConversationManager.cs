@@ -4,8 +4,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
 using AUDIO_SYSTEM;
 using UnityEngine;
 
@@ -14,7 +12,7 @@ namespace DIALOGUE
     public class ConversationManager
     {
         private const string INCONSISTENCY_FLAG = "[I]";
-        public virtual DialogueSystem dialogueSystem => DialogueSystem.instance;
+        public DialogueSystem dialogueSystem => VisualNovelSL.services.dialogueSystem;
         private Coroutine process = null;
         public bool isRunning => process != null;
         public TextArchitect architect = null;
@@ -23,7 +21,6 @@ namespace DIALOGUE
         public string currentDialogueSentence => JoinSegments(currentDialogue.segments);
         protected List<string> cachedConversation = new List<string>();
         private List<string> pausedConversation = new List<string>();
-        protected bool isPaused = false;
         
         public event Action finishConversation;
 
@@ -92,11 +89,6 @@ namespace DIALOGUE
                 // check for inconsistency flag before parsing
                 string flaggedConversation = CheckForInconsistencyFlag(conversation[i]);
                 DIALOGUE_LINE line = DialogueParser.Parse(flaggedConversation);
-
-                if (isPaused) {
-                    yield return PauseForNotebook(conversation.GetRange(i, conversation.Count - i));
-                    yield break;
-                }
 
                 if (line.hasSpeaker)
                     yield return Line_RunSpeaker(line);
@@ -219,37 +211,7 @@ namespace DIALOGUE
                 dialogue += segment.dialogue;
             }
             return dialogue;
-        }
-
-        protected IEnumerator PauseForNotebook(List<string> leftOverConversation)
-        {
-            pausedConversation = leftOverConversation;
-            
-            architect.EmptyBox();
-            dialogueSystem.HideSpeakerName();
-
-            StopConversation();
-            yield return null;
-        }
-
-        public void Pause()
-        {
-            if (isPaused)
-                return;
-
-            isPaused = true;
-        }
-
-        public Coroutine Resume()
-        {
-            StopConversation();
-            if (!isPaused)
-                return null;
-
-            isPaused = false;
-            process = dialogueSystem.StartCoroutine(RunningConversation(pausedConversation));
-            return process;
-        }
+        } 
 
         public string CheckForInconsistencyFlag(string rawText)
         {

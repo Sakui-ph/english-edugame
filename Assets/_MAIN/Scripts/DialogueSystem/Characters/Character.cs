@@ -20,7 +20,7 @@ namespace CHARACTERS
         public CharacterConfigData config;
 
         protected CharacterManager characterManager => CharacterManager.instance;
-        public DialogueSystem dialogueSystem => DialogueSystem.instance;
+        public DialogueSystem dialogueSystem => VisualNovelSL.services.dialogueSystem;
 
         protected bool facingLeft = DEFAULT_ORIENTATION_IS_FACING_LEFT;
 

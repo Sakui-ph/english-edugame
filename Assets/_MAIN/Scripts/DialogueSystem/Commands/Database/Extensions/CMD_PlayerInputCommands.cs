@@ -4,8 +4,6 @@ using System;
 using System.Collections;
 public class CMD_PlayerInputCommands : CMD_DatabaseExtension
 {   
-    private static DialogueSystem ds => DialogueSystem.instance;
-
     new public static void Extend(CommandDatabase database)
     {
         database.AddCommand("getplayername", new Func<IEnumerator>(GetPlayerName));
@@ -18,17 +16,17 @@ public class CMD_PlayerInputCommands : CMD_DatabaseExtension
         bool setting = true;
         bool.TryParse(data, out setting);
 
-        ds.viewController.SetFocusMode(setting);
+        VisualNovelSL.services.viewController.SetFocusMode(setting);
     }
 
     public static IEnumerator GetPlayerName()
     {
-        yield return ds.playerInputManager.RunGetPlayerName();
+        yield return VisualNovelSL.services.playerInputManager.RunGetPlayerName();
     }
 
     public static IEnumerator GetPlayerGender()
     {
-        yield return ds.playerInputManager.GetPlayerGender();
+        yield return VisualNovelSL.services.playerInputManager.GetPlayerGender();
     }
 }
 

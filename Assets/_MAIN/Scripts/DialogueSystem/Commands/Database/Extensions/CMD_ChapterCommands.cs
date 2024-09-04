@@ -3,7 +3,7 @@ using DIALOGUE;
 using System;
 public class CMD_ChapterCommands : CMD_DatabaseExtension
 {   
-    private static DialogueSystem ds => DialogueSystem.instance;
+    private static DialogueSystem ds => VisualNovelSL.services.dialogueSystem;
 
     new public static void Extend(CommandDatabase database)
     {

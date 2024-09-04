@@ -5,8 +5,6 @@ using System.Collections;
 using UnityEngine;
 public class CMD_TitleCardCommands : CMD_DatabaseExtension
 {   
-    private static DialogueSystem ds => DialogueSystem.instance;
-
     new public static void Extend(CommandDatabase database)
     {
         // usage PlayTitle(HeaderText TitleText Delay)
@@ -19,7 +17,7 @@ public class CMD_TitleCardCommands : CMD_DatabaseExtension
     {
         DaysOfTheWeek value = DaysOfTheWeek.Monday;
         Enum.TryParse(day, out value);
-        ds.viewController.SetWeekday(value);
+        VisualNovelSL.services.viewController.SetWeekday(value);
     }
 
     public static IEnumerator PlayTitle(string[] data)
@@ -33,12 +31,11 @@ public class CMD_TitleCardCommands : CMD_DatabaseExtension
         parameters.TryGetValue("-t", out titleText, "");
         parameters.TryGetValue("-d", out delay, 10f);
         
-        ds.titleCardController.SetHeaderText(headerText);
-        ds.titleCardController.SetTitleText(titleText);
-        
-        ds.titleCardController.ShowCard();
+        VisualNovelSL.services.titleCardController.SetHeaderText(headerText);
+        VisualNovelSL.services.titleCardController.SetTitleText(titleText);
+        VisualNovelSL.services.titleCardController.ShowCard();
         yield return new WaitForSeconds(delay);
-        ds.titleCardController.HideCard();
+        VisualNovelSL.services.titleCardController.HideCard();
 
         yield return new WaitForSeconds(1.5f);
     }

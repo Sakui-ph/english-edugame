@@ -8,7 +8,7 @@ using System;
 
 public class PlayerInputManager : MonoBehaviour
 {
-    private DialogueSystem ds => DialogueSystem.instance;
+    private DialogueSystem ds => VisualNovelSL.services.dialogueSystem;
     private bool buttonMode = false;
 
     // Where the buttons will show up

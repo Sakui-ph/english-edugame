@@ -41,12 +41,12 @@ namespace CHARACTERS
             return result;
         }
 
-        private static Color defaultDialogueTextColor => DialogueSystem.instance.config.defaultDialogueTextColor;
-        private static Color defaultNameTextColor => DialogueSystem.instance.config.defaultNameTextColor;
-        private static TMP_FontAsset defaultNameFont => DialogueSystem.instance.config.defaultNameFont;
-        private static TMP_FontAsset defaultFont => DialogueSystem.instance.config.defaultFont;
-        private static int defaultFontSize => DialogueSystem.instance.config.defaultFontSize;
-        private static int defaultNameFontSize => DialogueSystem.instance.config.defaultNameFontSize;
+        private static Color defaultDialogueTextColor => VisualNovelSL.services.dialogueSystem.config.defaultDialogueTextColor;
+        private static Color defaultNameTextColor => VisualNovelSL.services.dialogueSystem.config.defaultNameTextColor;
+        private static TMP_FontAsset defaultNameFont => VisualNovelSL.services.dialogueSystem.config.defaultNameFont;
+        private static TMP_FontAsset defaultFont => VisualNovelSL.services.dialogueSystem.config.defaultFont;
+        private static int defaultFontSize => VisualNovelSL.services.dialogueSystem.config.defaultFontSize;
+        private static int defaultNameFontSize => VisualNovelSL.services.dialogueSystem.config.defaultNameFontSize;
 
 
         public static CharacterConfigData Default

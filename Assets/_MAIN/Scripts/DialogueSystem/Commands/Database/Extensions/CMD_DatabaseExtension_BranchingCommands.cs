@@ -46,7 +46,7 @@ public class CMD_DatabaseExtension_BranchingCommands : CMD_DatabaseExtension
         string branchName = "";
         bool isInconsistency = false;
         (buttonName, branchName, isInconsistency) = PrepareButton(data);
-        DialogueSystem.instance.playerInputManager.PrepareButton(buttonName, branchName, false, false);
+        VisualNovelSL.services.playerInputManager.PrepareButton(buttonName, branchName, false, false);
     }
 
     private static void PrepareClassTrialButton(string[] data)
@@ -55,23 +55,23 @@ public class CMD_DatabaseExtension_BranchingCommands : CMD_DatabaseExtension
         string branchName = "";
         bool isInconsistency = false;
         (buttonName, branchName, isInconsistency) = PrepareButton(data);
-        DialogueSystem.instance.playerInputManager.PrepareButton(buttonName, branchName, isInconsistency, true);
+        VisualNovelSL.services.playerInputManager.PrepareButton(buttonName, branchName, isInconsistency, true);
     }
 
 
     private static void ReturnBranch(string fileName)
     {
-        DialogueSystem.instance.chapterManager.QueuePreviousFile(fileName);
+        VisualNovelSL.services.dialogueSystem.chapterManager.QueuePreviousFile(fileName);
     }
 
     private static void ReturnDirectory(string fileName)
     {
-        DialogueSystem.instance.chapterManager.QueuePreviousDirectory(fileName);
+        VisualNovelSL.services.dialogueSystem.chapterManager.QueuePreviousDirectory(fileName);
     }
 
     private static IEnumerator ShowButtons()
     {
-        yield return DialogueSystem.instance.playerInputManager.ShowButtons();
+        yield return VisualNovelSL.services.playerInputManager.ShowButtons();
     }
 
 }

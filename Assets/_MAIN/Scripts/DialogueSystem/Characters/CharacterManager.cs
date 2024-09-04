@@ -19,7 +19,7 @@ namespace CHARACTERS
             }
         }
         private static Dictionary<string, Character> characters = new Dictionary<string, Character>();
-        private CharacterConfigSO config => DialogueSystem.instance.config.characterConfigurationAsset;
+        private CharacterConfigSO config => VisualNovelSL.services.dialogueSystem.config.characterConfigurationAsset;
 
         // Casting characters so that you can have multiple characters that use the same configuration
         private const string CHAR_CASTING_ID = " as ";

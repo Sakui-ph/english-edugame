@@ -17,8 +17,8 @@ namespace TESTING
         {
             List<string> lines = FileManager.ReadTextAsset(file);
             
-            DialogueSystem.instance.Say(lines);
-            while (DialogueSystem.instance.isRunningConversation)
+            VisualNovelSL.services.dialogueSystem.Say(lines);
+            while (VisualNovelSL.services.dialogueSystem.isRunningConversation)
                 yield return null;
         }
 
