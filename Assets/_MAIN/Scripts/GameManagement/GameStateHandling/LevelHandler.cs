@@ -70,25 +70,25 @@ public class LevelHandler : MonoBehaviour
     public void LoadLevelData(GameObject levelObject, Level level)
     {
         Player player = GameSystem.instance.GetLoadedPlayer();
-        TextMeshProUGUI[] tmps = levelObject.GetComponentsInChildren<TextMeshProUGUI>();
-        foreach (var tmp in tmps)
+        TextMeshProUGUI[] textmeshArray = levelObject.GetComponentsInChildren<TextMeshProUGUI>();
+        foreach (var textmesh in textmeshArray)
         {
-            if (levelData.Contains(tmp.gameObject))
+            if (levelData.Contains(textmesh.gameObject))
             {
-                tmp.text = level.levelName;
+                textmesh.text = level.levelName;
             }
 
-            if (scoreData.Contains(tmp.gameObject))
+            if (scoreData.Contains(textmesh.gameObject))
             {
                 if (player.playerScore.ContainsKey(level.levelChapterReference))
                 {
                     float score = player.playerScore[level.levelChapterReference] * 100;
                     score = Mathf.Round(score);
-                    tmp.text = $"{score}%";
+                    textmesh.text = $"{score}%";
 
                 }
                 else
-                    tmp.text = "-%";
+                    textmesh.text = "-%";
             }
         }
     }
