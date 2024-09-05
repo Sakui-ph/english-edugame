@@ -157,7 +157,7 @@ namespace DIALOGUE
         {
             characterManager.ClearCharacters();
             LowerOrderScoreHandler.Reset();
-            HistoryData.Reset();
+            VisualNovelSL.services.historyManager.ResetLines();
             
             conversationManager.NullifyObservers();
             chapterManager = new(chapterName);

@@ -19,7 +19,7 @@ public class HistoryListView : MonoBehaviour
     {
         menuButton.onClick.AddListener(OpenHistory);
         backButton.onClick.AddListener(CloseHistory);
-        HistoryData.onAddLine += AddEntry;
+        HistoryManager.onAddLine += AddEntry;
     }
 
     private void AddEntry(DIALOGUE_LINE line)

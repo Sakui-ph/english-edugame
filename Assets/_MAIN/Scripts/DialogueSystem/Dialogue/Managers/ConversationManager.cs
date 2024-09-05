@@ -95,7 +95,7 @@ namespace DIALOGUE
 
                 if (line.hasDialogue) {
                     yield return Line_RunDialogue(line);
-                        HistoryData.AddFinishedLine(line);
+                        VisualNovelSL.services.historyManager.AddFinishedLine(line);
                 }
                     
 

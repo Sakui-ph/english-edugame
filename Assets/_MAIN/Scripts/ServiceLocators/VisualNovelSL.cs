@@ -10,6 +10,7 @@ public class VisualNovelSL : MonoBehaviour
     public TitleCardController titleCardController  {get; private set;}
     public TutorialManager tutorialManager          {get; private set;}
     public VisualNovelViewController viewController {get; private set;}
+    public HistoryManager historyManager            {get; private set;}
 
 
 
@@ -31,7 +32,6 @@ public class VisualNovelSL : MonoBehaviour
         titleCardController =   GetComponentInChildren<TitleCardController>();
         tutorialManager =       GetComponentInChildren<TutorialManager>();
         viewController =        GetComponentInChildren<VisualNovelViewController>();
-
-        Debug.Log("Initialization Complete");
+        historyManager =        GetComponentInChildren<HistoryManager>();
     }
 }

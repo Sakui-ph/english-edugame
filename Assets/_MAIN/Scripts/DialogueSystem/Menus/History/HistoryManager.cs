@@ -1,21 +1,21 @@
 using System;
 using System.Collections.Generic;
 using DIALOGUE;
+using UnityEngine;
 
 namespace DIALOGUE
 {
-    public static class HistoryData
+    public class HistoryManager : MonoBehaviour
     {
-        private static List<DIALOGUE_LINE> finishedLines = new();
         public static event Action<DIALOGUE_LINE> onAddLine;
-        
-        public static List<DIALOGUE_LINE> GetFinishedLines() => finishedLines;
-        public static void AddFinishedLine(DIALOGUE_LINE line) 
+        private List<DIALOGUE_LINE> finishedLines = new();
+        public List<DIALOGUE_LINE> GetFinishedLines() => finishedLines;
+        public void AddFinishedLine(DIALOGUE_LINE line) 
         {
             finishedLines.Add(line);
             onAddLine?.Invoke(line);
         }
-        public static void Reset() 
+        public void ResetLines() 
         {
             finishedLines = new();
             onAddLine = null;
