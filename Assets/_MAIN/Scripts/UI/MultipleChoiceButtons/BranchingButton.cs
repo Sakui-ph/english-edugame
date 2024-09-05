@@ -37,7 +37,7 @@ public class BranchingButton : MultipleChoiceButton
         // I wanted to make this an event that happens in PlayerInputManager, but it wouldn't subscribe :(
         if (isClassTrial)
         {
-            VisualNovelSL.services.dialogueSystem.CheckClassTrialAnswer(isInconsistency);
+            LowerOrderScoreHandler.CheckAnswer(isInconsistency);
         }
 
         VisualNovelSL.services.dialogueSystem.branchManager.QueueBranch(branchName);

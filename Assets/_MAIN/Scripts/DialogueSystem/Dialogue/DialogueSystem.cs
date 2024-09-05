@@ -183,12 +183,5 @@ namespace DIALOGUE
             VisualNovelSL.services.viewController.Show();
             return conversationManager.StartConversation(conversation);
         }
-        public void CheckClassTrialAnswer(bool answer)
-        {
-            LowerOrderScoreHandler.CheckAnswer(answer, conversationManager.isInconsistent);
-
-            // reset the inconsistency checker
-            conversationManager.isInconsistent = false;
-        }
     }
 }

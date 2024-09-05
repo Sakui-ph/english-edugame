@@ -20,12 +20,7 @@ namespace DIALOGUE
         protected DL_DIALOGUE_DATA currentDialogue;
         public string currentDialogueSentence => JoinSegments(currentDialogue.segments);
         protected List<string> cachedConversation = new List<string>();
-        private List<string> pausedConversation = new List<string>();
-        
         public event Action finishConversation;
-
-        
-        public bool isInconsistent = false;
 
 
         public ConversationManager(TextArchitect architect)
@@ -217,7 +212,7 @@ namespace DIALOGUE
         {
             if (rawText[0..4].Contains(INCONSISTENCY_FLAG))
             {
-                isInconsistent = true;
+                LowerOrderScoreHandler.isInconsistent = true;
                 return rawText.Remove(0, 3);
             }   
             

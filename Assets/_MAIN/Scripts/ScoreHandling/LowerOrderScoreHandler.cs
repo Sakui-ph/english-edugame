@@ -4,9 +4,12 @@ public static class LowerOrderScoreHandler
 {
     private static int score = 0;
     private static int total = 0;
+    public static bool isInconsistent = false;
 
-    public static void CheckAnswer(bool answer, bool expected)
+    public static void CheckAnswer(bool answer)
     {
+        bool expected = isInconsistent;
+        isInconsistent = false;
         if (answer != expected) {
             Debug.Log("Incorrect!");
             Incorrect();
