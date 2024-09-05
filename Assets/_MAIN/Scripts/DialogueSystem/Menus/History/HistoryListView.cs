@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HistoryManager : MonoBehaviour
+public class HistoryListView : MonoBehaviour
 {
     public GameObject historyRoot;
     public GameObject historyLayout;

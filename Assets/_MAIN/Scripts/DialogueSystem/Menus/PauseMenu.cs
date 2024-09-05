@@ -8,7 +8,7 @@ using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PauseMenuManager : MonoBehaviour
+public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
     public Button pauseButton;
