@@ -18,35 +18,35 @@ public class PauseMenu : MonoBehaviour
 
     void Awake()
     {
-        Continue();
-        pauseButton.onClick.AddListener(Pause);
-        continueButton.onClick.AddListener(Continue);
-        resetButton.onClick.AddListener(Reset);
-        quitButton.onClick.AddListener(Quit);
+        ClosePauseMenu();
+        pauseButton.onClick.AddListener(OpenPauseMenu);
+        continueButton.onClick.AddListener(ClosePauseMenu);
+        resetButton.onClick.AddListener(ResetButton);
+        quitButton.onClick.AddListener(QuitButton);
     }
 
-    public void Pause()
+    public void OpenPauseMenu()
     {
         CanvasGroupControl.ShowCanvasGroup(pauseMenu);
     }
 
-    public void Continue()
+    public void ClosePauseMenu()
     {
         CanvasGroupControl.HideCanvasGroup(pauseMenu);
     }
 
 
-    public void Reset()
+    public void ResetButton()
     {
         // todo: delegate these to a score handler of some sort
         HigherOrderErrorHandler.Reset();
         LowerOrderScoreHandler.Reset();
         GameSystem.instance.ResetLevel();
 
-        Continue();
+        ClosePauseMenu();
     }
 
-    public void Quit()
+    public void QuitButton()
     {
         HigherOrderErrorHandler.Reset();
         LowerOrderScoreHandler.Reset();
