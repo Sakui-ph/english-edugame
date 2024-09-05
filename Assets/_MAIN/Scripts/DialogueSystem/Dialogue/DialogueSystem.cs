@@ -190,9 +190,5 @@ namespace DIALOGUE
             // reset the inconsistency checker
             conversationManager.isInconsistent = false;
         }
-
-        public string GetDialogue() => dialogueContainer.dialogueText.text;
-        public string GetCurrentSentence() => conversationManager.currentDialogueSentence;
-        public void RestartLevel() => conversationManager.ResetConversation();
     }
 }
