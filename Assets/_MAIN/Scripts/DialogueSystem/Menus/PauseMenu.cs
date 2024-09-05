@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
-    [SerializeField] GameObject pauseMenu;
+    [SerializeField] CanvasGroup pauseMenu;
     public Button pauseButton;
     public Button continueButton;
     public Button resetButton;
@@ -27,17 +27,18 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
-        pauseMenu.SetActive(true);
+        CanvasGroupControl.ShowCanvasGroup(pauseMenu);
     }
 
     public void Continue()
     {
-        pauseMenu.SetActive(false);
+        CanvasGroupControl.HideCanvasGroup(pauseMenu);
     }
 
 
     public void Reset()
     {
+        // todo: delegate these to a score handler of some sort
         HigherOrderErrorHandler.Reset();
         LowerOrderScoreHandler.Reset();
         GameSystem.instance.ResetLevel();
