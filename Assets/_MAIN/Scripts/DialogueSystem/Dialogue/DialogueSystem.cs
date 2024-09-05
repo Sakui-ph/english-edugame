@@ -152,7 +152,7 @@ namespace DIALOGUE
         public void HideDialogueBox() => dialogueContainer.Hide();
         public void ShowDialogueBox() => dialogueContainer.Show();
 
-        // Playing the chapter
+        // TODO: this doesn't belong here, figure out where it does.
         public virtual void LoadBranch(string chapterName, Action callback = null)
         {
             characterManager.ClearCharacters();

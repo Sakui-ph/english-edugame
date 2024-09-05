@@ -6,47 +6,47 @@ namespace DIALOGUE
     public class BranchManager 
     {
         private DialogueSystem ds => VisualNovelSL.services.dialogueSystem;
-        public BRANCH_DATA branchData;
+        public BranchLoader branchLoader;
         public static event Action OnChapterEnd;
 
         public BranchManager(string path)
         {
             OnChapterEnd = null;
-            branchData = new(path.ToLower());
+            branchLoader = new(path.ToLower());
         }
 
         public void QueueStoryFile(string fileName)
         {
-            branchData.QueueFile(fileName.ToLower());
+            branchLoader.QueueFile(fileName.ToLower());
         }
 
         public void QueueBranch(string directory)
         {
-            branchData.QueueSubDirectory(directory.ToLower());
+            branchLoader.QueueSubDirectory(directory.ToLower());
         }
 
         public void QueueStoryFileFromPreviousBranch(string fileName)
         {
-            branchData.ReturnDirectory();
+            branchLoader.ReturnDirectory();
             QueueStoryFile(fileName);
         }
 
         public void QueueBranchFromPreviousBranch(string directoryName)
         {
-            branchData.ReturnDirectory();
+            branchLoader.ReturnDirectory();
             QueueBranch(directoryName);
         }
 
         public void PlayQueuedBranch()
         {
-            branchData.LoadQueuedFile();
+            branchLoader.LoadQueuedFile();
             PlayBranch();
         }
 
         public void PlayBranch()
         {
             if (!isCompleted)
-                ds.Say(branchData.currentDialogue);
+                ds.Say(branchLoader.currentDialogue);
             else
             {
                 Debug.Log("Story has been completed");
@@ -55,6 +55,6 @@ namespace DIALOGUE
             }
         }
 
-        public bool isCompleted => branchData.isCompleted;
+        public bool isCompleted => branchLoader.isCompleted;
     }
 }

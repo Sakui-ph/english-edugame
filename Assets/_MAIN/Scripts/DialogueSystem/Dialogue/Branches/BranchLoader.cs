@@ -6,34 +6,42 @@ using System;
 
 namespace DIALOGUE
 {
-    public class BRANCH_DATA
+    // Todo: this is super hard to read
+    public class BranchLoader
     {
+        // This is literally the only one we need to have here
         public List<string> currentDialogue;
         public int queuedFile;
         public List<string> fileNames;
-        public string path;
-        public string directory;
+        public string currentPath;
+        public string currentDirectory;
         private string returnDirectory;
         private string subPath;
         private int current_index = 0;
         public bool isCompleted = false;
 
 
-        public BRANCH_DATA(string directory)
+        public BranchLoader(string directory)
         {
             QueueMainDirectory(directory);
         }
-
-        public void EndChapter()
+        private void QueueMainDirectory(string directory)
         {
-            isCompleted = true;
+            ResetAttributes();
+            this.currentDirectory = directory;
+            this.currentPath = GetPathToChapter(directory);
+            if (GetFileNamesList(directory))
+            {
+                subPath = $"{directory}";
+                LoadFileAtIndex();
+            }
         }
 
         public void LoadFileAtIndex()
         {
             if (current_index >= fileNames.Count)
             {
-                EndChapter();
+                isCompleted = true;
                 return;
             }
 
@@ -63,32 +71,12 @@ namespace DIALOGUE
             }
         }
 
-        public void QueueMainDirectory(string directory)
-        {
-            fileNames = new();
-            current_index = 0;
-            queuedFile = 0;
-            isCompleted = false;
-
-
-            this.directory = directory;
-            this.path = GetPathToChapter(directory);
-            if (GetFileNamesList(directory))
-            {
-                subPath = $"{directory}";
-                LoadFileAtIndex();
-            }
-        }
-
         public void QueueSubDirectory(string subdirectory)
         {
-            returnDirectory = path;
-            fileNames = new();
-            this.queuedFile = 0;
-            this.current_index = 0;
-            isCompleted = false;
+            returnDirectory = currentPath;
+            ResetAttributes();
 
-            path += $"/{subdirectory}";
+            currentPath += $"/{subdirectory}";
             if (GetFileNamesList(subPath + $"/{subdirectory}"))
             {
                 subPath += $"/{subdirectory}";
@@ -97,15 +85,12 @@ namespace DIALOGUE
 
         public void ReturnDirectory()
         {
-            fileNames = new();
-            this.queuedFile = 0;
-            this.current_index = 0;
-            isCompleted = false;
-
-            path = returnDirectory;
+            ResetAttributes();
+            currentPath = returnDirectory;
             subPath = ReturnOneDirectory(subPath);
             GetFileNamesList(subPath);
         }
+
         private string ReturnOneDirectory(string directory)
         {
             char[] reversePath = directory.ToCharArray();
@@ -129,7 +114,7 @@ namespace DIALOGUE
         public bool GetFileNamesList(string path)
         {
             #if UNITY_ANDROID
-                return GetStreamingChapters(path);
+                return GetChaptersFromStreamingAssets(path);
             #else
                 return GetChaptersFromDefaultFolder(path);
             #endif
@@ -180,5 +165,12 @@ namespace DIALOGUE
             return defaultPath + chapterName;
         }
 
+        private void ResetAttributes()
+        {
+            fileNames = new();
+            this.queuedFile = 0;
+            this.current_index = 0;
+            isCompleted = false;
+        }
     }
 }
