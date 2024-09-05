@@ -40,7 +40,7 @@ public class BranchingButton : MultipleChoiceButton
             VisualNovelSL.services.dialogueSystem.CheckClassTrialAnswer(isInconsistency);
         }
 
-        VisualNovelSL.services.dialogueSystem.chapterManager.QueueDirectory(branchName);
+        VisualNovelSL.services.dialogueSystem.branchManager.QueueBranch(branchName);
         VisualNovelSL.services.playerInputManager.ClearButtons();
     }
 }

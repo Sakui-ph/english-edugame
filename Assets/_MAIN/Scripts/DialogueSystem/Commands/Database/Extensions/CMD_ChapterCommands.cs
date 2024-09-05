@@ -13,12 +13,12 @@ public class CMD_ChapterCommands : CMD_DatabaseExtension
 
     public static void QueueChapter(string chapterName)
     {
-        ds.chapterManager.QueueFile(chapterName);
+        ds.branchManager.QueueStoryFile(chapterName);
     }
 
     public static void QueueDirectory(string directory)
     {
-        ds.chapterManager.QueueDirectory(directory);
+        ds.branchManager.QueueBranch(directory);
     }
 }
 

@@ -61,12 +61,12 @@ public class CMD_DatabaseExtension_BranchingCommands : CMD_DatabaseExtension
 
     private static void ReturnBranch(string fileName)
     {
-        VisualNovelSL.services.dialogueSystem.chapterManager.QueuePreviousFile(fileName);
+        VisualNovelSL.services.dialogueSystem.branchManager.QueueStoryFileFromPreviousBranch(fileName);
     }
 
     private static void ReturnDirectory(string fileName)
     {
-        VisualNovelSL.services.dialogueSystem.chapterManager.QueuePreviousDirectory(fileName);
+        VisualNovelSL.services.dialogueSystem.branchManager.QueueBranchFromPreviousBranch(fileName);
     }
 
     private static IEnumerator ShowButtons()

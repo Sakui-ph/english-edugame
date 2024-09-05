@@ -14,11 +14,11 @@ namespace DIALOGUE
         public DialogueContainer dialogueContainer = new DialogueContainer();
         public TextArchitect architect;
         private ConversationManager conversationManager;
+        public BranchManager branchManager;
         public bool isRunningConversation => conversationManager.isRunning;
         public delegate void DialogueSystemEvent();
         public event DialogueSystemEvent onUserPrompt_Next;
         private CharacterManager characterManager => CharacterManager.instance;
-        public ChapterManager chapterManager;
 
         bool _initialized = false;
 
@@ -153,23 +153,23 @@ namespace DIALOGUE
         public void ShowDialogueBox() => dialogueContainer.Show();
 
         // Playing the chapter
-        public virtual void LoadChapter(string chapterName, Action callback = null)
+        public virtual void LoadBranch(string chapterName, Action callback = null)
         {
             characterManager.ClearCharacters();
             LowerOrderScoreHandler.Reset();
             VisualNovelSL.services.historyManager.ResetLines();
             
             conversationManager.NullifyObservers();
-            chapterManager = new(chapterName);
+            branchManager = new(chapterName);
             GameSystem.instance.cachedChapter = chapterName;
-            conversationManager.finishConversation += chapterManager.PlayQueuedChapter;
+            conversationManager.finishConversation += branchManager.PlayQueuedBranch;
 
             if (callback != null)
             {
-                ChapterManager.OnChapterEnd += callback;
+                BranchManager.OnChapterEnd += callback;
             }
 
-            chapterManager.PlayChapter();       
+            branchManager.PlayBranch();       
         }
 
         public Coroutine Say(string speaker, string dialogue) 

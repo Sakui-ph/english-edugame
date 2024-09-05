@@ -3,13 +3,10 @@ using UnityEngine;
 using System.IO;
 using System.Linq;
 using System;
-using UnityEngine.Networking;
-using Unity.Profiling;
-using System.Collections;
 
 namespace DIALOGUE
 {
-    public class CHAPTER_DATA
+    public class BRANCH_DATA
     {
         public List<string> currentDialogue;
         public int queuedFile;
@@ -22,7 +19,7 @@ namespace DIALOGUE
         public bool isCompleted = false;
 
 
-        public CHAPTER_DATA(string directory)
+        public BRANCH_DATA(string directory)
         {
             QueueMainDirectory(directory);
         }
