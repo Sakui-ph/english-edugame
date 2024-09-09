@@ -14,7 +14,7 @@ namespace CARD_GAME
         public static List<Claim> claims = new();
         public static HashSet<CardData> cardDataSet = new();
         public static string subject = "";
-        public static string postLevelChapterReference = "";
+        public static string postLevelReference = "";
         
         public static CardMinigameLevel LoadLevel()
         {
@@ -30,7 +30,7 @@ namespace CARD_GAME
                 return null;
             }
 
-            level = new(claims, cardDataSet, subject, postLevelChapterReference);
+            level = new(claims, cardDataSet, subject, postLevelReference);
             return level;
         }
 

@@ -42,7 +42,7 @@ public class LevelHandler : MonoBehaviour
         for (int i = 0; i < levels.Count; i++)
         {
             MultipleChoiceButton button = i > 4 ? higherOrderLevels[i % 5] : lowerOrderLevels[i];
-            string levelReference = levels[i].levelChapterReference;
+            string levelReference = levels[i].levelReference;
             Level level = levels[i];
             button.OnClickAction += () => {
                 GameSystem.instance.currentLevel = level;
@@ -52,7 +52,7 @@ public class LevelHandler : MonoBehaviour
                 }
                 if (level.levelType == LevelType.CardGame)
                 {
-                    CardMinigameLevelLoader.postLevelChapterReference = level.postLevelChapterReference;
+                    CardMinigameLevelLoader.postLevelReference = level.postLevelReference;
                     GameSystem.instance.LoadVisualNovel(levelReference);
                 }
 
@@ -80,9 +80,9 @@ public class LevelHandler : MonoBehaviour
 
             if (scoreData.Contains(textmesh.gameObject))
             {
-                if (player.playerScore.ContainsKey(level.levelChapterReference))
+                if (player.playerScore.ContainsKey(level.levelReference))
                 {
-                    float score = player.playerScore[level.levelChapterReference] * 100;
+                    float score = player.playerScore[level.levelReference] * 100;
                     score = Mathf.Round(score);
                     textmesh.text = $"{score}%";
 

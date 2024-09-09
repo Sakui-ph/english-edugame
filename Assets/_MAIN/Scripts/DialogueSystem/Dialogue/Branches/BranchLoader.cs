@@ -21,15 +21,15 @@ namespace DIALOGUE
         public bool isCompleted = false;
 
 
-        public BranchLoader(string directory)
+        public BranchLoader(string levelDirectory)
         {
-            QueueMainDirectory(directory);
+            QueueMainDirectory(levelDirectory);
         }
         private void QueueMainDirectory(string directory)
         {
             ResetAttributes();
             this.currentDirectory = directory;
-            this.currentPath = GetPathToChapter(directory);
+            this.currentPath = GetPathToBranch(directory);
             if (GetFileNamesList(directory))
             {
                 subPath = $"{directory}";
@@ -52,7 +52,7 @@ namespace DIALOGUE
                 return;
             }
 
-            currentDialogue = FileManager.ReadTextAsset(FilePaths.chapter_files + $"{subPath}/{fileNames[current_index]}");
+            currentDialogue = FileManager.ReadTextAsset(FilePaths.branch_files + $"{subPath}/{fileNames[current_index]}");
             queuedFile = current_index + 1;
         }
 
@@ -114,16 +114,16 @@ namespace DIALOGUE
         public bool GetFileNamesList(string path)
         {
             #if UNITY_ANDROID
-                return GetChaptersFromStreamingAssets(path);
+                return GetBranchesFromStreamingAssets(path);
             #else
-                return GetChaptersFromDefaultFolder(path);
+                return GetBranchesFromDefaultFolder(path);
             #endif
         }
 
-        private bool GetChaptersFromDefaultFolder(string path)
+        private bool GetBranchesFromDefaultFolder(string path)
         {
             try {
-                    path = GetPathToChapter(path);
+                    path = GetPathToBranch(path);
                     
                     Debug.Log(path);
 
@@ -139,7 +139,7 @@ namespace DIALOGUE
             return false;
         }
 
-        private bool GetChaptersFromStreamingAssets(string directory)
+        private bool GetBranchesFromStreamingAssets(string directory)
         {
             try
             {
@@ -155,14 +155,14 @@ namespace DIALOGUE
             return false;
         }
 
-        private string GetPathToChapter(string chapterName)
+        private string GetPathToBranch(string branchName)
         {
-            string defaultPath = FilePaths.stream_assets_chapters;
-            if (chapterName.StartsWith(FilePaths.HOME_DIRECTORY_SYMBOL))
+            string defaultPath = FilePaths.stream_assets_branch;
+            if (branchName.StartsWith(FilePaths.HOME_DIRECTORY_SYMBOL))
             {
-                return chapterName.Substring(FilePaths.HOME_DIRECTORY_SYMBOL.Length);
+                return branchName.Substring(FilePaths.HOME_DIRECTORY_SYMBOL.Length);
             }
-            return defaultPath + chapterName;
+            return defaultPath + branchName;
         }
 
         private void ResetAttributes()

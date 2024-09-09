@@ -42,7 +42,7 @@ public class FileManager
         if(asset == null) 
         {
             // If it doesn't exist as a text asset, we try streaming assets
-            return ReadChapterFromStreamingAssets(filePath, includeBlankLines);
+            return ReadBranchFromStreamingAssets(filePath, includeBlankLines);
         }
 
         return ReadTextAsset(asset, includeBlankLines);
@@ -65,20 +65,20 @@ public class FileManager
         return lines;
     }
 
-    public static List<string> ReadChapterFromStreamingAssets(string filePath, bool includeBlankLines = true)
+    public static List<string> ReadBranchFromStreamingAssets(string filePath, bool includeBlankLines = true)
     {
         
         #if UNITY_ANDROID
             string relativePath = GetRelativePath(filePath, "chapters");
-            return ReadChapterAndroid(relativePath, includeBlankLines);
+            return ReadBranchAndroid(relativePath, includeBlankLines);
         #else
             string relativePath = $"{Application.streamingAssetsPath}/{GetRelativePath(filePath, "chapters")}";
-            return ReadChapterWindows(relativePath, includeBlankLines);
+            return ReadBranchWindows(relativePath, includeBlankLines);
         #endif 
     }
 
 
-    private static List<string> ReadChapterAndroid(string relativePath, bool includeBlankLines = true)
+    private static List<string> ReadBranchAndroid(string relativePath, bool includeBlankLines = true)
     {
         try{
             List<string> data = BetterStreamingAssets.ReadAllLines($"{relativePath}.txt").ToList();
@@ -95,7 +95,7 @@ public class FileManager
         }
     }
 
-    private static List<string> ReadChapterWindows(string relativePath, bool includeBlankLines = true)
+    private static List<string> ReadBranchWindows(string relativePath, bool includeBlankLines = true)
     {
 
         try{

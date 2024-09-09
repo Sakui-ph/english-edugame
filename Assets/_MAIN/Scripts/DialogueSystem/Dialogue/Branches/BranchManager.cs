@@ -7,11 +7,11 @@ namespace DIALOGUE
     {
         private DialogueSystem ds => VisualNovelSL.services.dialogueSystem;
         public BranchLoader branchLoader;
-        public static event Action OnChapterEnd;
+        public static event Action OnBranchEnd;
 
         public BranchManager(string path)
         {
-            OnChapterEnd = null;
+            OnBranchEnd = null;
             branchLoader = new(path.ToLower());
         }
 
@@ -50,8 +50,8 @@ namespace DIALOGUE
             else
             {
                 Debug.Log("Story has been completed");
-                OnChapterEnd?.Invoke();
-                OnChapterEnd = null;
+                OnBranchEnd?.Invoke();
+                OnBranchEnd = null;
             }
         }
 

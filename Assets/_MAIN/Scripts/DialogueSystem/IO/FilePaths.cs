@@ -4,7 +4,7 @@ public class FilePaths
 {
     public static readonly string HOME_DIRECTORY_SYMBOL = "~/";
     public static readonly string root = $"{Application.dataPath}/gameData/";
-    public static readonly string stream_assets_chapters = $"{Application.streamingAssetsPath}/chapters/";
+    public static readonly string stream_assets_branch = $"{Application.streamingAssetsPath}/chapters/";
     // Resources Paths
     public static readonly string resources_graphics = "Graphics/";
     public static readonly string resources_backgroundImages = $"{resources_graphics}BG Images/";
@@ -20,6 +20,6 @@ public class FilePaths
     public static readonly string interrogation_files = "InterrogationFiles/";
     public static readonly string dialogue_files = "DialogueFiles/";
 
-    public static readonly string chapter_files = "Chapters/";
+    public static readonly string branch_files = "Chapters/";
     
 }

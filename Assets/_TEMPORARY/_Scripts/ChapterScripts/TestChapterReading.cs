@@ -9,7 +9,7 @@ namespace TESTING
         
         void Start()
         {
-            ds.LoadBranch("level10_cg");
+            ds.LoadLevel("level10_cg");
         }
     }
 

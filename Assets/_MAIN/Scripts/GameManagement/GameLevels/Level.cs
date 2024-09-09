@@ -7,15 +7,15 @@ using UnityEngine;
 public class Level
 {
     public string levelName;
-    public string levelChapterReference;
-    public string postLevelChapterReference = "";
+    public string levelReference;
+    public string postLevelReference = "";
     public LevelType levelType;
-    public Level(string levelName, string levelChapterReference, LevelType levelType, string postLevelChapterReference = "")
+    public Level(string levelName, string levelReference, LevelType levelType, string postLevelReference = "")
     {
         this.levelName = levelName;
-        this.levelChapterReference = levelChapterReference;
+        this.levelReference = levelReference;
         this.levelType = levelType;
-        this.postLevelChapterReference = postLevelChapterReference;
+        this.postLevelReference = postLevelReference;
     }
 
     public void EndLevel()
@@ -23,8 +23,8 @@ public class Level
         GameSystem.instance.currentLevel = null;
 
         SaveLevelData(this);
-        if (postLevelChapterReference != "")
-                GameSystem.instance.LoadVisualNovel(postLevelChapterReference, () => GameSystem.instance.LoadMainMenu());
+        if (postLevelReference != "")
+                GameSystem.instance.LoadVisualNovel(postLevelReference, () => GameSystem.instance.LoadMainMenu());
             else
                 GameSystem.instance.LoadMainMenu();
     }
@@ -35,11 +35,11 @@ public class Level
         Player player = GameSystem.instance.GetLoadedPlayer();
         if (level.levelType == LevelType.ClassTrial)
         {
-            player.SaveLOScore(level.levelChapterReference, LowerOrderScoreHandler.GetPercentage());
+            player.SaveLOScore(level.levelReference, LowerOrderScoreHandler.GetPercentage());
         }
         if (level.levelType == LevelType.CardGame)
         {
-            player.SaveHOScore(level.levelChapterReference);
+            player.SaveHOScore(level.levelReference);
         }
     }
 }

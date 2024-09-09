@@ -7,13 +7,13 @@ using UnityEngine;
 public class GameSystem : MonoBehaviour
 {
     public MenuConfigSO menuConfigSO;
-    private const string INTRO_CHAPTER = "nameselectionchapter"; 
+    private const string INTRO_LEVEL = "nameselectionchapter"; 
     private SceneHandler sh => SceneHandler.instance;
     private PlayerHandler playerHandler = new();
     private string[] playerList;
     public static GameSystem instance;
     public bool isFirstStart = true;
-    public string cachedChapter;
+    public string cachedLevel;
     public Level currentLevel = null;
     
     void Awake()
@@ -68,18 +68,18 @@ public class GameSystem : MonoBehaviour
         }
     }
 
-    public void LoadVisualNovel(string levelReference, Action OnChapterEnd = null)
+    public void LoadVisualNovel(string levelReference, Action OnLevelEnd = null)
     {
         sh.LoadSceneWithCallback(SceneName.VisualNovel, () => {
             Debug.Log("Loading Visual Novel");
-            VisualNovelSL.services.dialogueSystem.LoadBranch(levelReference, OnChapterEnd);
+            VisualNovelSL.services.dialogueSystem.LoadLevel(levelReference, OnLevelEnd);
         });
     }
 
     public void ResetLevel()
     {
         sh.LoadSceneWithCallback(SceneName.VisualNovel, () => {
-            VisualNovelSL.services.dialogueSystem.LoadBranch(cachedChapter);
+            VisualNovelSL.services.dialogueSystem.LoadLevel(cachedLevel);
         });
     }
 
@@ -117,8 +117,8 @@ public class GameSystem : MonoBehaviour
     
     private void RunGameIntro()
     {
-        VisualNovelSL.services.dialogueSystem.LoadBranch(INTRO_CHAPTER);
-        BranchManager.OnChapterEnd += () =>
+        VisualNovelSL.services.dialogueSystem.LoadLevel(INTRO_LEVEL);
+        BranchManager.OnBranchEnd += () =>
         {
             LoadMainMenu();
         };

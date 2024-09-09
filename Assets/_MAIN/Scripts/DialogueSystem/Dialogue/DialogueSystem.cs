@@ -153,20 +153,20 @@ namespace DIALOGUE
         public void ShowDialogueBox() => dialogueContainer.Show();
 
         // TODO: this doesn't belong here, figure out where it does.
-        public virtual void LoadBranch(string chapterName, Action callback = null)
+        public virtual void LoadLevel(string levelName, Action callback = null)
         {
             characterManager.ClearCharacters();
             LowerOrderScoreHandler.Reset();
             VisualNovelSL.services.historyManager.ResetLines();
             
             conversationManager.NullifyObservers();
-            branchManager = new(chapterName);
-            GameSystem.instance.cachedChapter = chapterName;
+            branchManager = new(levelName);
+            GameSystem.instance.cachedLevel = levelName;
             conversationManager.finishConversation += branchManager.PlayQueuedBranch;
 
             if (callback != null)
             {
-                BranchManager.OnChapterEnd += callback;
+                BranchManager.OnBranchEnd += callback;
             }
 
             branchManager.PlayBranch();       
