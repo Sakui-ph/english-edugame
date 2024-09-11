@@ -124,9 +124,6 @@ namespace DIALOGUE
         {
             try {
                     path = GetPathToBranch(path);
-                    
-                    Debug.Log(path);
-
                     fileNames = Directory.GetFiles(path, "*.txt")
                         .Select<string, string>(Path.GetFileNameWithoutExtension)
                         .ToList<string>();
@@ -143,7 +140,7 @@ namespace DIALOGUE
         {
             try
             {
-                string folderPath = "chapters/" + directory;
+                string folderPath = "levels/" + directory;
                 fileNames = BetterStreamingAssets.GetFiles(folderPath, "*.txt").Select<string, string>(Path.GetFileNameWithoutExtension)
                             .ToList<string>();
                 return true;

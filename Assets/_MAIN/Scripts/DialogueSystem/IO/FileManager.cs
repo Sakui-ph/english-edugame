@@ -69,10 +69,10 @@ public class FileManager
     {
         
         #if UNITY_ANDROID
-            string relativePath = GetRelativePath(filePath, "chapters");
+            string relativePath = GetRelativePath(filePath, "levels");
             return ReadBranchAndroid(relativePath, includeBlankLines);
         #else
-            string relativePath = $"{Application.streamingAssetsPath}/{GetRelativePath(filePath, "chapters")}";
+            string relativePath = $"{Application.streamingAssetsPath}/{GetRelativePath(filePath, "levels")}";
             return ReadBranchWindows(relativePath, includeBlankLines);
         #endif 
     }
