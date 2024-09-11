@@ -15,7 +15,6 @@ namespace MAIN_MENU
         public GameObject flowersPrefab;
         public RectTransform logo;
         public RectTransform play;
-        public RectTransform line;
         public RectTransform settings;
         public RectTransform credits;
         public RectTransform quit;
@@ -29,7 +28,6 @@ namespace MAIN_MENU
                 bg.alpha = 0;
                 logo.localScale = new Vector2(0,0);
                 play.localScale = new Vector2(0,0);
-                line.LeanAlpha(0, 0);
                 settings.localScale = new Vector2(0,0);
                 credits.localScale = new Vector2(0,0);
                 quit.localScale = new Vector2(0,0);
@@ -45,9 +43,7 @@ namespace MAIN_MENU
         {
             CanvasGroupControl.ShowCanvasGroup(bg);
             ScaleRect(logo, 1f);
-            ScaleRect(play, 2f, () => {
-                line.LeanAlpha(1, 1);
-            });
+            ScaleRect(play, 2f);
             ScaleRect(settings, 2f);
             ScaleRect(credits, 2.2f);
             ScaleRect(quit, 2.3f);
