@@ -20,7 +20,8 @@ public class TitleCardController : MonoBehaviour
     public void ShowCard()
     {
         canvasGroup.alpha = 0f;
-
+        canvasGroup.blocksRaycasts = true;
+        canvasGroup.interactable = true;
         float duration =0.3f;
 
         AudioManager.instance.PlaySoundEffect(SOUND);
@@ -31,7 +32,8 @@ public class TitleCardController : MonoBehaviour
     public void HideCard()
     {
         canvasGroup.alpha = 1f;
-
+        canvasGroup.blocksRaycasts = false;
+        canvasGroup.interactable = false;
         float duration = 1f;
         AudioManager.instance.PlaySoundEffect(SOUND);
         LeanTween.alphaCanvas(canvasGroup, 0.0f, duration).setDelay(1f);
