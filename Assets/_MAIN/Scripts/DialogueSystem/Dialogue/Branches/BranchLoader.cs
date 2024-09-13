@@ -140,7 +140,7 @@ namespace DIALOGUE
         {
             try
             {
-                string folderPath = "levels/" + directory;
+                string folderPath = FilePaths.better_stream_assets_levels + directory;
                 fileNames = BetterStreamingAssets.GetFiles(folderPath, "*.txt").Select<string, string>(Path.GetFileNameWithoutExtension)
                             .ToList<string>();
                 return true;

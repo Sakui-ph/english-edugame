@@ -5,6 +5,7 @@ public class FilePaths
     public static readonly string HOME_DIRECTORY_SYMBOL = "~/";
     public static readonly string root = $"{Application.dataPath}/gameData/";
     public static readonly string stream_assets_branch = $"{Application.streamingAssetsPath}/levels/";
+    public static readonly string better_stream_assets_levels = "levels/";
     // Resources Paths
     public static readonly string resources_graphics = "Graphics/";
     public static readonly string resources_backgroundImages = $"{resources_graphics}BG Images/";

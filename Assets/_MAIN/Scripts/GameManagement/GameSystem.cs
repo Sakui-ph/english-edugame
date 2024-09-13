@@ -42,9 +42,7 @@ public class GameSystem : MonoBehaviour
             }
         }   
 
-        #if UNITY_ANDROID
         BetterStreamingAssets.Initialize();
-        #endif
     }
 
     public void CheckForPlayerList()
