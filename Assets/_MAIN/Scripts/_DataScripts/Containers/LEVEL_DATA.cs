@@ -1,25 +1,48 @@
 
 public class LEVEL_DATA
 {
-    string levelName;
-    string levelId;
-    string levelDescription;
-    bool isOfficial;
-    int levelNumber;
-    string levelPath;
+    public string levelName;
+    public uint levelId;
+    public string levelDescription;
+    public bool isOfficialLevel;
+    public int levelNumber;
+    public string levelPath;
 
-    public LEVEL_DATA (LevelData level, string path)
+    public LEVEL_DATA (LevelData level, uint levelId, string path)
     {
         levelName = level.levelName;
-        levelId = level.levelId;
+        this.levelId = levelId;
         levelDescription = level.levelDescription;
-        isOfficial = level.isOfficial;
+        isOfficialLevel = level.isOfficialLevel;
         levelNumber = level.levelNumber;
         levelPath = path;
     }
 
     public override string ToString()
     {
-        return $"Name: {levelName} \n Level: {levelId} \n Official? {isOfficial} \n Path: {levelPath}";
+        return $"Name: {levelName} \n Level: {levelId} \n Official? {isOfficialLevel} \n Path: {levelPath}";
+    }
+
+    public override bool Equals(object obj)
+    {
+        if (!(obj is LEVEL_DATA))
+            return false;
+        LEVEL_DATA otherLevelData = (LEVEL_DATA)obj;
+        if (otherLevelData.levelName != this.levelName)
+            return false;
+        if (otherLevelData.levelId != this.levelId)
+            return false;
+        return true;
+    }
+
+    public override int GetHashCode()
+    {
+        unchecked
+        {
+            int hash = 419;
+            hash = hash + 569 + levelName.GetHashCode();
+            hash = hash + 569 + levelId.GetHashCode();
+            return hash;
+        }
     }
 }
