@@ -48,7 +48,7 @@ namespace DIALOGUE
             if (current_index <= -1 || current_index > fileNames.Count)
             {
                 Debug.LogError($"Out of bounds! Exited out of nowhere! Current index is {current_index} and filename count is {fileNames.Count}");
-                GameSystem.instance.LoadMainMenu();
+                GameSystemSL.services.gameSystem.LoadMainMenu();
                 return;
             }
 

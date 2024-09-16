@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneHandler : MonoBehaviour
 {
-    public static SceneHandler instance;
     private LoadSceneMode loadingMode = LoadSceneMode.Single;
     private Coroutine process = null;
 
@@ -15,17 +14,8 @@ public class SceneHandler : MonoBehaviour
 
     void Awake()   
     {
-        if (instance == null)
-        {
-            instance = this;
-
-            SceneManager.sceneLoaded += LoadSceneCallback;
-            SceneManager.sceneUnloaded += UnloadSceneCallback;
-        }
-        else {
-            Destroy(gameObject);
-        }
-            
+        SceneManager.sceneLoaded += LoadSceneCallback;
+        SceneManager.sceneUnloaded += UnloadSceneCallback;  
     }
     
     public void LoadScene(SceneName sceneName)

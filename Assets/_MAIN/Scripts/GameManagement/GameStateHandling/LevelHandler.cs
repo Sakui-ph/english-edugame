@@ -45,15 +45,15 @@ public class LevelHandler : MonoBehaviour
             string levelReference = levels[i].levelReference;
             Level level = levels[i];
             button.OnClickAction += () => {
-                GameSystem.instance.currentLevel = level;
+                GameSystemSL.services.gameSystem.currentLevel = level;
                 if (level.levelType == LevelType.ClassTrial)
                 {
-                    GameSystem.instance.LoadVisualNovel(levelReference, EndLevel);
+                    GameSystemSL.services.gameSystem.LoadVisualNovel(levelReference, EndLevel);
                 }
                 if (level.levelType == LevelType.CardGame)
                 {
                     CardMinigameLevelLoader.postLevelReference = level.postLevelReference;
-                    GameSystem.instance.LoadVisualNovel(levelReference);
+                    GameSystemSL.services.gameSystem.LoadVisualNovel(levelReference);
                 }
 
             };
@@ -64,12 +64,12 @@ public class LevelHandler : MonoBehaviour
 
     public void EndLevel()
     {
-        GameSystem.instance.currentLevel.EndLevel();
+        GameSystemSL.services.gameSystem.currentLevel.EndLevel();
     }
 
     public void LoadLevelData(GameObject levelObject, Level level)
     {
-        Player player = GameSystem.instance.GetLoadedPlayer();
+        Player player = GameSystemSL.services.gameSystem.GetLoadedPlayer();
         TextMeshProUGUI[] textmeshArray = levelObject.GetComponentsInChildren<TextMeshProUGUI>();
         foreach (var textmesh in textmeshArray)
         {

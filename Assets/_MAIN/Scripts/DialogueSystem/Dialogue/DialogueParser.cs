@@ -92,7 +92,7 @@ namespace DIALOGUE
                 speaker = rawLine;
             
             if (speaker == playerNameSpeakerLocator)
-                speaker = GameSystem.instance.GetLoadedPlayer().playerName;
+                speaker = GameSystemSL.services.gameSystem.GetLoadedPlayer().playerName;
             return (speaker, dialogue, commands);
         }
 
@@ -139,7 +139,7 @@ namespace DIALOGUE
 
         private static string ReplaceNameAndPronoun(string substring, bool capitalize)
         {
-            Player player = GameSystem.instance.GetLoadedPlayer();
+            Player player = GameSystemSL.services.gameSystem.GetLoadedPlayer();
             string playerName;
             PlayerGender gender;
 

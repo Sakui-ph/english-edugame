@@ -9,9 +9,7 @@ namespace AUDIO_SYSTEM {
         private const string SFX_PARENT_NAME = "SFX";
         private const string SFX_NAME_FORMAT = "SFX - [{0}]";
         public const float TRACK_TRANSITION_SPEED = 0.1f;
-
-        public static AudioManager instance { get; private set; }
-
+        
         public Dictionary<int, AudioChannel> channels = new Dictionary<int, AudioChannel>();
 
         // Sub part of a main mixer, a master can have multiple submixers
@@ -28,16 +26,9 @@ namespace AUDIO_SYSTEM {
         
         void Awake() 
         {
-            if (instance == null) {
-                transform.SetParent(null); // remove the parent so that it won't be destroyed when changing scenes
-                DontDestroyOnLoad(gameObject);
-                instance = this;
-
-                sfxRoot  = new GameObject(SFX_PARENT_NAME).transform;
-                sfxRoot.SetParent(transform);
-            } else if (instance != this) {
-                DestroyImmediate(gameObject);
-            }
+            transform.SetParent(null);
+            sfxRoot  = new GameObject(SFX_PARENT_NAME).transform;
+            sfxRoot.SetParent(transform);
         }
 
 

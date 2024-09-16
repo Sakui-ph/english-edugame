@@ -52,8 +52,8 @@ public class MultipleChoiceButton : MonoBehaviour, IPointerEnterHandler, IPointe
         multipleChoiceGroup.OnClick(this);
 
         if (clickSound != null)
-            AudioManager.instance.PlaySoundEffect(clickSound);
-        AudioManager.instance.PlaySoundEffect("Switch");
+            GameSystemSL.services.audioManager.PlaySoundEffect(clickSound);
+        GameSystemSL.services.audioManager.PlaySoundEffect("Switch");
     }
 
     public void DisableButton() => isDisabled = true;

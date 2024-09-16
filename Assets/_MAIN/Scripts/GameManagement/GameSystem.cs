@@ -8,25 +8,12 @@ public class GameSystem : MonoBehaviour
 {
     public MenuConfigSO menuConfigSO;
     private const string INTRO_LEVEL = "nameselectionchapter"; 
-    private SceneHandler sh => SceneHandler.instance;
+    private SceneHandler sh => GameSystemSL.services.sceneHandler;
     private PlayerHandler playerHandler = new();
     private string[] playerList;
-    public static GameSystem instance;
     public bool isFirstStart = true;
     public string cachedLevel;
     public Level currentLevel = null;
-    
-    void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            DestroyImmediate(this.gameObject);
-        }
-    }
 
     void Start()
     {

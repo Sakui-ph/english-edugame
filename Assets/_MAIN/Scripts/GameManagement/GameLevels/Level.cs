@@ -20,19 +20,19 @@ public class Level
 
     public void EndLevel()
     {
-        GameSystem.instance.currentLevel = null;
+        GameSystemSL.services.gameSystem.currentLevel = null;
 
         SaveLevelData(this);
         if (postLevelReference != "")
-                GameSystem.instance.LoadVisualNovel(postLevelReference, () => GameSystem.instance.LoadMainMenu());
+                GameSystemSL.services.gameSystem.LoadVisualNovel(postLevelReference, () => GameSystemSL.services.gameSystem.LoadMainMenu());
             else
-                GameSystem.instance.LoadMainMenu();
+                GameSystemSL.services.gameSystem.LoadMainMenu();
     }
 
 
     private void SaveLevelData(Level level)
     {
-        Player player = GameSystem.instance.GetLoadedPlayer();
+        Player player = GameSystemSL.services.gameSystem.GetLoadedPlayer();
         if (level.levelType == LevelType.ClassTrial)
         {
             player.SaveLOScore(level.levelReference, LowerOrderScoreHandler.GetPercentage());

@@ -40,9 +40,9 @@ namespace TUTORIAL_MANAGER
 
             HideNext();
 
-            GameSystem.instance.GetLoadedPlayer().hasSeenHOTutorial = true;
-            GameSystem.instance.SaveLoadedPlayer();
-            SceneHandler.instance.UnloadScene(SceneName.HOLMTutorial);
+            GameSystemSL.services.gameSystem.GetLoadedPlayer().hasSeenHOTutorial = true;
+            GameSystemSL.services.gameSystem.SaveLoadedPlayer();
+            GameSystemSL.services.sceneHandler.UnloadScene(SceneName.HOLMTutorial);
         }
 
         public void BlockInputs()

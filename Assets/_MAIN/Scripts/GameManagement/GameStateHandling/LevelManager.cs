@@ -9,7 +9,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public Dictionary<uint, LEVEL_DATA> levels {get; private set;}
-
+    
     void Start()
     {
         // Read all levels
@@ -21,7 +21,7 @@ public class LevelManager : MonoBehaviour
     {
         string levelPath = levels[levelId].levelPath;
         string level = levelPath.Split(new char[] {Path.DirectorySeparatorChar}).Last();
-        GameSystem.instance.LoadVisualNovel(level);
+        GameSystemSL.services.gameSystem.LoadVisualNovel(level);
     }
 
     private void ReadAllLevelData()

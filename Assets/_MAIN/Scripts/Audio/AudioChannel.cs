@@ -16,7 +16,7 @@ namespace AUDIO_SYSTEM {
         public AudioChannel(int channel) {
             channelIndex = channel;
             trackContainer = new GameObject(string.Format(TRACK_CONTAINER_NAME_FORMAT, channelIndex)).transform;
-            trackContainer.SetParent(AudioManager.instance.transform);
+            trackContainer.SetParent(GameSystemSL.services.audioManager.transform);
         }
 
         public AudioTrack PlayTrack(AudioClip clip, bool loop, float startingVolume, float volumeCap, float pitch, string filePath) {
@@ -31,7 +31,7 @@ namespace AUDIO_SYSTEM {
                 return existingTrack;
             }
 
-            AudioTrack track = new AudioTrack(clip, loop, startingVolume, volumeCap, pitch, this, AudioManager.instance.musicMixer);
+            AudioTrack track = new AudioTrack(clip, loop, startingVolume, volumeCap, pitch, this, GameSystemSL.services.audioManager.musicMixer);
             track.Play();
 
             SetAsActiveTrack(track);
@@ -63,7 +63,7 @@ namespace AUDIO_SYSTEM {
         private Coroutine TryStartVolumeLeveling()
         {
             if (!isVolumeLeveling) {
-                thread_volumeLeveling = AudioManager.instance.StartCoroutine(VolumeLeveling());
+                thread_volumeLeveling = GameSystemSL.services.audioManager.StartCoroutine(VolumeLeveling());
                 return thread_volumeLeveling;
             }
             return null;   

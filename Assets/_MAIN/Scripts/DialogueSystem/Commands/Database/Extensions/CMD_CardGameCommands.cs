@@ -8,7 +8,7 @@ public class CMD_CardGameCommands : CMD_DatabaseExtension
     private static string[] KEY = new string[] {"-k", "-key"};
     private static string[] CONNECTION_KEY = new string[] {"-ck", "-connectkey"};
     private static string[] CHAINS = new string[] {"-ch", "chains"};
-    private static GameSystem gameSystem => GameSystem.instance;
+    private static GameSystem gameSystem => GameSystemSL.services.gameSystem;
 
     new public static void Extend(CommandDatabase database)
     {
@@ -31,7 +31,7 @@ public class CMD_CardGameCommands : CMD_DatabaseExtension
         parameters.TryGetValue("-s", out subjectName, "");
         parameters.TryGetValue("-t", out tutorialMode, false);   
         CardMinigameLevelLoader.subject = subjectName;
-        GameSystem.instance.LoadCardGame(tutorialMode);
+        gameSystem.LoadCardGame(tutorialMode);
     }
 
     private static void AddWarrantCard(string[] data)

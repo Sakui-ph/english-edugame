@@ -71,7 +71,7 @@ namespace GRAPHIC_PANELS
 
             video.audioOutputMode = VideoAudioOutputMode.AudioSource;
             audio = video.gameObject.AddComponent<AudioSource>();
-            audio.outputAudioMixerGroup = AudioManager.instance.sfxMixer;
+            audio.outputAudioMixerGroup = GameSystemSL.services.audioManager.sfxMixer;
 
             // Start with vol 0 to setup for fade in
             audio.volume = immediate? 1:  0;

@@ -41,7 +41,7 @@ public class PauseMenu : MonoBehaviour
         // todo: delegate these to a score handler of some sort
         HigherOrderErrorHandler.Reset();
         LowerOrderScoreHandler.Reset();
-        GameSystem.instance.ResetLevel();
+        GameSystemSL.services.gameSystem.ResetLevel();
 
         ClosePauseMenu();
     }
@@ -50,7 +50,7 @@ public class PauseMenu : MonoBehaviour
     {
         HigherOrderErrorHandler.Reset();
         LowerOrderScoreHandler.Reset();
-        GameSystem.instance.LoadMainMenu();
+        GameSystemSL.services.gameSystem.LoadMainMenu();
     }
 
 }

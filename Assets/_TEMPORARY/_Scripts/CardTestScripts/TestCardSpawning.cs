@@ -48,7 +48,7 @@ namespace TESTING
 
             CardMinigameLevelLoader.subject = "Test Subject";
 
-            GameSystem.instance.LoadCardGame(false);
+            GameSystemSL.services.gameSystem.LoadCardGame(false);
         }
     }
 }

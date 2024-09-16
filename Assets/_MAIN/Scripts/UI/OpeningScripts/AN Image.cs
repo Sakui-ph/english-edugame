@@ -14,7 +14,7 @@ public class ANImage : MonoBehaviour
 
             LeanTween.alphaCanvas(cg, 0, 1).setDelay(2f).setOnComplete(() => 
             {
-                GameSystem.instance.CheckForPlayerList();
+                GameSystemSL.services.gameSystem.CheckForPlayerList();
             });
         });
     }

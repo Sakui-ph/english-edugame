@@ -53,7 +53,7 @@ namespace CARD_GAME
             
             if (BGM != null)
             {
-                AudioManager.instance.PlayTrack(BGM, startingVolume:0, loop:true, volumeCap: 0.3f, pitch: 0.8f);
+                GameSystemSL.services.audioManager.PlayTrack(BGM, startingVolume:0, loop:true, volumeCap: 0.3f, pitch: 0.8f);
             }
 
             process = StartCoroutine(RunMinigame());
@@ -100,7 +100,7 @@ namespace CARD_GAME
             if (!claimManager.CheckFinished())
                 return;
 
-            GameSystem.instance.currentLevel.EndLevel();
+            GameSystemSL.services.gameSystem.currentLevel.EndLevel();
         }
 
         private void InitializePlayer()
@@ -112,7 +112,7 @@ namespace CARD_GAME
 
         void OnDestroy()
         {
-            AudioManager.instance.StopTrack(0, true);
+            GameSystemSL.services.audioManager.StopTrack(0, true);
         }
     }
 

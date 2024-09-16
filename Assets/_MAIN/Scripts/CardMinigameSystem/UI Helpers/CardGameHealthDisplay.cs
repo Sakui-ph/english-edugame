@@ -36,13 +36,13 @@ namespace CARD_GAME
 
         private void InstantiateHealthSprite()
         {   
-            AudioManager.instance.PlaySoundEffect(system.correctSound);
+            GameSystemSL.services.audioManager.PlaySoundEffect(system.correctSound);
             Instantiate(healthSprite, transform);
         }
 
         private void DestroyHealthSprite()
         {
-            AudioManager.instance.PlaySoundEffect(system.incorrectSound);
+            GameSystemSL.services.audioManager.PlaySoundEffect(system.incorrectSound);
             if (spriteCount > 0)
             {
                 Destroy(transform.GetChild(0).gameObject);

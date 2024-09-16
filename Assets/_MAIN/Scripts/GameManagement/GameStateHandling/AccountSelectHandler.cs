@@ -11,7 +11,7 @@ public class AccountSelectHandler : MonoBehaviour
 
     void Start()
     {
-        createNewAccount.onClick.AddListener(GameSystem.instance.CreateNewCharacter);
+        createNewAccount.onClick.AddListener(GameSystemSL.services.gameSystem.CreateNewCharacter);
     }
     public void SetupButtons(string[] accountNames)
     {
@@ -24,8 +24,8 @@ public class AccountSelectHandler : MonoBehaviour
 
             button.onClick.AddListener(() => 
             {
-                GameSystem.instance.LoadPlayer(name);
-                GameSystem.instance.LoadMainMenu();
+                GameSystemSL.services.gameSystem.LoadPlayer(name);
+                GameSystemSL.services.gameSystem.LoadMainMenu();
             });
         }
     }

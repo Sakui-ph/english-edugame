@@ -20,7 +20,7 @@ namespace MAIN_MENU
         public RectTransform quit;
         public RectTransform production;
         public RectTransform characters;
-        private bool isFirstStart => GameSystem.instance.isFirstStart;
+        private bool isFirstStart => GameSystemSL.services.gameSystem.isFirstStart;
         void Start()
         {
             if (isFirstStart)
@@ -49,7 +49,7 @@ namespace MAIN_MENU
             ScaleRect(quit, 2.3f);
             LeanTween.delayedCall(1.9f, () => {
                 Instantiate(flowersPrefab, flowerRoot);
-                GameSystem.instance.isFirstStart = false;
+                GameSystemSL.services.gameSystem.isFirstStart = false;
             });
             ScaleRect(characters, 2.3f);
             ScaleRect(production, 2.4f);

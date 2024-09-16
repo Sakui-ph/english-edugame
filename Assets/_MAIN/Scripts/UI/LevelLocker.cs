@@ -8,7 +8,7 @@ public class LevelLocker : MonoBehaviour
 {
     public string levelReferenceRequired = "";
     public bool unlocked = false;
-    private Player player => GameSystem.instance.GetLoadedPlayer();
+    private Player player => GameSystemSL.services.gameSystem.GetLoadedPlayer();
     private CanvasGroup cg;
     private Image image;
 

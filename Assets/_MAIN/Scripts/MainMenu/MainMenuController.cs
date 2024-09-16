@@ -10,13 +10,13 @@ namespace MAIN_MENU
         [SerializeField] private MainMenuAudio mainMenuAudio = new();
         [SerializeField] private MainMenuCG mainMenuCG;
         public Canvas canvas;
-        private bool isFirstStart => GameSystem.instance.isFirstStart;
+        private bool isFirstStart => GameSystemSL.services.gameSystem.isFirstStart;
         
         private void Start() 
         {     
             mainMenuButtons.InitializeButtons();
 
-            AudioManager.instance.StopAllSoundEffects();
+            GameSystemSL.services.audioManager.StopAllSoundEffects();
 
             mainMenuAudio.Play();
             if (!isFirstStart) {

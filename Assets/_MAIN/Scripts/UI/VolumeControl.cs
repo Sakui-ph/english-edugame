@@ -17,7 +17,7 @@ public class VolumeControl : MonoBehaviour
     // TODO FIX VOLUME SAVING 
     public void RetrieveSavedVolume()
     {
-        float savedValue = GameSystem.instance.GetLoadedPlayer().volumePreference;
+        float savedValue = GameSystemSL.services.gameSystem.GetLoadedPlayer().volumePreference;
         volumeSlider.value = savedValue;
         mainMixer.SetFloat("Volume", Mathf.Log10(savedValue) * 20);
     }
@@ -25,8 +25,8 @@ public class VolumeControl : MonoBehaviour
     public void UpdateVolumeOnChange()
     {
         mainMixer.SetFloat("Volume", Mathf.Log10(volumeSlider.value) * 20);
-        GameSystem.instance.GetLoadedPlayer().volumePreference = volumeSlider.value;
-        GameSystem.instance.SaveLoadedPlayer();
+        GameSystemSL.services.gameSystem.GetLoadedPlayer().volumePreference = volumeSlider.value;
+        GameSystemSL.services.gameSystem.SaveLoadedPlayer();
     }
 
 }

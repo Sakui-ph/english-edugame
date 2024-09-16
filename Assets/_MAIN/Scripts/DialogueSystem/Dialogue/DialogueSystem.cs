@@ -161,7 +161,7 @@ namespace DIALOGUE
             
             conversationManager.NullifyObservers();
             branchManager = new(levelName);
-            GameSystem.instance.cachedLevel = levelName;
+            GameSystemSL.services.gameSystem.cachedLevel = levelName;
             conversationManager.finishConversation += branchManager.PlayQueuedBranch;
 
             if (callback != null)

@@ -86,7 +86,7 @@ public static class SaveSystem
         string directory = 
         Application.persistentDataPath 
         + SAVE_DIRECTORY 
-        + $"\\{GameSystem.instance.GetLoadedPlayer().playerName}" 
+        + $"\\{GameSystemSL.services.gameSystem.GetLoadedPlayer().playerName}" 
         + HO_SCORES_DIRECTORY;
 
         List<string> text = new();

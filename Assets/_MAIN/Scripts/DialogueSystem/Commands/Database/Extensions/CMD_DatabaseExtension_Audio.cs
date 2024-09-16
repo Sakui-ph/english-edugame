@@ -16,6 +16,7 @@ public class CMD_DatabaseExtension_Audio : CMD_DatabaseExtension
     private static string[] PARAM_CHANNEL = new string[] { "-c", "-channel" };
     private static string[] PARAM_IMMEDIATE = new string[] { "-i", "-immediate" };
     private const string HOME_DIRECTORY_SYMBOL = "~/";
+    private static AudioManager audioManager => GameSystemSL.services.audioManager;
     new public static void Extend(CommandDatabase database)
     {
         // USAGE: -t trackname -c channel -v volume -p pitch -sv startingvolume -l loop
@@ -33,7 +34,7 @@ public class CMD_DatabaseExtension_Audio : CMD_DatabaseExtension
     private static void StopSFX(string data)
     {
         string trackName = data;
-        AudioManager.instance.StopSoundEffect(trackName);
+        audioManager.StopSoundEffect(trackName);
     }
 
     private static IEnumerator StopMusic(string[] data)
@@ -51,7 +52,7 @@ public class CMD_DatabaseExtension_Audio : CMD_DatabaseExtension
             yield return null;
         }
         
-        yield return AudioManager.instance.StopTrack(channel);
+        yield return audioManager.StopTrack(channel);
     }
 
     private static void PlaySFX(string[] data)
@@ -67,7 +68,7 @@ public class CMD_DatabaseExtension_Audio : CMD_DatabaseExtension
             Debug.LogError($"Audio clip not found at path: {filePath}");
             return;
         }
-        AudioMixerGroup audioMixerGroup = AudioManager.instance.sfxMixer;
+        AudioMixerGroup audioMixerGroup = audioManager.sfxMixer;
         PlaySound(parameters, clip, audioMixerGroup);
     }
 
@@ -84,7 +85,7 @@ public class CMD_DatabaseExtension_Audio : CMD_DatabaseExtension
             Debug.LogError($"Audio clip not found at path: {filePath}");
             return;
         }
-        AudioMixerGroup audioMixerGroup = AudioManager.instance.voiceMixer;
+        AudioMixerGroup audioMixerGroup = audioManager.voiceMixer;
         PlaySound(parameters, clip, audioMixerGroup);
     }
     
@@ -98,12 +99,12 @@ public class CMD_DatabaseExtension_Audio : CMD_DatabaseExtension
         parameters.TryGetValue(PARAM_PITCH, out pitch, defaultValue: 1f);
         parameters.TryGetValue(PARAM_LOOP, out loop, defaultValue: false);
 
-        if (mixer == AudioManager.instance.voiceMixer)
+        if (mixer == audioManager.voiceMixer)
         {
-            AudioManager.instance.PlayVoice(clip, volume, pitch, loop);
+            audioManager.PlayVoice(clip, volume, pitch, loop);
             return;
         }
-        AudioManager.instance.PlaySoundEffect(clip, mixer, volume, pitch, loop);
+        audioManager.PlaySoundEffect(clip, mixer, volume, pitch, loop);
         return;
     }
 
@@ -134,7 +135,7 @@ public class CMD_DatabaseExtension_Audio : CMD_DatabaseExtension
         parameters.TryGetValue(PARAM_STARTING_VOLUME, out startingvolume, defaultValue: 0f);
         parameters.TryGetValue(PARAM_LOOP, out loop, defaultValue: false);
 
-        AudioManager.instance.PlayTrack(clip, channel, loop, startingvolume, volume, pitch, filePath);
+        audioManager.PlayTrack(clip, channel, loop, startingvolume, volume, pitch, filePath);
     }
 
     private static string GetPathToAudio(string defaultPath, string graphicName)

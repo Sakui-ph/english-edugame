@@ -173,7 +173,7 @@ public class PlayerInputManager : MonoBehaviour
     private void UpdatePlayerInfo()
     {
         SaveSystem.SavePlayer(loadingPlayer);
-        GameSystem.instance.LoadPlayer(loadingPlayer.playerName);
+        GameSystemSL.services.gameSystem.LoadPlayer(loadingPlayer.playerName);
     }
 }
 

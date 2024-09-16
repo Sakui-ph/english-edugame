@@ -99,7 +99,7 @@ public class TextArchitect
 
             yield return new WaitForSeconds(0.015f / speed);
         }
-        AudioManager.instance.StopVoiceBank();
+        GameSystemSL.services.audioManager.StopVoiceBank();
     }
 
     private void StartVoices()
@@ -107,7 +107,7 @@ public class TextArchitect
         if (voiceBank == null)
             return;
         if (voiceBank.Count != 0)
-            AudioManager.instance.RunVoiceBank(voiceBank);
+            GameSystemSL.services.audioManager.RunVoiceBank(voiceBank);
     }
 
     private IEnumerator Build_Fade()

@@ -21,7 +21,7 @@ namespace TESTING {
             Character Me = CreateCharacter("Me");
             Nanami.Show();
 
-            AudioManager.instance.PlayTrack("misty_memory", startingVolume: 0f, volumeCap: 1f);
+            GameSystemSL.services.audioManager.PlayTrack("misty_memory", startingVolume: 0f, volumeCap: 1f);
 
             yield return new WaitForSeconds(3);
 

@@ -73,7 +73,7 @@ namespace DIALOGUE
 
                 if (conversation[i].Contains("</color>"))
                 {
-                    AudioManager.instance.PlaySoundEffect("ding", volume: 0.3f);
+                    GameSystemSL.services.audioManager.PlaySoundEffect("ding", volume: 0.3f);
                 }
 
                 if (conversation[i].ToLower().StartsWith("playerwait")){

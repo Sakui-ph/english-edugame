@@ -24,7 +24,7 @@ public class TitleCardController : MonoBehaviour
         canvasGroup.interactable = true;
         float duration =0.3f;
 
-        AudioManager.instance.PlaySoundEffect(SOUND);
+        GameSystemSL.services.audioManager.PlaySoundEffect(SOUND);
 
         LeanTween.alphaCanvas(canvasGroup, 1.0f, duration).setDelay(0f);
     }
@@ -35,7 +35,7 @@ public class TitleCardController : MonoBehaviour
         canvasGroup.blocksRaycasts = false;
         canvasGroup.interactable = false;
         float duration = 1f;
-        AudioManager.instance.PlaySoundEffect(SOUND);
+        GameSystemSL.services.audioManager.PlaySoundEffect(SOUND);
         LeanTween.alphaCanvas(canvasGroup, 0.0f, duration).setDelay(1f);
     }
 }

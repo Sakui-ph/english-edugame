@@ -89,7 +89,7 @@ public class FileManager
         }
         catch
         {
-            GameSystem.instance.LoadMainMenu();
+            GameSystemSL.services.gameSystem.LoadMainMenu();
             Debug.Log($"Error, file  not found in {relativePath}");
             return null;
         }
@@ -107,7 +107,7 @@ public class FileManager
         }
         catch
         {
-            GameSystem.instance.LoadMainMenu();
+            GameSystemSL.services.gameSystem.LoadMainMenu();
             Debug.Log($"Error, file  not found in {relativePath}");
             return null;
         }
