@@ -24,6 +24,7 @@ public class GameSystemSL : MonoBehaviour
         }
         services = this;
         Initialize();
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Initialize()
