@@ -2408,8 +2408,8 @@ CanvasGroup:
   m_GameObject: {fileID: 471226493}
   m_Enabled: 1
   m_Alpha: 0
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!222 &471226496
 CanvasRenderer:
@@ -6851,10 +6851,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1729087504}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e115aae74e45b794189497dd317944b4, type: 3}
+  m_Script: {fileID: 11500000, guid: abf056bd5a967524997f16e19af6d0b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 471226493}
+  pauseMenu: {fileID: 471226495}
   pauseButton: {fileID: 179567895}
   continueButton: {fileID: 1858785428}
   resetButton: {fileID: 2072297892}
