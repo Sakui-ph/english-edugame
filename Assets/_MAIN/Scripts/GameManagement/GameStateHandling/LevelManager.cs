@@ -8,20 +8,26 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    public Dictionary<uint, LEVEL_DATA> levels {get; private set;}
+    public Dictionary<int, LEVEL_DATA> levels {get; private set;}
     
     void Start()
     {
-        // Read all levels
-        levels = new();
-        ReadAllLevelData();
+        FindLevels();
     }
 
-    public void LaunchLevel(uint levelId)
+    public void LaunchLevel(int levelId)
     {
         string levelPath = levels[levelId].levelPath;
         string level = levelPath.Split(new char[] {Path.DirectorySeparatorChar}).Last();
         GameSystemSL.services.gameSystem.LoadVisualNovel(level);
+    }
+
+    public void FindLevels()
+    {
+        levels = new();
+        // from experience, clearing a dictionary never went well, this might not clear things :/
+        levels.Clear();
+        ReadAllLevelData();
     }
 
     private void ReadAllLevelData()
@@ -35,7 +41,7 @@ public class LevelManager : MonoBehaviour
             string path = Path.Combine(Application.streamingAssetsPath, value);
             string levelPath = Path.GetFullPath(Path.Combine(path, ".."));
             string json_data = File.ReadAllText(path);
-            uint levelId = (uint)levels.Count;
+            int levelId = levels.Count;
             LEVEL_DATA data = new(JsonConvert.DeserializeObject<LevelData>(json_data), levelId, levelPath);
 
             StoreLevelData(data);
@@ -45,10 +51,10 @@ public class LevelManager : MonoBehaviour
     private void StoreLevelData(LEVEL_DATA levelData)
     {
         if (levels.ContainsValue(levelData))
-            {
-                Debug.LogWarning($"A copy of {levelData.levelName} with  exists or one with the same name exists. The other copy is ignored");
-                return;
-            }
+        {
+            Debug.LogWarning($"A copy of {levelData.levelName} with  exists or one with the same name exists. The other copy is ignored");
+            return;
+        }
         levels.Add(levelData.levelId, levelData);
     }
 }

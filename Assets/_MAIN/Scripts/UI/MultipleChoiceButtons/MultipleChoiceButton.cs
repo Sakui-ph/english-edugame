@@ -16,7 +16,15 @@ public class MultipleChoiceButton : MonoBehaviour, IPointerEnterHandler, IPointe
     void Start()
     {
         background = GetComponent<Image>();
+
+        if (multipleChoiceGroup == null)
+        {
+            if (GetComponentInParent<MultipleChoiceGroup>())
+                multipleChoiceGroup = GetComponentInParent<MultipleChoiceGroup>();
+        }
         multipleChoiceGroup.Subscribe(this);
+
+        // level locking belongs here?
         if (GetComponentInChildren<LevelLocker>())
         {
             if(!GetComponentInChildren<LevelLocker>().unlocked)

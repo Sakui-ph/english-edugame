@@ -6,4 +6,5 @@ public class LevelData
     public bool isOfficialLevel = false;
     public int levelNumber = -1;
     public string levelPath = "/";
+    public int playerScore = 0;
 }

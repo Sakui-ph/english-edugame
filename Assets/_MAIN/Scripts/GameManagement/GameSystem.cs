@@ -53,11 +53,11 @@ public class GameSystem : MonoBehaviour
         }
     }
 
-    public void LoadVisualNovel(string levelReference, Action OnLevelEnd = null)
+    public void LoadVisualNovel(string levelPath, Action OnLevelEnd = null)
     {
         sh.LoadSceneWithCallback(SceneName.VisualNovel, () => {
-            Debug.Log("Loading Visual Novel");
-            VisualNovelSL.services.dialogueSystem.LoadLevel(levelReference, OnLevelEnd);
+            Debug.Log($"Loading Visual Novel under the level path = {levelPath}");
+            VisualNovelSL.services.dialogueSystem.LoadLevel(levelPath, OnLevelEnd);
         });
     }
 

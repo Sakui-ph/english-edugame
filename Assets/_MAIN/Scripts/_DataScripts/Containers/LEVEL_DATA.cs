@@ -2,13 +2,14 @@
 public class LEVEL_DATA
 {
     public string levelName;
-    public uint levelId;
+    public int levelId;
     public string levelDescription;
     public bool isOfficialLevel;
     public int levelNumber;
     public string levelPath;
+    public int playerScore;
 
-    public LEVEL_DATA (LevelData level, uint levelId, string path)
+    public LEVEL_DATA (LevelData level, int levelId, string path)
     {
         levelName = level.levelName;
         this.levelId = levelId;
@@ -16,6 +17,7 @@ public class LEVEL_DATA
         isOfficialLevel = level.isOfficialLevel;
         levelNumber = level.levelNumber;
         levelPath = path;
+        playerScore = level.playerScore;
     }
 
     public override string ToString()

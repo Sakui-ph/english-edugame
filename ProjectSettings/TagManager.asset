@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ScoreData
   - LevelName
+  - UI Object
   layers:
   - Default
   - TransparentFX
