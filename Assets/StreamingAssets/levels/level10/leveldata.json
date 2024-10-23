@@ -1,7 +1,8 @@
 {
-  "levelName": "Verdict 10: Cat maybe!",
+  "levelName": "Verdict 5: Cat maybe!",
   "levelId": "Level10",
   "levelDescription": "This is the first level",
   "isOfficial": true,
-  "levelNumber": 10
+  "levelNumber": 9,
+  "levelType": 1
 }

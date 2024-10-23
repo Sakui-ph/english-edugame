@@ -3,5 +3,6 @@
   "levelId": "Level1",
   "levelDescription": "This is the first level",
   "isOfficial": true,
-  "levelNumber": 5
+  "levelNumber": 4,
+  "levelType": 0
 }

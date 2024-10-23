@@ -8,6 +8,7 @@ public class LEVEL_DATA
     public int levelNumber;
     public string levelPath;
     public int playerScore;
+    public LevelType levelType;
 
     public LEVEL_DATA (LevelData level, int levelId, string path)
     {
@@ -18,6 +19,7 @@ public class LEVEL_DATA
         levelNumber = level.levelNumber;
         levelPath = path;
         playerScore = level.playerScore;
+        levelType = (LevelType)level.levelType;
     }
 
     public override string ToString()

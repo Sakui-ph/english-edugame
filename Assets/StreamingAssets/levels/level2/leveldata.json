@@ -1,5 +1,8 @@
 {
   "levelName": "Trial 2: Yes!",
   "levelId": "Level2",
-  "levelDescription": "This is the second level"
+  "levelDescription": "This is the second level",
+  "isOfficial": true,
+  "levelNumber": 1,
+  "levelType": 0
 }

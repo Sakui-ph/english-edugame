@@ -6,6 +6,11 @@ public class LevelMenuSetup : MonoBehaviour
 {
     private LevelManager levelManager => GameSystemSL.services.levelManager;
     public GameObject levelMenuOptionPrefab;
+    public Transform trialLevelMenuHolder;
+
+    public Transform verdictLevelMenuHolder;
+    public Transform customLevelMenuHolder;
+    
     
     
     void Start()
@@ -26,7 +31,21 @@ public class LevelMenuSetup : MonoBehaviour
 
     private void InitializeLevel(string imagePath, LEVEL_DATA levelData)
     {
-        GameObject newLevelOption = Instantiate(levelMenuOptionPrefab, transform);
+        Transform targetParent = null;
+        if (levelData.isOfficialLevel == false)
+            targetParent = customLevelMenuHolder;
+        if (levelData.levelType == LevelType.ClassTrial)
+            targetParent = trialLevelMenuHolder;
+        if (levelData.levelType == LevelType.CardGame)
+            targetParent = verdictLevelMenuHolder;
+
+        if (targetParent == null)
+        {
+            Debug.LogError("No viable level menu to place the level in!");
+            return;
+        }
+
+        GameObject newLevelOption = Instantiate(levelMenuOptionPrefab, targetParent); // change this
 
         int levelNumber = levelData.levelNumber;
         if (levelNumber < 1)
@@ -34,7 +53,7 @@ public class LevelMenuSetup : MonoBehaviour
             levelNumber = levelData.levelId;
         }
 
-        newLevelOption.name = levelNumber + "-" + levelData.levelPath.Split(new char[] {Path.DirectorySeparatorChar}).Last();
+        newLevelOption.name = "[" + levelNumber + "]" + "-" + levelData.levelPath.Split(new char[] {Path.DirectorySeparatorChar}).Last();
         LevelMenuButton levelButton = newLevelOption.GetComponent<LevelMenuButton>();
 
         // todo: add background image support
@@ -45,6 +64,8 @@ public class LevelMenuSetup : MonoBehaviour
 
     private void SortLevels()
     {
-        EditorHelpers.SortChildrenByName(transform);
+        EditorHelpers.SortChildrenByNumber(trialLevelMenuHolder);
+        EditorHelpers.SortChildrenByNumber(verdictLevelMenuHolder);
+        EditorHelpers.SortChildrenByNumber(customLevelMenuHolder);
     }
 }
