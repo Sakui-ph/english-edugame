@@ -383,11 +383,11 @@ MonoBehaviour:
   - {fileID: 334523966}
   - {fileID: 1449941108}
   - {fileID: 214949498}
-  firstSelectedTab: {fileID: 2006709660}
+  firstSelectedTab: {fileID: 2000776358}
   useSprites: 0
-  tabIdleColor: {r: 0, g: 0, b: 0, a: 0}
-  tabHoverColor: {r: 0, g: 0, b: 0, a: 0}
-  tabActiveColor: {r: 0, g: 0, b: 0, a: 0}
+  tabIdleColor: {r: 0.735849, g: 0.3019758, b: 0.3019758, a: 1}
+  tabHoverColor: {r: 0.4716981, g: 0.14907439, b: 0.14907439, a: 1}
+  tabActiveColor: {r: 0.5, g: 0.1721698, b: 0.1721698, a: 1}
   tabIdleSprite: {fileID: 0}
   tabHoverSprite: {fileID: 0}
   tabActiveSprite: {fileID: 0}
