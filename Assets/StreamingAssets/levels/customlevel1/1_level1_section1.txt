@@ -1,0 +1,95 @@
+TriggerAnimation(Anjelo Hop), HideCharacter(Hershey Ezekiel)
+
+Anjelo "{name}, have you heard about Ming Ming?" 
+PC "The white cat that people want the school to adopt?"
+
+TriggerAnimation(Anjelo Hop)
+
+Anjelo "Yep, exactly!" 
+PC "What about her?" 
+Anjelo "Well, You see Ezekiel is the one who found her." 
+"He was feeding stray cats at the back of the canteen and"
+"this specific white cat didn’t want to leave." 
+"She came back everyday, so he fed her everyday." 
+Anjelo [0:shock] "Eventually the other students found out and started feeding her too!" 
+"People started calling her Ming Ming" 
+Anjelo [0:happy] "then lots of us got attached, so they asked the school to adopt her!"
+
+ShowCharacter(Ezekiel)
+narrator  "Ezekiel nods along to this explanation" 
+
+Express(Hershey angry)
+ShowCharacter(Hershey)
+
+"while, Hershey looks frustrated." 
+Anjelo "Hershey doesn't think that the school should adopt the cat."
+
+"So now you gotta help settle this debate!" 
+
+[wait]PlayTitle("Case 1" "Should the school adopt the cat?" 5)
+
+Anjelo "Since it’s your first time, let's do this case together!" 
+"Our goal right now is to <color=\"yellow\">get the facts</color>!"
+"We want to hear out both sides and make sure that <color=\"yellow\">everything they’re saying lines up!" 
+"Let’s start with Ezekiel." 
+
+// have the following text be in large font, preferably shown in the middle of the screen like a movie title card
+HideCharacter(Hershey)
+StopTrack(0)
+[wait]PlayTitle("Case 1" "Ezekiel's Stance" 5)
+PlayTrack(MorningAfterTheRain 0 0.2 1 -p 1.2 -sv 0 -l true)
+
+Anjelo "Ezekiel is very <color=\"yellow\">for</color> the school adopting the cat." 
+"Let's ask him why."
+
+
+Anjelo "But first, theres something you need to know." 
+"as you may have already noticed, <color=\"yellow\">highlighted text, and a neat little bell sound</color> sometimes happens." 
+"This means that what they’re saying is <color=\"yellow\">important</color> so you gotta <color=\"yellow\">remember</color> it!" 
+"When they say lots of things, it might be helpful to <color=\"yellow\">write stuff down on a real life pen and paper!</color>" 
+"Now that you know all about what to look out for, lets ask him!"
+
+HideCharacter(Anjelo)
+[wait]MoveCharacter(Ezekiel 0.5:0 1 true)
+SetPosition(Anjelo 0.5:0)
+
+PC "Ezekiel, why do you want the school to adopt Ming Ming?" 
+
+Ezekiel "Well, most of the kids tell me that they love Ming Ming. <color=\"yellow\">She makes a lot of students really happy</color>." // key statement 
+Ezekiel "She’s also not dangerous. <color=\"yellow\">She hasn’t scratched anyone</color> even though lots of people pet her every day." // key statement 
+Ezekiel "Aside from that, I think that allergies are the worst thing you can get from her but <color=\"yellow\">I don’t think anyone has cat allergies in this school</color>." // key statement 
+
+PC "Thank you, Ezekiel."
+
+Express(Ezekiel happy)
+narrator "Ezekiel smiles and takes a seat"
+
+HideCharacter(Ezekiel)
+
+ShowCharacter(Anjelo)
+Anjelo "Remember what Ezekiel said because we’ll need to compare his statements with Hershey’s!" 
+
+// have the following text be in large font, preferably shown in the middle of the screen like a movie title card  
+StopTrack(0)
+[wait]PlayTitle("Case 1" "Hershey's Stance" 5)
+PlayTrack(EavesdroppingLady 0 0.2 1 -p 1.2 -sv 0 -l true)
+
+Anjelo "Hershey has been really against adopting the cat."
+"At this point, Hershey will be making her statement, but since we already have Ezekiel's statement, we get to <color=\"yellow\">compare her statements with Ezekiel's to find inconsistencies!</color>" 
+"An inconsistency is something in the story that <color=\"yellow\">does not align with what we already know."
+"Go for it! I'll guide you from the side."
+[wait]MoveCharacter(Anjelo 0.1:0 2 true)
+
+
+ShowCharacter(Hershey)
+
+PC "Hershey, why don’t you want the school to adopt Ming Ming?" 
+
+Express(Anjelo shock)
+Hershey [0:angry] "Well first of all, <color=\"yellow\">stray cats can carry diseases</color>! We shouldn’t have animals like that near students!" 
+
+Anjelo [0:happy] "This doesn’t conflict with anything Ezekiel said." 
+"It all lines up so far, so let's click continue." 
+
+QueueChapter(2_Level1_Button1) 
+

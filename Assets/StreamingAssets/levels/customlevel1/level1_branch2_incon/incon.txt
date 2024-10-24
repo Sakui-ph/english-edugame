@@ -1,0 +1,16 @@
+PC "Ezekiel said that Ming Ming hasn’t scratched anyone."
+"Did you tell Ezekiel that Ming Ming scratched you?" 
+Hershey [0:angry] "I did!" 
+Anjelo [0:sad] "What did he say?" 
+// hershey sprite sad face  
+Hershey "He said it wasn’t the same cat!" 
+PC "Why?" 
+Hershey [0:sad] "Well, the scratch happened outside of school,"
+"but it looked just like Ming Ming!" 
+Anjelo [0:sad] "Can you be 100% sure it was the same cat?" 
+Hershey [0:embarrass] "..."
+"No." 
+PC "Since we can’t be sure, let’s not count that into our evidence." 
+narrator "Hershey nods even though she looks disappointed." 
+
+ReturnBranch(5_Level1_Section3) 

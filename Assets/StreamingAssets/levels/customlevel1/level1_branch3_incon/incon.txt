@@ -1,0 +1,10 @@
+Anjelo [0:sad] "Ezekiel, did you know about Tris’s cat allergy?" 
+
+SetPosition(Ezekiel 0.5:0)
+ShowCharacter(Ezekiel)
+Ezekiel [0:sad] "I didn’t, actually."
+"That’s my fault." 
+"I should have asked instead of assuming." 
+Anjelo [0:happy] "No problem! Thanks for being honest." 
+
+ReturnBranch(7_Level1_Outro)

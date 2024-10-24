@@ -9,11 +9,6 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public Dictionary<int, LEVEL_DATA> levels {get; private set;}
-    
-    void Start()
-    {
-        FindLevels();
-    }
 
     public void LaunchLevel(int levelId)
     {
@@ -43,7 +38,7 @@ public class LevelManager : MonoBehaviour
             string json_data = File.ReadAllText(path);
             int levelId = levels.Count;
             LEVEL_DATA data = new(JsonConvert.DeserializeObject<LevelData>(json_data), levelId, levelPath);
-
+            Debug.Log(data);
             StoreLevelData(data);
         }
     }

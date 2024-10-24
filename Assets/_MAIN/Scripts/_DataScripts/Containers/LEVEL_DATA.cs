@@ -15,7 +15,7 @@ public class LEVEL_DATA
         levelName = level.levelName;
         this.levelId = levelId;
         levelDescription = level.levelDescription;
-        isOfficialLevel = level.isOfficialLevel;
+        isOfficialLevel = level.isOfficial;
         levelNumber = level.levelNumber;
         levelPath = path;
         playerScore = level.playerScore;

@@ -34,9 +34,9 @@ public class LevelMenuSetup : MonoBehaviour
         Transform targetParent = null;
         if (levelData.isOfficialLevel == false)
             targetParent = customLevelMenuHolder;
-        if (levelData.levelType == LevelType.ClassTrial)
+        else if (levelData.levelType == LevelType.ClassTrial)
             targetParent = trialLevelMenuHolder;
-        if (levelData.levelType == LevelType.CardGame)
+        else if (levelData.levelType == LevelType.CardGame)
             targetParent = verdictLevelMenuHolder;
 
         if (targetParent == null)
