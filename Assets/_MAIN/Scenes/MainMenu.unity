@@ -1688,7 +1688,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 754544477}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -2451,6 +2451,7 @@ MonoBehaviour:
   trialLevelMenuHolder: {fileID: 1756267980}
   verdictLevelMenuHolder: {fileID: 1678343842}
   customLevelMenuHolder: {fileID: 1841709004}
+  defaultSprite: {fileID: 21300000, guid: 2a7910f877f3a164ba5ebaabae18308e, type: 3}
 --- !u!1 &1097041403
 GameObject:
   m_ObjectHideFlags: 0

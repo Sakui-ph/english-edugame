@@ -6,7 +6,7 @@ using System;
 public class LevelMenuButton : MonoBehaviour
 {
     public Button button;
-    public Image backgroundImage;
+    public Image thumbnailImage;
     public TextMeshProUGUI levelTitle;
     public TextMeshProUGUI levelScore;
 

@@ -7,9 +7,9 @@ public class LevelMenuSetup : MonoBehaviour
     private LevelManager levelManager => GameSystemSL.services.levelManager;
     public GameObject levelMenuOptionPrefab;
     public Transform trialLevelMenuHolder;
-
     public Transform verdictLevelMenuHolder;
     public Transform customLevelMenuHolder;
+    public Sprite defaultSprite;
     
     
     
@@ -55,6 +55,10 @@ public class LevelMenuSetup : MonoBehaviour
 
         newLevelOption.name = "[" + levelNumber + "]" + "-" + levelData.levelPath.Split(new char[] {Path.DirectorySeparatorChar}).Last();
         LevelMenuButton levelButton = newLevelOption.GetComponent<LevelMenuButton>();
+        Sprite thumbnailSprite = levelData.TryLoadThumbnail();
+        levelButton.thumbnailImage.sprite = thumbnailSprite == null ? defaultSprite : thumbnailSprite;
+
+
 
         // todo: add background image support
         levelButton.levelTitle.text = levelData.levelName;

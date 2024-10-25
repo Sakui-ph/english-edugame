@@ -38,7 +38,6 @@ public class LevelManager : MonoBehaviour
             string json_data = File.ReadAllText(path);
             int levelId = levels.Count;
             LEVEL_DATA data = new(JsonConvert.DeserializeObject<LevelData>(json_data), levelId, levelPath);
-            Debug.Log(data);
             StoreLevelData(data);
         }
     }
