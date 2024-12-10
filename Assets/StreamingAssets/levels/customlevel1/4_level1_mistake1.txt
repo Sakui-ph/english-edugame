@@ -1,3 +1,0 @@
-PrepareNormalButton("Continue" Level1_Branch2_Continue) 
-PrepareNormalButton("Inconsistency" Level1_Branch2_Incon)  
-[wait]ShowButtons() 

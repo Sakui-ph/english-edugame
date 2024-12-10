@@ -1,9 +1,0 @@
-TriggerAnimation(Hershey Hop)
-[I]Hershey [0:angry] "Secondly, Ming Ming is dangerous! <color=\"yellow\">She scratched me</color>!"
-
-Anjelo [0:angry] "This statement doesn’t match what Ezekiel said." 
-"He said that the cat wasn’t dangerous" 
-"and that it hasn’t scratched anyone." 
-Anjelo [0:happy] "Since this doesn’t line up, let’s click inconsistency."  
-
-QueueChapter(4_Level1_Button2) 

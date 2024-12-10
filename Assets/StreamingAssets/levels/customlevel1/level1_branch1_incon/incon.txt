@@ -1,6 +1,0 @@
-Anjelo [0:shock] "Their statements line up, so there’s no inconsistency."
-"We can continue on to her next points."
-Express(Anjelo happy)
-
-ReturnBranch(2_level1_mistake1) 
-

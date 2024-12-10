@@ -1,4 +1,0 @@
-Anjelo [0:shock] "Wait! This is an inconsistency! We need to call that out!" 
-Express(Anjelo happy)
-
-ReturnBranch(6_Level1_mistake1) 

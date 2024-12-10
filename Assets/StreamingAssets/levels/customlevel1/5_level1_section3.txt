@@ -1,8 +1,0 @@
-TriggerAnimation(Hershey Hop)
-[I]Hershey [0:angry] "But my last point is, even if she hasn’t scratched anyone, she can still hurt people! My best friend <color=\"yellow\">Tris has a cat allergy</color>!" 
-
-Anjelo [0:shock] "This is another inconsistency!" 
-"Ezekiel said that he didn’t think anyone in school had a cat allergy." 
-Anjelo [0:happy] "Let’s point this out and click inconsistency again."
-
-QueueChapter(6_Level1_Button3) 
