@@ -92,6 +92,7 @@ public class TextArchitect
 
     private IEnumerator Build_Typewriter() 
     {
+        // TODO Architect should not be running the voices what the heck were you thinking
         StartVoices();
         while(tmpro.maxVisibleCharacters < tmpro.textInfo.characterCount) 
         {
