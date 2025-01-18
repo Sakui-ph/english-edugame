@@ -35,6 +35,7 @@ public class Draggable : MonoBehaviour {
             isFalling = value;
         }
     }
+    public GameObject parent;
     private float initialZ = 0;
     public float lift = 3.0f;
     public float fallingThreshold = 0;
@@ -61,6 +62,7 @@ public class Draggable : MonoBehaviour {
             targetPos = hit.point;
             targetPos.z = initialZ + -lift;
             rb.position = targetPos;
+            parent.transform.position = targetPos;
         }
     }
     
